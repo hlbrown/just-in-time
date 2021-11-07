@@ -3,9 +3,9 @@ import { useQuery } from '@apollo/client';
 import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
-} from '../../utils/actions';
-import { QUERY_CATEGORIES } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
+} from 'utils/actions';
+import { QUERY_CATEGORIES } from 'utils/queries';
+import { idbPromise } from 'utils/helpers';
 // import useSelector and useDispatch from react-redux
 import { useSelector, useDispatch } from 'react-redux';
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Auth from "../../utils/auth";
+import Auth from "utils/auth";
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -43,8 +43,8 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+          <span role="img" aria-label="shopping bag"></span>
+          Just In Time
         </Link>
       </h1>
 
