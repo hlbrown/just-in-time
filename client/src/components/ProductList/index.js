@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import ProductItem from '../ProductItem';
-import { UPDATE_PRODUCTS } from '../../utils/actions';
+import { UPDATE_PRODUCTS } from 'utils/actions';
 import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCTS } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import spinner from '../../assets/spinner.gif';
+import { QUERY_PRODUCTS } from 'utils/queries';
+import { idbPromise } from 'utils/helpers';
+import spinner from 'assets/spinner.gif';
 // import useselector and usedispatch from react-redux
 import { useSelector, useDispatch } from 'react-redux';
 
