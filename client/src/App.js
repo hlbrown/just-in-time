@@ -8,17 +8,15 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { Provider } from 'react-redux';
+import store from 'utils/store';
 
 import Home from 'pages/Home';
+
 import NoMatch from 'pages/NoMatch';
 import Login from 'pages/Login';
 import Signup from 'pages/Signup';
 import Nav from 'components/Nav';
 
-
-
-import M from 'materialize-css/dist/js/materialize.min.js';
-import ActionTypes from 'constants/ActionTypes';
 
 
 
@@ -55,7 +53,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Provider >
+          <Provider store={store}>
             <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
