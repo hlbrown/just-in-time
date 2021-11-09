@@ -2,14 +2,6 @@ import React from "react";
 import Auth from "utils/auth";
 import "materialize-css/dist/css/materialize.min.css";
 import { Link } from "react-router-dom";
-import M from 'materialize-css/dist/js/materialize.min.js';
-
-
- function mobileNav() {
-   var elems = document.querySelectorAll(".sidenav");
-   var instance = M.Sidenav.init(elems);
-  
-}
 
 
 
@@ -32,22 +24,22 @@ function Nav() {
         </ul>
         
       );
-    } //else {
-      //return (
-        // <ul className="flex-row">
-        //   <li className="mx-1">
-        //     <Link to="/signup">
-        //       Signup
-        //     </Link>
-        //   </li>
-        //   <li className="mx-1">
-        //     <Link to="/login">
-        //       Login
-        //     </Link>
-        //   </li>
-        // </ul>
-      //);
-    //}
+    } else {
+      return (
+         <ul className="flex-row">
+           <li className="mx-1">
+             <Link to="/signup">
+               Signup
+             </Link>
+           </li>
+           <li className="mx-1">
+             <Link to="/login">
+               Login
+             </Link>
+           </li>
+         </ul>
+      );
+    }
   }
 
  

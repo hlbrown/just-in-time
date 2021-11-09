@@ -119,7 +119,7 @@ function Signup(props) {
           <input
             placeholder="image"
             name="photo"
-            type="image"
+            type="photo"
             id="photo"
             onChange={handleChange}
           />
