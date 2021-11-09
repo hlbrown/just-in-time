@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
+const Profile = require('profile');
 
 const userSchema = new Schema({
   // id: {
@@ -54,7 +55,8 @@ const userSchema = new Schema({
   careGiver: {
     type: Boolean,
     required: true,
-  }
+  },
+  profile: [Profile.schema]
 
 });
 
