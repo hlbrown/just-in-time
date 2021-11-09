@@ -19,6 +19,11 @@ import Nav from 'components/Nav';
 import Success from 'pages/Success';
 import OrderHistory from 'pages/OrderHistory';
 
+import M from 'materialize-css/dist/js/materialize.min.js';
+import ActionTypes from 'constants/ActionTypes';
+
+
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -38,7 +43,16 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+//const mapDispatchToProps = dispatch => ({ 
+// hideModal: () => dispatch(hideModal()),
+// showModal: (modalProps, modalType) => {
+//  dispatch(showModal({ modalProps, modalType }))
+// }
+//})
+
+
 function App() {
+  
   return (
     <ApolloProvider client={client}>
       <Router>

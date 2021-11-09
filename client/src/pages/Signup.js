@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from 'utils/auth';
 import { ADD_USER } from 'utils/mutations';
+import "materialize-css/dist/css/materialize.min.css";
+
 
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -16,6 +18,12 @@ function Signup(props) {
         password: formState.password,
         firstName: formState.firstName,
         lastName: formState.lastName,
+        phoneNumber: formState.phoneNumber,
+        photo: formState.photo,
+        dob: formState.dob,
+        caregiver: formState.caregiver,
+        admin: formState.admin
+        
       },
     });
     const token = mutationResponse.data.addUser.token;
@@ -31,7 +39,7 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
+    <div className="container modal1">
       <Link to="/login">← Go to Login</Link>
 
       <h2>Signup</h2>
@@ -57,6 +65,16 @@ function Signup(props) {
           />
         </div>
         <div className="flex-row space-between my-2">
+          <label htmlFor="phoneNumber">Phone Number:</label>
+          <input
+            placeholder="(***)***-****"
+            name="phoneNumber"
+            type="phoneNumber"
+            id="phoneNumber"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
           <label htmlFor="email">Email:</label>
           <input
             placeholder="youremail@test.com"
@@ -73,6 +91,36 @@ function Signup(props) {
             name="password"
             type="password"
             id="pwd"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="dob">Date Of Birth:</label>
+          <input
+            placeholder="**/**/****"
+            name="dob"
+            type="dob"
+            id="dob"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="caregiver">Caregiver</label>
+          <input
+            placeholder="yes/no"
+            name="caregiver"
+            type="caregiver"
+            id="caregiver"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="flex-row space-between my-2">
+          <label htmlFor="photo">Photo</label>
+          <input
+            placeholder="image"
+            name="photo"
+            type="image"
+            id="photo"
             onChange={handleChange}
           />
         </div>
