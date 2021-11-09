@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const Medication = require('./Medication');
-const Profile = require('./Profile');
 
 const diagnosisSchema = new Schema({
     // name of the diagnosis or specific illness
@@ -21,8 +19,16 @@ const diagnosisSchema = new Schema({
         required: true,
         trim: true
     },
-    profile: [Profile.schema],
-    medication: [Medication.schema]
+    profile: {
+        type: Schema.Types.ObjectId,
+        ref: 'Profile',
+        required: true
+    },
+    medication: {
+        type: Schema.Types.ObjectId,
+        ref: 'Medication',
+        required: true
+    }
 });
 
 const Diagnosis = mongoose.model('Diagnosis', diagnosisSchema);
