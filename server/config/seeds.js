@@ -1,19 +1,57 @@
 const db = require('./connection');
-const { Profile } = require('../models');
+const { Profile, Diagnosis } = require('../models');
 
 db.once('open', async () => {
   await Profile.deleteMany();
 
-  Profile.insertMany([
+  const profiles = await Profile.insertMany([
       {
           firstName: 'Cody',
-          lastName: 'Van Buren'
+          lastName: 'Van Buren',
+          address: '141 Windrush Ln. Durham NC 27703',
+          image: 'Discgolf.jpeg',
+          dob: 1181991,
+          height: 6,
+          weight: 220,
+          bloodType: 'O',
+          organDonor: true,
+          pastSurgeries: true,
+          pcpName: 'Random',
+          pcpAddress: 'some address',
+          pcpPhoneNumber: 39857230489,
+          emergencyContactName: 'Her',
+          emergencyContactNumber: 985273458907234,
       },
       { 
           firstName: 'jay',
-          lastName: 'Eggs'
+          lastName: 'Eggs',
+          address: '141 Windrush Ln. Durham NC 27703',
+          image: 'Discgolf.jpeg',
+          dob: '1/18/1991',
+          height: 6,
+          weight: 220,
+          bloodType: 'O',
+          organDonor: true,
+          pastSurgeries: true,
+          pcpName: 'Random',
+          pcpAddress: 'some address',
+          pcpPhoneNumber: 39857230489,
+          emergencyContactName: 'Her',
+          emergencyContactNumber: 985273458907234
       }
   ]);
+
+   Diagnosis.deleteMany();
+
+        Diagnosis.insertMany([
+      {
+        name: 'Diabetes',
+        description: 'Diabetes Mellitus II',
+        symptoms: 'High Blood Sugar',
+        profile: profiles[0]._id,
+
+      }
+    ])
   console.log('categories seeded');
 });
 
