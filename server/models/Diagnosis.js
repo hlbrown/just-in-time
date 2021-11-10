@@ -27,7 +27,7 @@ const diagnosisSchema = new Schema({
     medication: {
         type: Schema.Types.ObjectId,
         ref: 'Medication',
-        required: true
+        required: false
     }
 });
 
