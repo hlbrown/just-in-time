@@ -22,7 +22,7 @@ const diagnosisSchema = new Schema({
     profile: {
         type: Schema.Types.ObjectId,
         ref: 'Profile',
-        required: true
+        required: false
     },
     medication: {
         type: Schema.Types.ObjectId,

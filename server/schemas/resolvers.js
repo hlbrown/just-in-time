@@ -5,11 +5,20 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
-    profiles: async () => {
-      return await Profile.find();
+    profiles: async (parent, { diagnosis, name }) => {
+      const params = {};
+      if(diagnosis) {
+        params.diagnosis = diagnosis; 
+      }
+
+      if (name) {
+        params.name = name
+      }
+
+      return await Profile.find(params).populate("diagnosis");
 
     },
-    diagnoses: async () => {
+    diagnosis: async () => {
       return await Diagnosis.find();
     }
   //   products: async (parent, { category, name }) => {
