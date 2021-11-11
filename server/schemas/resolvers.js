@@ -1,21 +1,29 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order, Profile, Diagnosis } = require('../models');
+const { User, Profile, Diagnosis, Medication } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
-    profiles: async (parent, { diagnosis, name }) => {
+    users: async (parent, { profile }) => {
+      const params = {};
+      if(profile) {
+        params.profile = profile;
+      }
+
+      return await User.find(params).populate({path: "profile",populate:[{path:"medication"}, {path:"diagnosis"}]});
+    },
+    profiles: async (parent, { diagnosis, medication }) => {
       const params = {};
       if(diagnosis) {
         params.diagnosis = diagnosis; 
       }
 
-      if (name) {
-        params.name = name
+      if(medication) {
+        params.medication = medication;
       }
 
-      return await Profile.find(params).populate("diagnosis");
+      return await Profile.find(params).populate("diagnosis").populate("medication");
 
     },
     diagnosis: async () => {

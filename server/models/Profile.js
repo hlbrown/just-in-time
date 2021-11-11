@@ -70,11 +70,11 @@ const profileSchema = new Schema({
       ref: 'Diagnosis',
       required: false
     }],
-    medication: {
+    medication: [{
       type: Schema.Types.ObjectId,
       ref: 'Medication',
       required: false
-    },
+    }],
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User',
