@@ -2,17 +2,8 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Profile = require('./Profile');
 
 const userSchema = new Schema({
-  // id: {
-  //   type: Number,
-  //   required: true,
-  //   minlength: 1,
-  //   maxlength: 100,
-  //   unique: true,
-  //   trim: true
-  // },
   firstName: {
     type: String,
     required: true,
@@ -33,31 +24,35 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  phoneNumber: {
-    type: String,
-    required: true,
-    trim: true,
-    maxlength: 10
-  },
-  dob: {
-    type: Date,
-    required: true,
-    trim: true
-  },
-  userPhoto: {
-    type: String,
-    required: false,
-  },
-  admin: {
-    type: Boolean,
-    required: true,
-  },
-  careGiver: {
-    type: Boolean,
-    required: true,
-  },
-  profile: [Profile.schema]
-
+  // phoneNumber: {
+  //   type: String,
+  //   required: true,
+  //   trim: true,
+  //   maxlength: 10
+  // },
+  // dob: {
+  //   type: Date,
+  //   required: true,
+  //   trim: true
+  // },
+  // userPhoto: {
+  //   type: String,
+  //   required: false,
+  // },
+  // // Adding two different portals for future development
+  // admin: {
+  //   type: Boolean,
+  //   required: false,
+  // },
+  // careGiver: {
+  //   type: Boolean,
+  //   required: false,
+  // },
+  profile: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Profile',
+    required: true
+  }]
 });
 
 // set up pre-save middleware to create password

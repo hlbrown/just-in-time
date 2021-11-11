@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { Profile, Diagnosis } = require('../models');
+const { Profile, Diagnosis, Medication, User } = require('../models');
 
 db.once('open', async () => {
   Diagnosis.deleteMany();
@@ -13,6 +13,18 @@ db.once('open', async () => {
 
  }
 ])
+  Medication.deleteMany();
+
+  const medication = await Medication.insertMany([
+    {
+      name: 'Glucophage',
+      brand: 'Metformin',
+      prescription: true,
+      otc: false,
+      dose: '100 units',
+      interactions: 'none'
+    }
+  ]);
 console.log('profiles seeded');
   await Profile.deleteMany();
 
@@ -33,7 +45,8 @@ console.log('profiles seeded');
           pcpPhoneNumber: 39857230489,
           emergencyContactName: 'Her',
           emergencyContactNumber: 985273458907234,
-          diagnosis: diagnosis[0]._id
+          diagnosis: diagnosis[0]._id,
+          medication: medication[0]._id
       },
       { 
           firstName: 'jay',
@@ -54,6 +67,18 @@ console.log('profiles seeded');
           
       }
   ]);
+  User.deleteMany();
+
+  const users = await User.insertMany([
+    {
+        firstName: 'Cody',
+        lastName: 'Van Buren',
+        email: "random@gmail.com",
+        password: "password12345",
+        profile: profiles[0]._id
+    },
+
+  ])
 
   
 });

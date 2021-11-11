@@ -1,7 +1,15 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Profile {
+type User {
+  id: ID!
+  firstName: String
+  lastName: String
+  email: String
+  password: String
+  profile: [Profile]
+}  
+type Profile {
     id: ID!
     firstName: String
     lastName: String
@@ -19,6 +27,8 @@ const typeDefs = gql`
     emergencyContactName: String
     emergencyContactNumber: Float
     diagnosis: [Diagnosis]
+    medication: [Medication]
+
   }
 
   type Diagnosis {
@@ -28,8 +38,19 @@ const typeDefs = gql`
     symptoms: String
   }
 
+  type Medication {
+    id: ID!
+    name: String
+    brand: String
+    prescription: Boolean
+    otc: Boolean
+    dose: String
+    interactions: String
+  }
+
   type Query {
-    profiles(diagnosis: ID, name: String): [Profile]
+    users(profiles: ID): [User]
+    profiles(diagnosis: ID, medication: ID): [Profile]
     diagnosis: [Diagnosis]
   }
 
