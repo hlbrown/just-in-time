@@ -2,6 +2,18 @@ const db = require('./connection');
 const { Profile, Diagnosis } = require('../models');
 
 db.once('open', async () => {
+  Diagnosis.deleteMany();
+
+  const diagnosis = await Diagnosis.insertMany([
+ {
+   name: 'Diabetes',
+   description: 'Diabetes Mellitus II',
+   symptoms: 'High Blood Sugar'
+   // profile: profiles[0].id,
+
+ }
+])
+console.log('profiles seeded');
   await Profile.deleteMany();
 
   const profiles = await Profile.insertMany([
@@ -21,6 +33,7 @@ db.once('open', async () => {
           pcpPhoneNumber: 39857230489,
           emergencyContactName: 'Her',
           emergencyContactNumber: 985273458907234,
+          diagnosis: diagnosis[0]._id
       },
       { 
           firstName: 'jay',
@@ -38,21 +51,11 @@ db.once('open', async () => {
           pcpPhoneNumber: 39857230489,
           emergencyContactName: 'Her',
           emergencyContactNumber: 985273458907234
+          
       }
   ]);
 
-   Diagnosis.deleteMany();
-
-        Diagnosis.insertMany([
-      {
-        name: 'Diabetes',
-        description: 'Diabetes Mellitus II',
-        symptoms: 'High Blood Sugar',
-        profile: profiles[0]._id,
-
-      }
-    ])
-  console.log('categories seeded');
+  
 });
 
   // const profiles = await Category.insertMany([

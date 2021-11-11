@@ -65,17 +65,17 @@ const profileSchema = new Schema({
       type: Number,
       required: true
     },
-    // Diagnosis: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'Diagnosis',
-    //   required: true
-    // },
-    Medication: {
+    diagnosis: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Diagnosis',
+      required: false
+    }],
+    medication: {
       type: Schema.Types.ObjectId,
       ref: 'Medication',
       required: false
     },
-    User: {
+    user: {
       type: Schema.Types.ObjectId,
       ref: 'User',
       required: false

@@ -18,7 +18,7 @@ const typeDefs = gql`
     pcpPhoneNumber: Float
     emergencyContactName: String
     emergencyContactNumber: Float
-    diagnoses: [Diagnosis]
+    diagnosis: [Diagnosis]
   }
 
   type Diagnosis {
@@ -29,8 +29,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    profiles: [Profile]
-    diagnoses(diagnosis: ID, name: String): [Diagnosis]
+    profiles(diagnosis: ID, name: String): [Profile]
+    diagnosis: [Diagnosis]
   }
 
 `;
