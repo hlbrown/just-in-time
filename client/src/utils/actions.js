@@ -1,4 +1,4 @@
-import ActionTypes from "constants/ActionTypes";
+
 
 export const showModal = ({ modalProps, modalType }) => dispatch => {
     dispatch({

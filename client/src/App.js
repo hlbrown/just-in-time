@@ -16,6 +16,8 @@ import NoMatch from 'pages/NoMatch';
 import Login from 'pages/Login';
 import Signup from 'pages/Signup';
 import Nav from 'components/Nav';
+import Main from 'components/Main';
+import Footer from 'components/Footer';
 
 
 
@@ -34,6 +36,8 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+
+
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -48,19 +52,21 @@ const client = new ApolloClient({
 
 
 function App() {
-  
+ 
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
           <Provider store={store}>
             <Nav />
+            <Main />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route component={NoMatch} />
             </Switch>
+            <Footer />
           </Provider>
         </div>
       </Router>
