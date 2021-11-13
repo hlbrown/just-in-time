@@ -117,6 +117,7 @@ button[disabled] {
 
 img {
   max-width: 100%;
+
 }
 
 span[role="img"] {
@@ -210,9 +211,15 @@ input:focus {
   color: var(--error);
 }
 .caregiverImg{
-  max-height: 20em;
+  height:100%;
   border: 10px solid grey;
   border-radius: 25px;
+}
+.primaryCaregiver{
+  max-height: auto;
+}
+.babysitter{
+  max-height:2em;
 }
 
 @media screen and (max-width: 768px) {
