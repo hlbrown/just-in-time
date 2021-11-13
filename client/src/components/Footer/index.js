@@ -22,20 +22,23 @@ export default function Footer() {
           <Grid container spacing={5}>
             {/* 1st column start */}
           <Grid item xs={12} sm={4}>
-            <Box borderBottom={1}>Help</Box>
+            <Box borderBottom={1}>Contributors</Box>
             <Box>
-              <Link href='/' color='inherit'>Contact</Link>
+              <Link href='https://github.com/bvanburenwx' target="_blank" color='inherit'>Cody Van Buren</Link>
             </Box>
             <Box>
-              <Link href='/' color='inherit'>Contact</Link>
+              <Link href='https://github.com/jameleggleston' target="_blank"  color='inherit'>Jamel Eggleston</Link>
             </Box>
             <Box>
-              <Link href='/' color='inherit'>Contact</Link>
+              <Link href='https://github.com/hlbrown' target="_blank"  color='inherit'>Hannah Brown</Link>
+            </Box>
+             <Box>
+              <Link href='https://github.com/DionneNoellaBarretto' target="_blank"  color='inherit'>Dionne Noella Barretto</Link>
             </Box>
             </Grid>
             {/* 2nd column start */}
               <Grid item xs={12} sm={4}>
-            <Box borderBottom={1}>Help</Box>
+            <Box borderBottom={1}>About</Box>
             <Box>
               <Link href='/' color='inherit'>Contact</Link>
             </Box>
@@ -48,7 +51,7 @@ export default function Footer() {
             </Grid>
             {/* 3rd column start */}
               <Grid item xs={12} sm={4}>
-            <Box borderBottom={1}>Help</Box>
+            <Box borderBottom={1}>Resources</Box>
             <Box>
               <Link href='/' color='inherit'>Contact</Link>
             </Box>
