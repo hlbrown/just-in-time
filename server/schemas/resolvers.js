@@ -1,163 +1,115 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Profile, Diagnosis, Medication } = require('../models');
-const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Profile, Diagnosis, Medication } = require("../models");
+const { signToken } = require("../utils/auth");
+const { Kind, GraphQLScalarType } = require("graphql");
 
 const resolvers = {
+  Date: new GraphQLScalarType({
+    name: "Date",
+    description: "Date custom scalar type",
+    parseValue(value) {
+      return new Date(value); // value from the client
+    },
+    serialize(value) {
+      return value.getTime(); // value sent to the client
+    },
+    parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return new Date(+ast.value); // ast value is always in string format
+      }
+      return null;
+    },
+  }),
   Query: {
     users: async (parent, { profile }) => {
       const params = {};
-      if(profile) {
+      if (profile) {
         params.profile = profile;
       }
-
-      return await User.find(params).populate({path: "profile",populate:[{path:"medication"}, {path:"diagnosis"}]});
+      return await User.find(params)
+        .populate({
+          path: "profile",
+          populate: [{ path: "medication" }, { path: "diagnosis" }],
+        })
+        .select("-password");
     },
-    profiles: async (parent, { diagnosis, medication }) => {
+    user: async (parent, { _id }) => {
       const params = {};
-      if(diagnosis) {
-        params.diagnosis = diagnosis; 
+      if (profile) {
+        params.profile = profile;
+      }
+      return await User.findById(_id)
+        .populate({
+          path: "profile",
+          populate: [{ path: "medication" }, { path: "diagnosis" }],
+        })
+        .select("-password");
+    },
+
+    profiles: async (parent, { diagnosis, medication }) => {
+      // for future use so can be queried profile by medication or diagnosis
+      const params = {};
+      if (diagnosis) {
+        params.diagnosis = diagnosis;
       }
 
-      if(medication) {
+      if (medication) {
         params.medication = medication;
       }
 
-      return await Profile.find(params).populate("diagnosis").populate("medication");
-
+      return await Profile.find(params)
+        .populate("diagnosis")
+        .populate("medication");
+    },
+    profile: async (parent, { _id }) => {
+      return await Profile.findById(_id)
+        .populate("diagnosis")
+        .populate("medication");
     },
     diagnosis: async () => {
       return await Diagnosis.find();
-    }
-  //   products: async (parent, { category, name }) => {
-  //     const params = {};
+    },
+    medication: async () => {
+      return await Medication.find();
+    },
+  },
+  Mutation: {
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
 
-  //     if (category) {
-  //       params.category = category;
-  //     }
+      return { token, user };
+    },
+    updateUser: async (parent, args, context) => {
+      if (context.user) {
+        return await User.findByIdAndUpdate(context.user._id, args, {
+          new: true,
+        });
+      }
 
-  //     if (name) {
-  //       params.name = {
-  //         $regex: name
-  //       };
-  //     }
+      throw new AuthenticationError("Not logged in");
+    },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
 
-  //     return await Product.find(params).populate('category');
-  //   },
-  //   product: async (parent, { _id }) => {
-  //     return await Product.findById(_id).populate('category');
-  //   },
-  //   user: async (parent, args, context) => {
-  //     if (context.user) {
-  //       const user = await User.findById(context.user._id).populate({
-  //         path: 'orders.products',
-  //         populate: 'category'
-  //       });
+      if (!user) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
 
-  //       user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+      const correctPw = await user.isCorrectPassword(password);
 
-  //       return user;
-  //     }
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect credentials");
+      }
 
-  //     throw new AuthenticationError('Not logged in');
-  //   },
-  //   order: async (parent, { _id }, context) => {
-  //     if (context.user) {
-  //       const user = await User.findById(context.user._id).populate({
-  //         path: 'orders.products',
-  //         populate: 'category'
-  //       });
+      const token = signToken(user);
 
-  //       return user.orders.id(_id);
-  //     }
-
-  //     throw new AuthenticationError('Not logged in');
-  //   },
-  //   checkout: async (parent, args, context) => {
-  //     const url = new URL(context.headers.referer).origin;
-  //     const order = new Order({ products: args.products });
-  //     const line_items = [];
-
-  //     const { products } = await order.populate('products').execPopulate();
-
-  //     for (let i = 0; i < products.length; i++) {
-  //       const product = await stripe.products.create({
-  //         name: products[i].name,
-  //         description: products[i].description,
-  //         images: [`${url}/images/${products[i].image}`]
-  //       });
-
-  //       const price = await stripe.prices.create({
-  //         product: product.id,
-  //         unit_amount: products[i].price * 100,
-  //         currency: 'usd',
-  //       });
-
-  //       line_items.push({
-  //         price: price.id,
-  //         quantity: 1
-  //       });
-  //     }
-
-  //     const session = await stripe.checkout.sessions.create({
-  //       payment_method_types: ['card'],
-  //       line_items,
-  //       mode: 'payment',
-  //       success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-  //       cancel_url: `${url}/`
-  //     });
-
-  //     return { session: session.id };
-  //   }
-  // },
-  // Mutation: {
-  //   addUser: async (parent, args) => {
-  //     const user = await User.create(args);
-  //     const token = signToken(user);
-
-  //     return { token, user };
-  //   },
-  //   addOrder: async (parent, { products }, context) => {
-  //     console.log(context);
-  //     if (context.user) {
-  //       const order = new Order({ products });
-
-  //       await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-
-  //       return order;
-  //     }
-
-  //     throw new AuthenticationError('Not logged in');
-  //   },
-  //   updateUser: async (parent, args, context) => {
-  //     if (context.user) {
-  //       return await User.findByIdAndUpdate(context.user._id, args, { new: true });
-  //     }
-
-  //     throw new AuthenticationError('Not logged in');
-  //   },
-  //   updateProduct: async (parent, { _id, quantity }) => {
-  //     const decrement = Math.abs(quantity) * -1;
-
-  //     return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
-  //   },
-  //   login: async (parent, { email, password }) => {
-  //     const user = await User.findOne({ email });
-
-  //     if (!user) {
-  //       throw new AuthenticationError('Incorrect credentials');
-  //     }
-
-  //     const correctPw = await user.isCorrectPassword(password);
-
-  //     if (!correctPw) {
-  //       throw new AuthenticationError('Incorrect credentials');
-  //     }
-
-  //     const token = signToken(user);
-
-  //     return { token, user };
-    }
-  }
+      return { token, user };
+    },
+    updateProfile: async (parent, { _id, args }) => {
+      return await Product.findByIdAndUpdate(_id, { $inc: {} }, { new: true });
+    },
+  },
+};
 
 module.exports = resolvers;
