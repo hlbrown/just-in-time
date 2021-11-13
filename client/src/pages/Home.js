@@ -1,4 +1,9 @@
 import React from "react";
+import Auth from "utils/auth";
+ 
+import Footer from 'components/Footer';
+import Nav from 'components/Nav';
+import Main from 'components/Main';
 
 
 
@@ -6,9 +11,9 @@ import React from "react";
 const Home = () => {
   return (
     <div className="container">
- 
-     
+    
     </div>
+    
   );
 };
 
