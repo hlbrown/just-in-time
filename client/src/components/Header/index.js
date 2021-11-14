@@ -14,9 +14,8 @@ export default function Header(){
          <Box
         px={{ xs: 3, sm: 5 }}
         py={{ xs: 5, sm: 5 }}
-        bgcolor="text.primary" color="white"
-      >
-        <Container maxWidth='lg'>
+        bgcolor="text.primary" color="white">
+                <Container maxWidth='lg'>
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item >
               <Box textAlign="center" pt={{xs: 2, sm:5}} pb={{xs:2, sm:0}}>

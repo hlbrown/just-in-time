@@ -2,17 +2,24 @@ import React from "react";
 import Auth from "utils/auth";
 import { Link } from "react-router-dom";
 import Footer from "components/Footer";
+import Testimonial from "components/Testimonial";
 import Header from "components/Header";
+// import GoogleMapsContainer from 'components/GoogleMaps';
+// import Map from 'components/GoogleMaps';
+// import GoogleApiWrapper from 'components/GoogleMaps';
 // import faviIconLogo from '../../assets/faviIconLogo.png';
+
 // import Nav from 'components/Nav';
+// import GoogleMap from 'components/GoogleMaps';
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-//shadow mui for the box cards https://mui.com/system/shadows/
-import { shadows } from "@mui/system";
-//border mui for box cards https://mui.com/system/borders/
-import { borders } from "@mui/system";
+//https://mui.com/system/borders/ imported for card borders
+//https://mui.com/system/shadows/ imported for card shadows
+import { borders, shadows } from "@mui/system";
+
+import { Paper } from "@material-ui/core";
 
 // images
 import teenBabysitter from "assets/teenBabysitter.jpg";
@@ -39,7 +46,7 @@ const style = {
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
-  p: 4
+  p: 4,
 };
 const Home = () => {
   const [open, setOpen] = React.useState(false);
@@ -48,21 +55,24 @@ const Home = () => {
   return (
     <main>
       {/* Mission Statement */}
-      <Box 
+      <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
         color="white"
-        
-        sx={{ justifyContent: "center",
+        sx={{
+          justifyContent: "center",
           borderRadius: 4,
-          boxShadow: 10,
           bgcolor: "text.disabled",
           m: 1,
           p: 1
         }}
       >
-         Placeholder for the mission statement
+        <Typography id="mission" variant="h3">
+          Our mission is to help parents and/or guardians to securely, and
+          efficiently create and share emergency information for their loved
+          ones via a web application portal in under 5 clicks!!
+        </Typography>
       </Box>
       {/* admin box */}
       <Box
@@ -97,7 +107,7 @@ const Home = () => {
                       sx={{
                         maxwidth: 345,
                         borderRadius: 4,
-                        boxShadow: 10,
+                        boxShadow: 10
                       }}
                       component="img"
                       height="200"
@@ -134,7 +144,7 @@ const Home = () => {
                             <Box sx={style}>
                               <Typography
                                 id="transition-modal-title"
-                                variant="h6"
+                                variant="h4"
                                 component="h2"
                               >
                                 This portal is for admins only.
@@ -199,7 +209,6 @@ const Home = () => {
                   p: 1
                 }}
               >
-                
                 some stuff about caregiver information
               </Box>
             </Grid>
@@ -217,7 +226,11 @@ const Home = () => {
                   }}
                 >
                   <CardActionArea>
-                    <CardMedia
+                    <CardMedia sx={{
+                        maxwidth: 345,
+                        borderRadius: 4,
+                        boxShadow: 10
+                      }}
                       component="img"
                       height="200"
                       image={babysitter}
@@ -227,7 +240,7 @@ const Home = () => {
                       <Typography
                         align="center"
                         gutterButton
-                        variant="h5"
+                        variant="h4"
                         component="div"
                       >
                         Caregiver
@@ -261,22 +274,44 @@ const Home = () => {
           boxShadow: 10,
           bgcolor: "text.disabled",
           m: 1,
-          p: 1
+          p: 1,
         }}
       >
         <Container maxWidth="lg">
           <Grid bgcolor="yellow" container direction="row" spacing={5}>
             <Grid item border={2} item xs={12} sm={12} md={6}>
               <Box
-                 sx={{
-                    maxwidth: 345,
-                    borderRadius: 4,
-                    boxShadow: 10,
-                    m: 1,
-                    p: 1,
-                    border: 1
-                  }}>
-                Google Map
+                sx={{
+                  maxwidth: 345,
+                  borderRadius: 4,
+                  boxShadow: 10,
+                  m: 1,
+                  p: 1,
+                  border: 1,
+                }}
+              >
+                <Card sx={{ maxwidth: 345 }}>
+                  <CardContent sx={{
+                        maxwidth: 345,
+                        borderRadius: 4,
+                        boxShadow: 10
+                      }}>
+                    {/* <GoogleMap/> */}
+                    {/* <MyComponent/> */}
+                    {/* <GoogleApiWrapper/> */}
+                  </CardContent>
+
+                  <CardContent sx={{ justifyContent: "center" }}>
+                    <Typography
+                      align="center"
+                      gutterButton
+                      variant="h5"
+                      component="div"
+                    >
+                      Nearest Emergency Locations
+                    </Typography>
+                    </CardContent>
+                </Card>
               </Box>
             </Grid>
             <Grid item border={2} item xs={12} sm={12} md={6}>
@@ -290,7 +325,7 @@ const Home = () => {
                     boxShadow: 10,
                     bgcolor: "text.disabled",
                     m: 1,
-                    p: 1
+                    p: 1,
                   }}
                 >
                   <CardContent sx={{ justifyContent: "center" }}>
@@ -298,24 +333,24 @@ const Home = () => {
                       color="white"
                       align="center"
                       gutterButton
-                      variant="h5"
+                      variant="h4"
                       component="div"
                     >
                       Closest Emergency Locations
                     </Typography>
-                    <Typography color="white" align="center" variant="body-2">
+                    <Typography color="white" variant="body-1">
                       Police dept here
                     </Typography>
                     <br />
-                    <Typography color="white" variant="body-2">
+                    <Typography color="white" variant="body-1">
                       Fire dept here
                     </Typography>
                     <br />
-                    <Typography color="white" variant="body-2">
+                    <Typography color="white" variant="body-1">
                       Hospital Info Here
                     </Typography>
                     <br />
-                    <Typography color="white" variant="body-2">
+                    <Typography color="white" variant="body-1">
                       EMS Info Here
                     </Typography>
                     <br />
@@ -327,22 +362,22 @@ const Home = () => {
         </Container>
       </Box>
 
-       {/* Testimonial carousel */}
-      <Box 
+      {/* Testimonial carousel */}
+      <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
         color="white"
-        
-        sx={{ justifyContent: "center",
+        sx={{
+          justifyContent: "center",
           borderRadius: 4,
           boxShadow: 10,
           bgcolor: "text.disabled",
           m: 1,
-          p: 1
+          p: 1,
         }}
-      >
-         Placeholder for the testimonial carousel
+      > <Testimonial/>
+        
       </Box>
     </main>
   );
