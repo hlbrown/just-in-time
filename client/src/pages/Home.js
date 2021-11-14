@@ -4,14 +4,19 @@ import { Link } from "react-router-dom";
  
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+// import GoogleMapsContainer from 'components/GoogleMaps';
+// import Map from 'components/GoogleMaps';
+// import GoogleApiWrapper from 'components/GoogleMaps';
 // import faviIconLogo from '../../assets/faviIconLogo.png';
 
 // import Nav from 'components/Nav';
+// import GoogleMap from 'components/GoogleMaps';
 
 
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import {Paper} from '@material-ui/core';
 
 
 // images
@@ -64,6 +69,7 @@ const Home = () => {
                             
                             <Grid item xs={12} sm={12} md={6}>
                                 <Box>
+                                    <Paper>
                                     <Card sx={{maxwidth: 345}}>
                                         <CardActionArea>
                                             <CardMedia 
@@ -98,7 +104,8 @@ const Home = () => {
                                                 </Typography>
                                             </CardContent>
                                         </CardActionArea>
-                                    </Card>                                    
+                                    </Card> 
+                                    </Paper>                                   
                                 </Box>                              
                               
                             </Grid>
@@ -159,8 +166,16 @@ const Home = () => {
                 >
                     <Container maxWidth='lg'>
                         <Grid bgcolor="yellow"container direction="row" spacing={5}>
-                            <Grid item border={2} item xs={12} sm={12} md={6}>
-                                <Box>Google Map</Box>
+                            <Grid item border={2} item xs={12} md={6} style={{position: 'relative', height:'50vh'}}>
+                                <Box>
+                                    <Card sx={{maxwidth: 345}}>
+                                        <CardContent>
+                                            {/* <GoogleMap/> */}
+                                            {/* <MyComponent/> */}
+                                                {/* <GoogleApiWrapper/> */}
+                                        </CardContent>
+                                    </Card>   
+                                </Box>                          
 
                             </Grid>
                             <Grid item border={2} item xs={12} sm={12} md={6}>
