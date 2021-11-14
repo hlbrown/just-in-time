@@ -11,8 +11,8 @@ import Header from "components/Header";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-// //shadow mui for the box cards https://mui.com/system/shadows/
-// import { shadows } from "@mui/system";
+//shadow mui for the box cards https://mui.com/system/shadows/
+import { shadows } from "@mui/system";
 //border mui for box cards https://mui.com/system/borders/
 import { borders } from "@mui/system";
 
@@ -58,6 +58,10 @@ const Home = () => {
         color="white"
         sx={{
           borderRadius: 4,
+          boxShadow: 10,
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1,
         }}
       >
         <Container maxWidth="lg">
@@ -129,12 +133,26 @@ const Home = () => {
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
         color="white"
-        sx={{ borderRadius: 4 }}
+        sx={{
+          borderRadius: 4,
+          boxShadow: 10,
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1,
+        }}
       >
         <Container maxWidth="lg">
           <Grid container direction="row" spacing={5}>
             <Grid item border={2} item xs={12} sm={12} md={6}>
-              <Box sx={{ borderRadius: 4 }}>
+              <Box
+                sx={{
+                  borderRadius: 4,
+                  boxShadow: 10,
+                  bgcolor: "text.disabled",
+                  m: 1,
+                  p: 1,
+                }}
+              >
                 some stuff about caregiver information{" "}
               </Box>
             </Grid>
