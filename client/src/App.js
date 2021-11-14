@@ -15,6 +15,7 @@ import Home from 'pages/Home';
 import NoMatch from 'pages/NoMatch';
 import Login from 'pages/Login';
 import Signup from 'pages/Signup';
+import Header from 'components/Header';
 import Nav from 'components/Nav';
 import Main from 'components/Main';
 import Footer from 'components/Footer';
@@ -58,8 +59,7 @@ function App() {
       <Router>
         <div>
           <Provider store={store}>
-            <Nav />
-            <Main />
+            <Header />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
