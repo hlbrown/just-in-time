@@ -124,9 +124,9 @@ span[role="img"] {
   cursor: default;
 }
 
-form {
+/* form {
   width: 40%;
-}
+} */
 
 input {
   font-size: 1rem;
@@ -220,6 +220,9 @@ input:focus {
 }
 .babysitter{
   max-height:2em;
+}
+.faviIconLogo{
+  
 }
 
 @media screen and (max-width: 768px) {

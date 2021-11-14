@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 // import faviIconLogo from '../../assets/faviIconLogo.png';
+
 // import Nav from 'components/Nav';
+
+
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+
+
 // images
 import teenBabysitter from 'assets/teenBabysitter.jpg';
 import primaryCaregiver from 'assets/primaryCaregiver.jpg';
@@ -23,6 +28,7 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Backdrop from '@mui/material/Backdrop';
+
 // styles for the modal
 const style = {
   position: 'absolute',
@@ -35,6 +41,9 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
+
+
+
 const Home = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -110,7 +119,9 @@ const Home = () => {
                         <Grid container direction="row" spacing={5}>
                             <Grid item border={2} item xs={12} sm={12} md={6}>
                                 <Box>some stuff about caregiver information </Box>
+
                             </Grid>
+
                             <Grid item border={2} item xs={12} sm={12} md={6}>
                                 <Box>
                                     <Card sx={{maxwidth: 345}}>
