@@ -59,7 +59,7 @@ function App() {
         <div>
           <Provider store={store}>
             <Nav />
-            <Main />
+            {/* <Main /> */}
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
