@@ -1,26 +1,29 @@
-import React, { useState } from 'react';
+import React, {Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Login } from 'utils/mutations';
 import { useMutation } from '@apollo/client';
-import Auth from 'utils/auth';
-import { ADD_USER } from 'utils/mutations';
+// import Auth from 'utils/auth';
+// import { ADD_USER } from 'utils/mutations';
 
 import {
 Button,
 TextField,
 Grid,
 Paper,
-AppBar,
+// AppBar,
 Typography,
-Toolbar,
+// Toolbar,
 Container,
 Box,
 } from "@material-ui/core";
 
-import { DatePicker, KeyboardDatePicker } from "@material-ui/pickers";
+import { DatePicker } from "@material-ui/pickers";
+
+import ImageUpload from 'components/ImageUpload'
+import MuiPhoneNumber from "material-ui-phone-number";
 
 
-function Signup(props) {
+export default function Signup(props) {
   // const [formState, setFormState] = useState({ email: '', password: '' });
   // const [addUser] = useMutation(ADD_USER);
 
@@ -52,6 +55,14 @@ function Signup(props) {
   // //   });
   //  };
   const [selectedDate, handleDateChange] = useState(new Date());
+  const galleryImageList = [
+  "https://raw.githubusercontent.com/dxyang/StyleTransfer/master/style_imgs/mosaic.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+  "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dora-maar-picasso.jpg",
+  "https://pbs.twimg.com/profile_images/925531519858257920/IyYLHp-u_400x400.jpg",
+  "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dog.jpg",
+  "http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg"
+];
 
   return (
        <div>
@@ -115,17 +126,22 @@ function Signup(props) {
                         autofocus
                         />
                     </Grid>
-                    <Grid item xs={12}>
-                      {/* <KeyBoardDatePicker
-                      autoOk
-                      variant="inline"
-                      inputVariant="outlined"
-                      label="with Keyboard"
-                      format="MM/dd/yyyy"
-                      value={selectedDate}
-                      // onChange={handleChange}
-                      /> */}
-                       
+                    <Grid item xs={12} md={6}>
+                      <TextField
+                      id="date"
+                      label="Birthday"
+                      type="date"
+                      defaultValue="2021-05-24"
+                      />
+                    </Grid>
+                     <Grid item xs={12} md={6}>
+                      <MuiPhoneNumber
+                      name="phone"
+                      label="Phone Number"
+                      defaultCountry={"us"}
+                      // value={this.state.phone}
+                      // onChange={this.handlePhoneChange}
+                      />
                     </Grid>
                     <Grid item xs={12}>
                       <TextField
@@ -139,6 +155,12 @@ function Signup(props) {
                       // this.setState({[event.target.name]: event.target.value,})}
                       required
                       />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <label>Profile Image
+                      </label>
+                    <ImageUpload 
+                    cardName="Input Image"/>
                     </Grid>
                     <Grid item>
                       <Button
@@ -165,6 +187,5 @@ function Signup(props) {
     </Box>
     </div>
   );
-}
+  }
 
-export default Signup;
