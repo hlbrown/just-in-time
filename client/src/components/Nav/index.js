@@ -8,7 +8,6 @@ import Switch from '@mui/material/Switch';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
 import faviIconLogo from '../../assets/faviIconLogo.png';
 
 
@@ -27,6 +26,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { text } from "dom-helpers";
+import { Menu } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -136,44 +136,30 @@ export default function Nav() {
   // }
  
   return (
-    <header>
-      <Box
-        px={{ xs: 3, sm: 5 }}
-        py={{ xs: 5, sm: 5 }}
-        bgcolor="text.primary" color="white"
-      >
-        <Container maxWidth='lg'>
-          <Grid container direction="row" justify="center" alignItems="center">
-            <Grid item >
-              <Box textAlign="center" pt={{xs: 2, sm:5}} pb={{xs:2, sm:0}}>
-                <img src={faviIconLogo}></img>
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
+    <nav>
+    
        <Box sx={{ flexGrow: 1}} >
       <AppBar color="inherit" position="static">
         <Toolbar >
+         
           <IconButton
             size="large"
-            edge="start"
+            edge="end"
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
            
-          </Typography>
-          <Search>
+          </Typography> */}
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -181,11 +167,12 @@ export default function Nav() {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search> */}
+           {/* <img src={faviIconLogo}></img> */}
         </Toolbar>
       </AppBar>
     </Box>
-      </header>
+      </nav>
       
 
    
