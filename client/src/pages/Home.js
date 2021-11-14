@@ -1,11 +1,9 @@
 import React from "react";
 import Auth from "utils/auth";
 import { Link } from "react-router-dom";
-
 import Footer from "components/Footer";
 import Header from "components/Header";
 // import faviIconLogo from '../../assets/faviIconLogo.png';
-
 // import Nav from 'components/Nav';
 
 import Container from "@material-ui/core/Container";
@@ -41,15 +39,31 @@ const style = {
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 4
 };
-
 const Home = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <main>
+      {/* Mission Statement */}
+      <Box 
+        px={{ xs: 3, sm: 10 }}
+        py={{ xs: 5, sm: 10 }}
+        bgcolor="text.secondary"
+        color="white"
+        
+        sx={{ justifyContent: "center",
+          borderRadius: 4,
+          boxShadow: 10,
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1
+        }}
+      >
+         Placeholder for the mission statement
+      </Box>
       {/* admin box */}
       <Box
         px={{ xs: 3, sm: 10 }}
@@ -61,27 +75,50 @@ const Home = () => {
           boxShadow: 10,
           bgcolor: "text.disabled",
           m: 1,
-          p: 1,
+          p: 1
         }}
       >
         <Container maxWidth="lg">
           <Grid container direction="row" spacing={5}>
             <Grid item xs={12} sm={12} md={6}>
               <Box>
-                <Card sx={{ maxwidth: 345, borderRadius: 4 }}>
+                <Card
+                  sx={{
+                    maxwidth: 345,
+                    borderRadius: 4,
+                    boxShadow: 10,
+                    m: 1,
+                    p: 1,
+                    border: 1
+                  }}
+                >
                   <CardActionArea>
                     <CardMedia
+                      sx={{
+                        maxwidth: 345,
+                        borderRadius: 4,
+                        boxShadow: 10,
+                      }}
                       component="img"
                       height="200"
                       image={primaryCaregiver}
                       alt="primaryCaregiver"
                     />
-                    <CardContent>
-                      <Typography gutterButton variant="h5" component="div">
+                    <CardContent sx={{ justifyContent: "center" }}>
+                      <Typography
+                        align="center"
+                        gutterButton
+                        variant="h5"
+                        component="div"
+                      >
                         Admin
                       </Typography>
-                      <Typography variant="body-2" color="text.secondary">
-                        <Button onClick={handleOpen}>
+                      <Typography
+                        align="center"
+                        variant="body-2"
+                        color="text.secondary"
+                      >
+                        <Button color="primary" onClick={handleOpen}>
                           Sign up or Login here
                         </Button>
                         <Modal
@@ -120,14 +157,100 @@ const Home = () => {
               </Box>
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <Box sx={{ borderRadius: 4 }}>
+              <Box
+                sx={{
+                  borderRadius: 4,
+                  boxShadow: 10,
+                  bgcolor: "text.disabled",
+                  m: 1,
+                  p: 1
+                }}
+              >
                 Information about the admin portal
               </Box>
             </Grid>
           </Grid>
         </Container>
       </Box>
+
       {/* cargiver box */}
+      <Box
+        px={{ xs: 3, sm: 10 }}
+        py={{ xs: 5, sm: 10 }}
+        color="white"
+        sx={{
+          borderRadius: 4,
+          boxShadow: 10,
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1
+        }}
+      >
+        <Container maxWidth="lg">
+          <Grid container direction="row" spacing={5}>
+            <Grid item border={2} item xs={12} sm={12} md={6}>
+              <Box
+                color="white"
+                sx={{
+                  borderRadius: 4,
+                  boxShadow: 10,
+                  bgcolor: "text.disabled",
+                  m: 1,
+                  p: 1
+                }}
+              >
+                
+                some stuff about caregiver information
+              </Box>
+            </Grid>
+
+            <Grid item border={2} item xs={12} sm={12} md={6}>
+              <Box>
+                <Card
+                  sx={{
+                    maxwidth: 345,
+                    borderRadius: 4,
+                    boxShadow: 10,
+                    m: 1,
+                    p: 1,
+                    border: 1
+                  }}
+                >
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={babysitter}
+                      alt="babysitter"
+                    />
+                    <CardContent sx={{ justifyContent: "center" }}>
+                      <Typography
+                        align="center"
+                        gutterButton
+                        variant="h5"
+                        component="div"
+                      >
+                        Caregiver
+                      </Typography>
+                      <Typography
+                        align="center"
+                        variant="body-2"
+                        color="text.secondary"
+                      >
+                        <Button color="primary" onClick={handleOpen}>
+                          Sign up or Login here
+                        </Button>
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      {/* emergency information box */}
       <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
@@ -138,83 +261,61 @@ const Home = () => {
           boxShadow: 10,
           bgcolor: "text.disabled",
           m: 1,
-          p: 1,
+          p: 1
         }}
-      >
-        <Container maxWidth="lg">
-          <Grid container direction="row" spacing={5}>
-            <Grid item border={2} item xs={12} sm={12} md={6}>
-              <Box
-                sx={{
-                  borderRadius: 4,
-                  boxShadow: 10,
-                  bgcolor: "text.disabled",
-                  m: 1,
-                  p: 1,
-                }}
-              >
-                some stuff about caregiver information{" "}
-              </Box>
-            </Grid>
-
-            <Grid item border={2} item xs={12} sm={12} md={6}>
-              <Box>
-                <Card sx={{ maxwidth: 345, borderRadius: 4 }}>
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      height="200"
-                      image={babysitter}
-                      alt="babysitter"
-                    />
-                    <CardContent>
-                      <Typography gutterButton variant="h5" component="div">
-                        Caregiver
-                      </Typography>
-                      <Typography variant="body-2" color="text.secondary">
-                        Sign up or Login here
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-      {/* emergency information box */}
-      <Box
-        px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
-        bgcolor="text.secondary"
-        color="white"
-        sx={{ borderRadius: 4 }}
       >
         <Container maxWidth="lg">
           <Grid bgcolor="yellow" container direction="row" spacing={5}>
             <Grid item border={2} item xs={12} sm={12} md={6}>
-              <Box sx={{ borderRadius: 4 }}>Google Map</Box>
+              <Box
+                 sx={{
+                    maxwidth: 345,
+                    borderRadius: 4,
+                    boxShadow: 10,
+                    m: 1,
+                    p: 1,
+                    border: 1
+                  }}>
+                Google Map
+              </Box>
             </Grid>
             <Grid item border={2} item xs={12} sm={12} md={6}>
-              <Box>
-                <Card sx={{ maxwidth: 345, borderRadius: 4 }}>
-                  <CardContent>
-                    <Typography gutterButton variant="h5" component="div">
+              <Box color="white">
+                <Card
+                  px={{ xs: 3, sm: 10 }}
+                  py={{ xs: 5, sm: 10 }}
+                  bgcolor="text.secondary"
+                  sx={{
+                    borderRadius: 4,
+                    boxShadow: 10,
+                    bgcolor: "text.disabled",
+                    m: 1,
+                    p: 1
+                  }}
+                >
+                  <CardContent sx={{ justifyContent: "center" }}>
+                    <Typography
+                      color="white"
+                      align="center"
+                      gutterButton
+                      variant="h5"
+                      component="div"
+                    >
                       Closest Emergency Locations
                     </Typography>
-                    <Typography variant="body-2" color="text.secondary">
+                    <Typography color="white" align="center" variant="body-2">
                       Police dept here
                     </Typography>
                     <br />
-                    <Typography variant="body-2" color="text.secondary">
+                    <Typography color="white" variant="body-2">
                       Fire dept here
                     </Typography>
                     <br />
-                    <Typography variant="body-2" color="text.secondary">
+                    <Typography color="white" variant="body-2">
                       Hospital Info Here
                     </Typography>
                     <br />
-                    <Typography variant="body-2" color="text.secondary">
+                    <Typography color="white" variant="body-2">
                       EMS Info Here
                     </Typography>
                     <br />
@@ -225,7 +326,26 @@ const Home = () => {
           </Grid>
         </Container>
       </Box>
+
+       {/* Testimonial carousel */}
+      <Box 
+        px={{ xs: 3, sm: 10 }}
+        py={{ xs: 5, sm: 10 }}
+        bgcolor="text.secondary"
+        color="white"
+        
+        sx={{ justifyContent: "center",
+          borderRadius: 4,
+          boxShadow: 10,
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1
+        }}
+      >
+         Placeholder for the testimonial carousel
+      </Box>
     </main>
   );
 };
+
 export default Home;
