@@ -24,6 +24,9 @@ Container,
 Box,
 } from "@material-ui/core";
 
+import { borders, shadows } from "@mui/system";
+
+
 
 
 
@@ -57,7 +60,16 @@ function Login(props) {
     <div>
       <Box
       px={{ xs: 3, sm: 10 }}
-      py={{ xs: 5, sm: 10 }}>
+      py={{ xs: 5, sm: 10 }}
+        bgcolor="text.secondary"
+        color="white"
+        sx={{
+          justifyContent: "center",
+          borderRadius: 4,
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1
+        }}>
       <Grid 
       container 
       spacing={0} 
@@ -69,7 +81,12 @@ function Login(props) {
           direction="column" 
           justify="center" 
           spacing={2} 
-          className="login-form">
+          className="login-form"
+          sx={{
+                        maxwidth: 345,
+                        borderRadius: 4,
+                        boxShadow: 10
+                      }}>
             <Paper 
             variant="elevation"
             elevation={2}

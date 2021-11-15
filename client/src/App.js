@@ -15,6 +15,9 @@ import Home from 'pages/Home';
 import NoMatch from 'pages/NoMatch';
 import Login from 'pages/Login';
 import Signup from 'pages/Signup';
+//testing
+import Signup2 from 'pages/Signup2';
+
 import Header from 'components/Header';
 import Nav from 'components/Nav';
 import Main from 'components/Main';
