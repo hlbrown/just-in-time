@@ -10,7 +10,7 @@ import Header from "components/Header";
 // import faviIconLogo from '../../assets/faviIconLogo.png';
 
 // import Nav from 'components/Nav';
-// import GoogleMap from 'components/GoogleMaps';
+import GoogleMap from 'components/GoogleMap';
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -296,7 +296,7 @@ const Home = () => {
                         borderRadius: 4,
                         boxShadow: 10
                       }}>
-                    {/* <GoogleMap/> */}
+                    <GoogleMap/>
                     {/* <MyComponent/> */}
                     {/* <GoogleApiWrapper/> */}
                   </CardContent>
