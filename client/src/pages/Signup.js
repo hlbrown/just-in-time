@@ -84,7 +84,7 @@ export default function Signup() {
    const [profile, setProfile] = React.useState({
    firstName: "",
    lastName: "",
-   birthdate: "",
+  //  birthdate: "",
   // phoneNumber:"",
   // email:"",
   // password:"",
@@ -96,7 +96,7 @@ export default function Signup() {
 const { 
    firstName,
    lastName, 
-   birthdate, 
+  //  birthdate, 
   // phoneNumber,
   // email,
   // password,
@@ -232,7 +232,7 @@ const {
         type="date"
         name="birthdate"
         value={new Date()}
-        onChange={handleDateChange}
+        onChange={handleChange}
         fullWidth
       />
                   </Grid>
