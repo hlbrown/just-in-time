@@ -6,36 +6,149 @@ db.once("open", async () => {
 
   const diagnosis = await Diagnosis.insertMany([
     {
-      name: "Diabetes",
-      description: "Diabetes Mellitus II",
-      symptoms: "High Blood Sugar",
-      // profile: profiles[0].id,
+      name: "Type 1 Diabetes",
+      commonlyKnownAs: "Diabetes",
+      description: "Pancreas doesn’t make insulin or makes very little insulin. Insulin is a hormone that helps blood sugar enter the cells in your body where it can be used for energy.",
+      symptoms: "Fatigue, Blurry vision, Crankiness or mood changes, Upset stomach and vomiting",
+    },
+    {
+      name:"Schizophrenia",
+      commonlyKnownAs: "Schizophrenia",
+      description:  "A mental illness that affects how a person thinks, feels, and behaves. People with schizophrenia may seem like they have lost touch with reality, which causes significant distress for the individual, their family members, and friends.",
+      symptoms: "Hallucinations, Delusions, and Thought disorder.",
+    },
+    {
+      name: "Attention Deficit Hyperactivity Disorder",
+      commonlyKnownAs: "ADHD",
+      description: "Common mental disorder.",
+      symptoms: "Inattention, Hyperactivity, Impulsivity",
+    },
+    {
+      name: "Nut Allergy",
+      commonlyKnownAs: "Nut Allergy",
+      description: "Allergic to any type of nut.",
+      symptoms: "hives, or itchy red spots on the skin, scratchy throat, swelling of the face, eyes, or tongue", 
+    },
+    {
+      name: "Shell Fish Allergy",
+      commonlyKnownAs: "Shell Fish Allergy",
+      description: "Allergic to any type of shell fish.",
+      symptoms: "hives, or itchy red spots on the skin, scratchy throat, swelling of the face, eyes, or tongue",
+    },
+    {
+      name: "Alzheimer's disease",
+      commonlyKnownAs: "Dementia",
+      description: "Alzheimer's disease is a progressive condition, which means the symptoms develop gradually and become more severe over the course of several years.",
+      symptoms: "confusion, disorientation and getting lost in familiar places, personality changes, such as becoming aggressive, demanding and suspicious of others",
+    },
+    {
+      name: "Anxiety disorders in children",
+      commonlyKnownAs: "Anxiety",
+      description: "Anxiety is a feeling of unease, such as worry or fear",
+      symptoms: "Finding it hard to concentrate, Feeling tense and fidgety, quickly getting angry or irritable, and being out of control during outbursts."
+    },
+    {
+      name: "Asperger Syndrome",
+      commonlyKnownAs: "Asperger's",
+      description: "A neurodevelopmental disorder characterized by significant difficulties in social interaction and nonverbal communication, along with restricted and repetitive patterns of behavior and interests.",
+      symptoms: "Poor social interactions, obsessions, odd speech patterns, limited facial expressions and other peculiar mannerisms."
     },
   ]);
+
+  console.log("diagnosis seeded");
+
   await Medication.deleteMany();
 
   const medication = await Medication.insertMany([
     {
+      //for type 1 diabetes
       name: "Glucophage",
       brand: "Metformin",
       prescription: true,
       otc: false,
       dose: "100 units",
-      interactions: "none",
+      interactions: "N/A",
     },
+    {
+      //for schizophrenia
+      name: "Chlorpromazine",
+      brand: "Thorazine",
+      prescription: true,
+      otc: false,
+      dose: "100 mg",
+      interactions: "",
+    },
+    {
+      // for ADHD
+      name: "Methylphenidate",
+      brand: "Ritalin ",
+      prescription: true,
+      otc: false,
+      dose: "5 mg two times a day",
+      interactions: "N/A",
+    },
+    {
+      //for food alergic retractions
+      name: "Adrenaline Auto Injector",
+      brand: "EpiPen",
+      perscription: true,
+      otc: false,
+      dose: " 0.3 mg",
+      interactions: "N/A",
+    },
+    {
+      //for food alergic retractions
+      name: "Diphenhydramine",
+      brand: "Benadryl (Liquid)",
+      perscription: false,
+      otc: true,
+      dose: "25 mg",
+      interactions: "N/A",
+    },
+    {
+      //for Alzheimer's
+      name: "Donepezil",
+      brand: "Aricept",
+      prescription: true,
+      otc: false,
+      dose: "10 mg once a day",
+      interactions:"",
+    },
+    {
+     //for Anxiety
+     name: "Paroxetine Hydrochloride",
+     brand: "Paxil",
+     prescription: true,
+     otc: false,
+     dose: "10 mg daily",
+     interactions: "",
+    },
+    {
+      //for Asperger
+      name: "Risperidone Systemic",
+      brand: "Risperdal",
+      prescription: true,
+      otc: false,
+      dose: "1 mg daily",
+      interactions: "",
+    }
+  
   ]);
-  console.log("profiles seeded");
+
+  console.log("medications seeded");
+
   await Profile.deleteMany();
 
   const profiles = await Profile.insertMany([
     {
       firstName: "Cody",
-      lastName: "Van Buren",
+      lastName: "Van Buren II",
+      sex: "Male",
       address: "141 Windrush Ln. Durham NC 27703",
-      image: "Discgolf.jpeg",
-      dob: 1181991,
-      height: 6,
-      weight: 220,
+      image: "https://res.cloudinary.com/dtjtbzifj/image/upload/v1636829359/FamilyGuy_Single_StewieBackpack_R7_cgr1dv.jpg",
+      dob: 1182010,
+      height: "5'5",
+      weight: 120,
       bloodType: "O",
       organDonor: true,
       pastSurgeries: true,
@@ -48,13 +161,34 @@ db.once("open", async () => {
       medication: medication[0]._id,
     },
     {
-      firstName: "jay",
-      lastName: "Eggs",
-      address: "141 Windrush Ln. Durham NC 27703",
-      image: "Discgolf.jpeg",
-      dob: "1/18/1991",
-      height: 6,
-      weight: 220,
+      firstName: "Agnus",
+      lastName: "Brown",
+      sex: "Female",
+      address: "141 Hippo Ln. Raleigh, NC 27703",
+      image: "https://res.cloudinary.com/dtjtbzifj/image/upload/v1637016620/Profile_-_Roz_wnpbap.jpg",
+      dob: 5251942,
+      height: "5'2",
+      weight: 130,
+      bloodType: "B",
+      organDonor: true,
+      pastSurgeries: true,
+      pcpName: "Random",
+      pcpAddress: "some address",
+      pcpPhoneNumber: 39857230489,
+      emergencyContactName: "Her",
+      emergencyContactNumber: 985273458907234,
+      diagnosis: diagnosis[5]._id,
+      medication: medication[5]._id,
+    },
+    {
+      firstName: "Harley",
+      lastName: "Eggleston",
+      sex: "Female",
+      address: "141 Lion Rush Ln. Durham, NC 27713",
+      image: "https://res.cloudinary.com/dtjtbzifj/image/upload/v1637016871/darla-finding-nemo-costume_iscyec.jpg",
+      dob: 3232018,
+      height: "3'3",
+      weight: 80,
       bloodType: "O",
       organDonor: true,
       pastSurgeries: true,
@@ -63,8 +197,32 @@ db.once("open", async () => {
       pcpPhoneNumber: 39857230489,
       emergencyContactName: "Her",
       emergencyContactNumber: 985273458907234,
+      diagnosis: diagnosis[1]._id,
+      medication: medication[1]._id,
     },
+    {
+      firstName: "Issac",
+      lastName: "Barretto",
+      sex: "Male",
+      address: "141 Zebra Dr Cary, NC 27703",
+      image: "https://res.cloudinary.com/dtjtbzifj/image/upload/v1637017276/up_2009_1280x717_796346_s6hzbq.jpg",
+      dob: "11/15/2003",
+      height: "6'8",
+      weight: 220,
+      bloodType: "A",
+      organDonor: true,
+      pastSurgeries: true,
+      pcpName: "Random",
+      pcpAddress: "some address",
+      pcpPhoneNumber: 39857230489,
+      emergencyContactName: "Her",
+      emergencyContactNumber: 985273458907234,
+      diagnosis: diagnosis[4]._id,
+      medication: medication[3]._id,
+    }
   ]);
+  console.log("profiles seeded")
+
   await User.deleteMany();
   // const user = new User(
   //   {
@@ -80,10 +238,39 @@ db.once("open", async () => {
     {
       firstName: "Cody",
       lastName: "Van Buren",
-      email: "random@gmail.com",
+      email: "bvanburenwx@gmail.com",
       password: "password12345",
+      phoneNumber: "9195556969",
+      image: "https://res.cloudinary.com/dtjtbzifj/image/upload/v1636818567/83733566_iwozxo.jpg",
       profile: profiles[0]._id,
     },
+    {
+      firstName: "Hannah",
+      lastName: "Brown",
+      email: "hlbrown@my.waketech.edu",
+      password: "world123",
+      phoneNumber: "9196961234",
+      image: "https://res.cloudinary.com/dtjtbzifj/image/upload/v1636819609/hlbrown_zcuxgk.jpg",
+      profile: profiles[1]._id,
+    },
+    {
+      firstName: "Jamel",
+      lastName: "Eggleston",
+      email: "jamel.eggleston@gmail.com",
+      password: "hello789",
+      phoneNumber: "9193345698",
+      image: "https://res.cloudinary.com/dtjtbzifj/image/upload/v1636819636/jameleggleston_gq7bky.jpg",
+      profile: profiles[2]._id,
+    },
+    {
+      firstName: "Dion",
+      lastName: "Barretto",
+      email: "denverdionne@gmail.com",
+      password: "helper248",
+      phoneNumber: "9193567888",
+      image:"https://res.cloudinary.com/dtjtbzifj/image/upload/v1636819620/dionnenoellabarretto_qvgtrx.jpg",
+      profile: profiles[3]._id,
+    }
   ]);
 });
 

@@ -24,21 +24,21 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  // phoneNumber: {
-  //   type: String,
-  //   required: true,
-  //   trim: true,
-  //   maxlength: 10
-  // },
+  phoneNumber: {
+    type: String,
+    required: true,
+    trim: true,
+    maxlength: 10
+  },
   // dob: {
   //   type: Date,
   //   required: true,
   //   trim: true
   // },
-  // userPhoto: {
-  //   type: String,
-  //   required: false,
-  // },
+  image: {
+    type: String,
+    required: false,
+  },
   // // Adding two different portals for future development
   // admin: {
   //   type: Boolean,

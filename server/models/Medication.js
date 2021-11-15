@@ -13,7 +13,6 @@ const medicationSchema = new Schema({
   },
   prescription: {
     type: Boolean,
-    required: true
   },
   // over the counter
   otc: {

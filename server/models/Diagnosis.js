@@ -9,6 +9,11 @@ const diagnosisSchema = new Schema({
         required: true,
         trim: true
     },
+    commonlyKnownAs: {
+        type: String,
+        required: true,
+        trim: true
+    },
     description: {
         type: String,
         required: true,
