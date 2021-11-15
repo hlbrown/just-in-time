@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-
+import Nav from 'components/Nav';
 import { LOGIN } from 'utils/mutations';
 import Auth from 'utils/auth';
 
@@ -57,7 +57,9 @@ function Login(props) {
 
   return (
     
+    
     <div>
+      <Nav/>
       <Box
       px={{ xs: 3, sm: 10 }}
       py={{ xs: 5, sm: 10 }}
