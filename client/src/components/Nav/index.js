@@ -135,6 +135,9 @@ export default function Nav() {
           <Toolbar>
             <IconButton
               size="large"
+              // image width and height needs to be set to bypass this error https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=lr#images-without-dimensions 
+              // width="500"
+              // height="500"
               edge="end"
               color="inherit"
               aria-label="open drawer"
