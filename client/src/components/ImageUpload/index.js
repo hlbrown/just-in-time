@@ -3,49 +3,49 @@ import React from "react";
 //Card
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardHeader from "@material-ui/core/CardHeader";
+// import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
-import CardMedia from "@material-ui/core/CardMedia";
+// import CardActions from "@material-ui/core/CardActions";
+// import CardMedia from "@material-ui/core/CardMedia";
 
 import Fab from "@material-ui/core/Fab";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Avatar from "@material-ui/core/Avatar";
 
 import red from "@material-ui/core/colors/red";
-import pink from "@material-ui/core/colors/pink";
+// import pink from "@material-ui/core/colors/pink";
 import blue from "@material-ui/core/colors/blue";
 
-import Icon from "@material-ui/core/Icon";
-import PageviewIcon from "@material-ui/icons/Pageview";
+// import Icon from "@material-ui/core/Icon";
+// import PageviewIcon from "@material-ui/icons/Pageview";
 import SearchIcon from "@material-ui/icons/Search";
 import AddPhotoAlternateIcon from "@material-ui/icons/AddPhotoAlternate";
-import CollectionsIcon from "@material-ui/icons/Collections";
+// import CollectionsIcon from "@material-ui/icons/Collections";
 
-import Typography from "@material-ui/core/Typography";
-import Popover from "@material-ui/core/Popover";
+// import Typography from "@material-ui/core/Typography";
+// import Popover from "@material-ui/core/Popover";
 
 // Search
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+// import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import ReplayIcon from "@material-ui/icons/Replay";
 
 //Tabs
 import { withStyles } from "@material-ui/core/styles";
 
-const imageGallery = [
-  "https://raw.githubusercontent.com/dxyang/StyleTransfer/master/style_imgs/mosaic.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-  "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dora-maar-picasso.jpg",
-  "https://pbs.twimg.com/profile_images/925531519858257920/IyYLHp-u_400x400.jpg",
-  "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dog.jpg",
-  "http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg"
-];
+// const imageGallery = [
+//   "https://raw.githubusercontent.com/dxyang/StyleTransfer/master/style_imgs/mosaic.jpg",
+//   "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+//   "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dora-maar-picasso.jpg",
+//   "https://pbs.twimg.com/profile_images/925531519858257920/IyYLHp-u_400x400.jpg",
+//   "https://raw.githubusercontent.com/ShafeenTejani/fast-style-transfer/master/examples/dog.jpg",
+//   "http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg"
+// ];
 
 const styles = theme => ({
   root: {
@@ -333,11 +333,11 @@ class ImageUploadCard extends React.Component {
       <React.Fragment>
         <div className={classes.root}>
           <Card className={this.props.cardName}>
-            {(this.state.mainState == "initial" && this.renderInitialState()) ||
-              (this.state.mainState == "search" && this.renderSearchState()) ||
-              (this.state.mainState == "gallery" &&
+            {(this.state.mainState === "initial" && this.renderInitialState()) ||
+              (this.state.mainState === "search" && this.renderSearchState()) ||
+              (this.state.mainState === "gallery" &&
                 this.renderGalleryState()) ||
-              (this.state.mainState == "uploaded" &&
+              (this.state.mainState === "uploaded" &&
                 this.renderUploadedState())}
           </Card>
         </div>

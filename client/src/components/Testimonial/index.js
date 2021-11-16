@@ -59,8 +59,8 @@ const Card = ({ img }) => {
           width: 120,
           height: 120,
           border: "1px solid black",
-          padding: 5,
-          marginBottom: 10,
+          padding: 1.5,
+          marginBottom: 5,
         }}
       />
       <p>

@@ -1,75 +1,75 @@
 import React from "react";
-import Auth from "utils/auth";
+// import Auth from "utils/auth";
 
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
-import MenuItem from "@mui/material/MenuItem";
-import faviIconLogo from "../../assets/faviIconLogo.png";
+// import AccountCircle from "@mui/icons-material/AccountCircle";
+// import Switch from "@mui/material/Switch";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import FormGroup from "@mui/material/FormGroup";
+// import MenuItem from "@mui/material/MenuItem";
+// import faviIconLogo from "../../assets/faviIconLogo.png";
 
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
+// import Container from "@material-ui/core/Container";
+// import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Link from "@material-ui/core/Link";
+// import Link from "@material-ui/core/Link";
 
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+// import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
+// import SearchIcon from "@mui/icons-material/Search";
 import { text } from "dom-helpers";
 import { Menu } from "@mui/material";
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(1),
-    width: "auto",
-  },
-}));
+// const Search = styled("div")(({ theme }) => ({
+//   position: "relative",
+//   borderRadius: theme.shape.borderRadius,
+//   backgroundColor: alpha(theme.palette.common.white, 0.15),
+//   "&:hover": {
+//     backgroundColor: alpha(theme.palette.common.white, 0.25),
+//   },
+//   marginLeft: 0,
+//   width: "100%",
+//   [theme.breakpoints.up("sm")]: {
+//     marginLeft: theme.spacing(1),
+//     width: "auto",
+//   },
+// }));
 
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
+// const SearchIconWrapper = styled("div")(({ theme }) => ({
+//   padding: theme.spacing(0, 2),
+//   height: "100%",
+//   position: "absolute",
+//   pointerEvents: "none",
+//   display: "flex",
+//   alignItems: "center",
+//   justifyContent: "center",
+// }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//   color: "inherit",
+//   "& .MuiInputBase-input": {
+//     padding: theme.spacing(1, 1, 1, 0),
+//     // vertical padding + font size from searchIcon
+//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//     transition: theme.transitions.create("width"),
+//     width: "100%",
+//     [theme.breakpoints.up("sm")]: {
+//       width: "12ch",
+//       "&:focus": {
+//         width: "20ch",
+//       },
+//     },
+//   },
+// }));
 
-const style = {
-  background: "#2E3B55",
-};
+// const style = {
+//   background: "#2E3B55",
+// };
 
 //     var classes = {
 //   logo: {
@@ -87,6 +87,7 @@ const style = {
 // };
 
 export default function Nav() {
+  
   // const [auth, setAuth] = React.useState(true);
   // const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -130,12 +131,12 @@ export default function Nav() {
 
   return (
     <nav>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box bgcolor="text.secondary" sx={{ flexGrow: 1 }}>
         <AppBar color="inherit" position="static">
           <Toolbar>
             <IconButton
               size="large"
-              // image width and height needs to be set to bypass this error https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=lr#images-without-dimensions 
+              // image width and height needs to be set to bypass this error https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=lr#images-without-dimensions
               // width="500"
               // height="500"
               edge="end"

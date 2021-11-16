@@ -1,16 +1,11 @@
 import React from "react";
-import Auth from "utils/auth";
+
 import { Link } from "react-router-dom";
-import Footer from "components/Footer";
+
 import Testimonial from "components/Testimonial";
 
-import Header from "components/Header";
-// import GoogleMapsContainer from 'components/GoogleMaps';
-// import Map from 'components/GoogleMaps';
-// import GoogleApiWrapper from 'components/GoogleMaps';
-// import faviIconLogo from '../../assets/faviIconLogo.png';
 
-// import Nav from 'components/Nav';
+
 import GoogleMap from "components/GoogleMap";
 
 import Container from "@material-ui/core/Container";
@@ -43,12 +38,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 500,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "4px dashed 	#808080",
   boxShadow: 24,
   p: 4,
 };
+
 const Home = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -62,17 +58,17 @@ const Home = () => {
         bgcolor="text.secondary"
         color="white"
         sx={{
-          justifyContent: "center",
+          
           borderRadius: 4,
           bgcolor: "text.disabled",
           m: 1,
           p: 1,
         }}
       >
-        <Typography id="mission" variant="h3">
-          Our mission is to help parents and/or guardians to securely, and
+        <Typography align="center" id="mission" variant="h4" color="black">
+          Just In Time's mission is to help parents and/or guardians securely &
           efficiently create and share emergency information for their loved
-          ones via a web application portal in under 5 clicks!!
+          ones via a web application portal in a few clicks!
         </Typography>
       </Box>
       {/* admin box */}
@@ -100,7 +96,7 @@ const Home = () => {
                     boxShadow: 10,
                     m: 1,
                     p: 1,
-                    border: 1,
+                    border: "2px dashed 	#808080",
                   }}
                 >
                   <CardActionArea>
@@ -122,7 +118,7 @@ const Home = () => {
                         variant="h5"
                         component="div"
                       >
-                        Admin
+                        Parent/Guardian
                       </Typography>
                       <Typography
                         align="center"
@@ -173,11 +169,11 @@ const Home = () => {
                   borderRadius: 4,
                   boxShadow: 10,
                   bgcolor: "text.disabled",
-                  m: 1,
-                  p: 1,
+                  m: 17,
+                  p: 3
                 }}
               >
-                Information about the admin portal
+              The Parent/Guardian Portal is used to create an end user/patient profile for your loved one
               </Box>
             </Grid>
           </Grid>
@@ -200,17 +196,17 @@ const Home = () => {
         <Container maxWidth="lg">
           <Grid container direction="row" spacing={5}>
             <Grid item border={2} item xs={12} sm={12} md={6}>
-              <Box
+              <Box justifyContent="center"
                 color="white"
                 sx={{
                   borderRadius: 4,
                   boxShadow: 10,
                   bgcolor: "text.disabled",
-                  m: 1,
-                  p: 1,
+                  m: 17,
+                  p: 3
                 }}
               >
-                some stuff about caregiver information
+                The Carer Portal authorizes caretakers to view an end user/patient profile
               </Box>
             </Grid>
 
@@ -223,7 +219,7 @@ const Home = () => {
                     boxShadow: 10,
                     m: 1,
                     p: 1,
-                    border: 1,
+                    border: "2px dashed 	#808080",
                   }}
                 >
                   <CardActionArea>
@@ -284,37 +280,26 @@ const Home = () => {
             <Grid item border={2} item xs={12} sm={12} md={6}>
               <Box
                 sx={{
-                  maxwidth: 345,
+                  maxwidth: 568,
+                  maxheight: 301,
                   borderRadius: 4,
                   boxShadow: 10,
-                  m: 1,
-                  p: 1,
-                  border: 1,
+                  m: 1
+                  
                 }}
-              >
-                <Card sx={{ maxwidth: 345 }}>
-                  <CardContent
-                    sx={{
-                      maxwidth: 345,
-                      borderRadius: 4,
-                      boxShadow: 10,
-                    }}
+              ><GoogleMap />
+                <CardContent sx={{ justifyContent: "center" }}>
+                  <Typography
+                    align="center"
+                    gutterButton
+                    variant="h5"
+                    component="div"
                   >
-                    {/* <MyComponent/> */}
-                    {/* <GoogleApiWrapper/> */}
-                  </CardContent>
-
-                  <CardContent sx={{ justifyContent: "center" }}>
-                    <Typography
-                      align="center"
-                      gutterButton
-                      variant="h5"
-                      component="div"
-                    >
-                      Nearest Emergency Locations
-                    </Typography>
-                  </CardContent>
-                </Card>
+                    {" "}
+                    
+                    Nearest Emergency Locations
+                  </Typography>
+                </CardContent>
               </Box>
             </Grid>
             <Grid item border={2} item xs={12} sm={12} md={6}>
@@ -327,8 +312,8 @@ const Home = () => {
                     borderRadius: 4,
                     boxShadow: 10,
                     bgcolor: "text.disabled",
-                    m: 1,
-                    p: 1,
+                    m: 9,
+                  p: 1
                   }}
                 >
                   <CardContent sx={{ justifyContent: "center" }}>
