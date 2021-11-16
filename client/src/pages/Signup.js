@@ -1,6 +1,7 @@
 import React, {Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Login } from 'utils/mutations';
+import Nav from 'components/Nav';
 import { useMutation } from '@apollo/client';
 // import Auth from 'utils/auth';
 // import { ADD_USER } from 'utils/mutations';
@@ -83,7 +84,7 @@ export default function Signup() {
    const [profile, setProfile] = React.useState({
    firstName: "",
    lastName: "",
-  // birthdate: "",
+  //  birthdate: "",
   // phoneNumber:"",
   // email:"",
   // password:"",
@@ -95,7 +96,7 @@ export default function Signup() {
 const { 
    firstName,
    lastName, 
-  // birthdate, 
+  //  birthdate, 
   // phoneNumber,
   // email,
   // password,
@@ -114,6 +115,7 @@ const {
 
   return (
     <div>
+      <Nav />
       <Box
       px={{ xs: 3, sm: 10 }}
       py={{ xs: 5, sm: 10 }}>
@@ -197,6 +199,51 @@ const {
           </Grid>
         </Grid>
       </Box>
+      <Box
+      px={{ xs: 3, sm: 10 }}
+      py={{ xs: 5, sm: 10 }}
+      >
+        <Grid
+          container 
+          spacing={0} 
+          justify="center" 
+          direction="row">
+           <Grid item>
+              <Grid
+              container
+              spacing={2}
+              justify="center"
+              direction="column">
+              <Paper
+              variant="elevation"
+              elevation={2}
+              className="login-background"
+              >
+                 <Grid item>
+                  <Typography
+                  component="h1"
+                  variant="h5">
+                    Demographics
+                  </Typography>
+                  <Grid item xs={12}>
+                        <TextField
+        id="birthdate"
+        variant="outlined"
+        type="date"
+        name="birthdate"
+        value={new Date()}
+        onChange={handleChange}
+        fullWidth
+      />
+                  </Grid>
+                </Grid>
+
+              </Paper>
+              </Grid>
+            </Grid>
+        </Grid>
+      </Box>
+
 
     </div>
     //    <div>

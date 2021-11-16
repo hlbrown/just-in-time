@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 import PlacesAutocomplete, {
   geocodeByAddress,
-  getLatLng
+  getLatLng,
 } from 'react-places-autocomplete';
-// import { sizing } from '@mui/system';
-// import { width } from '@mui/material/node_modules/@mui/system';​
+
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       // for google map places autocomplete
-      address: '4732 Radcliff rd',
+      address: '',
+
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
@@ -20,9 +20,10 @@ export class MapContainer extends Component {
         lat: 49.2827291,
         lng: -123.1207375
       }
-    }
-  }    ​
- handleChange = address => {
+    };
+  }
+
+  handleChange = address => {
     this.setState({ address });
   };
  
@@ -32,7 +33,7 @@ export class MapContainer extends Component {
       .then(results => getLatLng(results[0]))
       .then(latLng => {
         console.log('Success', latLng);
-​
+
         // update center state
         this.setState({ mapCenter: latLng });
       })
@@ -40,10 +41,13 @@ export class MapContainer extends Component {
   };
  
   render() {
-      
+    const style = {
+        maxWidth:'345px',
+        maxHeight: '345px'
+    }
     return (
-      <div id='googleMaps'>
-        
+      <div id='googleMaps' style={style}>
+      
         <PlacesAutocomplete
             
           value={this.state.address}
@@ -83,7 +87,7 @@ export class MapContainer extends Component {
             </div>
           )}
         </PlacesAutocomplete>
-​
+
         <Map 
           google={this.props.google}
           initialCenter={{
@@ -94,6 +98,7 @@ export class MapContainer extends Component {
             lat: this.state.mapCenter.lat,
             lng: this.state.mapCenter.lng
           }}
+          style={style}
         >
           <Marker 
             position={{
@@ -105,7 +110,7 @@ export class MapContainer extends Component {
     )
   }
 }
-​
+
 export default GoogleApiWrapper({
-  //  ('AIzaSyBBXJogeVn9AL_eViKwuaQwi-wABxTNevQ')
+  apiKey: ('AIzaSyBBXJogeVn9AL_eViKwuaQwi-wABxTNevQ')
 })(MapContainer)
