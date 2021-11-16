@@ -3,6 +3,7 @@ import Auth from "utils/auth";
 import { Link } from "react-router-dom";
 import Footer from "components/Footer";
 import Testimonial from "components/Testimonial";
+
 import Header from "components/Header";
 // import GoogleMapsContainer from 'components/GoogleMaps';
 // import Map from 'components/GoogleMaps';
@@ -10,7 +11,7 @@ import Header from "components/Header";
 // import faviIconLogo from '../../assets/faviIconLogo.png';
 
 // import Nav from 'components/Nav';
-import GoogleMap from 'components/GoogleMap';
+import GoogleMap from "components/GoogleMap";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -65,7 +66,7 @@ const Home = () => {
           borderRadius: 4,
           bgcolor: "text.disabled",
           m: 1,
-          p: 1
+          p: 1,
         }}
       >
         <Typography id="mission" variant="h3">
@@ -85,7 +86,7 @@ const Home = () => {
           boxShadow: 10,
           bgcolor: "text.disabled",
           m: 1,
-          p: 1
+          p: 1,
         }}
       >
         <Container maxWidth="lg">
@@ -99,7 +100,7 @@ const Home = () => {
                     boxShadow: 10,
                     m: 1,
                     p: 1,
-                    border: 1
+                    border: 1,
                   }}
                 >
                   <CardActionArea>
@@ -107,7 +108,7 @@ const Home = () => {
                       sx={{
                         maxwidth: 345,
                         borderRadius: 4,
-                        boxShadow: 10
+                        boxShadow: 10,
                       }}
                       component="img"
                       height="200"
@@ -173,7 +174,7 @@ const Home = () => {
                   boxShadow: 10,
                   bgcolor: "text.disabled",
                   m: 1,
-                  p: 1
+                  p: 1,
                 }}
               >
                 Information about the admin portal
@@ -193,7 +194,7 @@ const Home = () => {
           boxShadow: 10,
           bgcolor: "text.disabled",
           m: 1,
-          p: 1
+          p: 1,
         }}
       >
         <Container maxWidth="lg">
@@ -206,7 +207,7 @@ const Home = () => {
                   boxShadow: 10,
                   bgcolor: "text.disabled",
                   m: 1,
-                  p: 1
+                  p: 1,
                 }}
               >
                 some stuff about caregiver information
@@ -222,14 +223,15 @@ const Home = () => {
                     boxShadow: 10,
                     m: 1,
                     p: 1,
-                    border: 1
+                    border: 1,
                   }}
                 >
                   <CardActionArea>
-                    <CardMedia sx={{
+                    <CardMedia
+                      sx={{
                         maxwidth: 345,
                         borderRadius: 4,
-                        boxShadow: 10
+                        boxShadow: 10,
                       }}
                       component="img"
                       height="200"
@@ -291,12 +293,13 @@ const Home = () => {
                 }}
               >
                 <Card sx={{ maxwidth: 345 }}>
-                  <CardContent sx={{
-                        maxwidth: 345,
-                        borderRadius: 4,
-                        boxShadow: 10
-                      }}>
-                    <GoogleMap/>
+                  <CardContent
+                    sx={{
+                      maxwidth: 345,
+                      borderRadius: 4,
+                      boxShadow: 10,
+                    }}
+                  >
                     {/* <MyComponent/> */}
                     {/* <GoogleApiWrapper/> */}
                   </CardContent>
@@ -310,7 +313,7 @@ const Home = () => {
                     >
                       Nearest Emergency Locations
                     </Typography>
-                    </CardContent>
+                  </CardContent>
                 </Card>
               </Box>
             </Grid>
@@ -376,8 +379,8 @@ const Home = () => {
           m: 1,
           p: 1,
         }}
-      > <Testimonial/>
-        
+      >
+        <Testimonial />
       </Box>
     </main>
   );
