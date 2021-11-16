@@ -32,7 +32,7 @@ function App() {
 
 // if the message was successfully sent
     if (res.status === 200) {
-      alert("Message Sent! Please expect a response in 48 hours");
+      alert("Message Sent! Please expect a response in 48 hours!");
 
       //clear state so text boxes clear after a successful submission
       setName("");
