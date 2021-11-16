@@ -10,9 +10,9 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 👉[Meeting Notes](https://docs.google.com/document/d/1njId61FKle7ykOCIGgb-_9f-hWhYVQetDhAcyLX1bIk/edit#)<br/>
 👉[Repository](https://github.com/hlbrown/just-in-time)<br/>
 👉 📖 [Setting up MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-set-up-mongodb-atlas)<br/>
-
 👉 📖 [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)<br/>
 👉 📖 [Project Management with GitHub Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)<br/>
+👉 📝 [Project ContactForm Slack Channel](https://app.slack.com/client/T02M9S1RTJN)
 👉[Project Presentation Deck]()
 
 ## Project Team (Developers)
@@ -37,7 +37,7 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 
 
 ## Just In Time Motivation:
- We all have experienced the panic scramble when a loved one is in need of medical attention be it via emergency response services or a guardian or caretaker and we are frantically searching for medicines, allergies, PCP information etc.. 
+ We all have experienced the panic scramble when a loved one is in need of medical attention be it via emergency response services or a guardian or caretaker and we are frantically searching for medicines, allergies, PCP information etc.
  👉  To stay calm and composed in such situations and supply the requested information in few clicks  was the motivation behind ***"just-in-time"***  an app that helps you organize all medical emergency information in a single page!
 
 
@@ -52,45 +52,41 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 Apply everything we’ve learnt over the past six months to create a real-world full-mern-stack application that we'll showcase to potential employers. Besides the user story and acceptance criteria our project fulfils the following requirements:
 ```
 ✔️ Use React for the front end.
-❌ Use GraphQL with a Node.js and Express.js server.
+✔️ Use GraphQL with a Node.js and Express.js server.
 ✔️ Use MongoDB and the Mongoose ODM for the database.
 ✔️ Use queries and mutations for retrieving, adding, updating, and deleting data.
 ✔️ Be deployed using Heroku (with data).
-❌ Have a polished UI.
-❌ Be responsive.
-❌ Be interactive (i.e., accept and respond to user input).
+✔️ Have a polished UI.
+✔️ Be responsive.
+✔️ Be interactive (i.e., accept and respond to user input).
 ✔️ Include authentication (JWT).
-❌ Protect sensitive API key information on the server.
+✔️ Protect sensitive API key information on the server.
 ✔️ Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
 ✔️ Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
 
 ## Technology Used in this Project
-**Accessibility Testing:** 
+**Accessibility Testing:** <br/>
 **IDE/OS:** <img align="center" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"> <img align="center" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"> <br>
-**Cloud Hosting:** 
-**Frontend:** 
-**Backend:** 
-**Database:** 
-**Frameworks:** 
-**Linters:** 
-**Social Media:** 
-**Communication:** <img align="center" src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white" /> <img align="center" src="https://img.shields.io/badge/Google%20Meet-32A350?style=for-the-badge&logo=google-meet&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white">
-
+**Cloud Hosting:** <br>
+**Frontend:** <br>
+**Backend:** <br>
+**Database:** <br>
+**Frameworks:** <br>
+**Linters:** <br>
+**Social Media:** <br>
+**Communication:** <img align="center" src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white" /> <img align="center" src="https://img.shields.io/badge/Google%20Meet-32A350?style=for-the-badge&logo=google-meet&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white"><br>
 
 ## App Usage/ Installation Instructions: 
 Place holder for usage instructions
 
-
 ## Project Future Enhancements
 ⏭️ Place holder for future features/ enhancements
 
-
 ## Mock-Up (Screenshots & Responsive UI View)
-Place holder for screenshots form the app 
+Place holder for screenshots form the app
 
 ## AccessibilityScores (LightHouseReports)
-
 
 ## Presentation Requirements
 ```
@@ -102,7 +98,6 @@ Directions for Future ⏭️ Development
 Links 🔗: to the deployed application in Heroku and the GitHub repository
 ```
 
-
 ## Grading Requirements
 
 This project is graded based on the following criteria:
@@ -111,12 +106,11 @@ This project is graded based on the following criteria:
 🏁 Satisfies the following code requirements:
 ```
 ✔️ Application uses React for the front end.
-❌ Application has a GraphQL API with a Node.js and Express.js server, and uses queries and mutations for retrieving, adding, updating, and deleting data.
+✔️ Application has a GraphQL API with a Node.js and Express.js server, and uses queries and mutations for retrieving, adding, updating, and deleting data.
 ✔️ Application uses MongoDB and the Mongoose ODM for the database and protects sensitive API key information on the server.
 ✔️ Application includes user authentication using JWT.
 ``` 
 ### Concept 10%
-
 ```
 ✔️ Application should be a unique and novel idea.
 ✔️ Your group should clearly and concisely articulate your project idea.
@@ -136,9 +130,9 @@ This project is graded based on the following criteria:
 ```
 ### Application Quality: 15%
 ```
-❌ Application user experience is intuitive and easy to navigate.
-❌ Application user interface style is clean and polished.
-❌ Application is responsive.
+✔️ Application user experience is intuitive and easy to navigate.
+✔️ Application user interface style is clean and polished.
+✔️ Application is responsive.
 ```
 ### Presentation 10%
 ```
