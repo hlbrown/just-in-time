@@ -3,6 +3,7 @@ import Auth from "utils/auth";
 import { Link } from "react-router-dom";
 import Footer from "components/Footer";
 import Testimonial from "components/Testimonial";
+
 import Header from "components/Header";
 // import GoogleMapsContainer from 'components/GoogleMaps';
 // import Map from 'components/GoogleMaps';
@@ -290,13 +291,13 @@ const Home = () => {
                   border: 1,
                 }}
               >
-                <Card sx={{ maxwidth: 345 }}>
+                <Card sx={{ maxwidth: 345 }}> 
                   <CardContent sx={{
                         maxwidth: 345,
                         borderRadius: 4,
                         boxShadow: 10
                       }}>
-                    <GoogleMap/>
+                    
                     {/* <MyComponent/> */}
                     {/* <GoogleApiWrapper/> */}
                   </CardContent>
@@ -379,6 +380,7 @@ const Home = () => {
       > <Testimonial/>
         
       </Box>
+
     </main>
   );
 };
