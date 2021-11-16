@@ -17,7 +17,6 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 👉[Project Presentation Deck]()
 
 ## Project Team (Developers)
-
 <table>
 <thead>
 <tr>

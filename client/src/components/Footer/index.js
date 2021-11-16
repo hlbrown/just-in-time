@@ -36,7 +36,9 @@ export default function Footer() {
               <Link href='https://github.com/DionneNoellaBarretto' target="_blank"  color='inherit'>Dionne Noella Barretto</Link>
             </Box>
             </Grid>
-            {/* 2nd column start */}
+
+            {/* hiding this section to bypass  redundant link error https://wave.webaim.org/report#/https://project-3-just-in-time.herokuapp.com/ - about column for the time being as there's no additional information to add here currently */}
+            {/* 2nd column start
               <Grid item xs={12} sm={4}>
             <Box borderBottom={1}>About</Box>
             <Box>
@@ -48,7 +50,7 @@ export default function Footer() {
             <Box>
               <Link href='/' color='inherit'>Contact</Link>
             </Box>
-            </Grid>
+            </Grid> */}
             {/* 3rd column start */}
               <Grid item xs={12} sm={4}>
             <Box borderBottom={1}>Resources</Box>
