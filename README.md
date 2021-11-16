@@ -12,7 +12,7 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 👉 📖 [Setting up MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-set-up-mongodb-atlas)<br/>
 👉 📖 [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)<br/>
 👉 📖 [Project Management with GitHub Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)<br/>
-👉 📝 [Project ContactForm Slack Channel](https://app.slack.com/client/T02M9S1RTJN)
+👉 📝 [Project ContactForm Slack Channel](https://app.slack.com/client/T02M9S1RTJN)<br/>
 👉[Project Presentation Deck]()
 
 ## Project Team (Developers)
@@ -66,22 +66,30 @@ Apply everything we’ve learnt over the past six months to create a real-world 
 ```
 
 ## Technology Used in this Project
-**Accessibility Testing:** <br/>
+**Accessibility Testing:** <a href="https://github.com/GoogleChrome/lighthouse" target="_blank"> <img align="center" width="30" src="client/public/images/google-lighthouse.svg"> </a>  <br>
 **IDE/OS:** <img align="center" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white"> <img align="center" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"> <br>
-**Cloud Hosting:** <br>
-**Frontend:** <br>
-**Backend:** <br>
-**Database:** <br>
-**Frameworks:** <br>
-**Linters:** <br>
-**Social Media:** <br>
-**Communication:** <img align="center" src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white" /> <img align="center" src="https://img.shields.io/badge/Google%20Meet-32A350?style=for-the-badge&logo=google-meet&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white"><br>
+**Repository Hosting:** <img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"> <br>
+**Website Cloud Hosting:**<img align="center" src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"> <br>
+**Design Tools:** <img align="center" src="https://img.shields.io/badge/Adobe%20Creative%20Cloud-DA1F26?style=for-the-badge&logo=Adobe%20Creative%20Cloud&logoColor=white"> <br>
+**Frontend:**  <img align="center" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> <img align="center" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> <br>
+**Styling:** <img align="center" src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"><br>
+<!-- <img align="center" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"> <img align="center" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white">  -->
+**Backend:** <img align="center" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"> <img align="center" src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"> <br>
+**Queries** <img align="center" src="https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white"> <br>
+**Database:** <img align="center" src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"> <br>
+**Frameworks:** <img align="center" src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> <img align="center" src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white">  <img align="center" src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white"> <br>
+**Linters:**  <img align="center" src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E"> <br>
+**ReadME:** <img align="center" src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"> <br>
+**Communication:** <img align="center" src="https://img.shields.io/badge/Slack-4A154B?logo=slack&logoColor=white" /> <img align="center" src="https://img.shields.io/badge/Google%20Meet-32A350?style=for-the-badge&logo=google-meet&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white"> <img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"><br>
 
 ## App Usage/ Installation Instructions: 
-Place holder for usage instructions
+Depending on whether you are a parent/guardian OR a care giver, you should have the ability to login to the appropriate Portal and have access to either enter information for a Patient /Dependent Profile OR view the entered information for the Patient/Dependent being cared for in under 5 clicks!
 
 ## Project Future Enhancements
-⏭️ Place holder for future features/ enhancements
+⏭️ Ability for Admins to create copy template fields
+⏭️ Ability to auto pin in the map on the landing page to display the nearest Fire station, Police station, UrgentCare facility based on users browser geolocation
+⏭️ Ability for caregivers/ EMS to comment on stale information / request Parents & Guardians for further clarification on medicine/allergy or the diagnosis information
+⏭️ Modal alert for the Contact form
 
 ## Mock-Up (Screenshots & Responsive UI View)
 Place holder for screenshots form the app
