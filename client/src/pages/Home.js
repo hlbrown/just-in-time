@@ -38,7 +38,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 500,
   bgcolor: "background.paper",
-  border: "4px dashed 	#808080",
+  border: "4px solid 	#808080",
   boxShadow: 24,
   p: 4,
 };
@@ -93,7 +93,7 @@ const Home = () => {
                     boxShadow: 10,
                     m: 1,
                     p: 1,
-                    border: "2px dashed 	#808080",
+                    border: "2px solid 	#808080",
                   }}
                 >
                   <CardActionArea>
@@ -185,7 +185,7 @@ const Home = () => {
                     boxShadow: 10,
                     m: 1,
                     p: 1,
-                    border: "2px dashed 	#808080",
+                    border: "2px solid 	#808080",
                   }}
                 >
                   <CardActionArea>

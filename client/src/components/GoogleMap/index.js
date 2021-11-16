@@ -60,8 +60,8 @@ export class MapContainer extends Component {
       boxShadow: 10,
       m: 1,
       p: 1,
-      bgcolor: "background.paper",
-      border: "4px dashed 	#808080",
+      bgcolor: "background.paper"
+
     };
 
     const search = {
