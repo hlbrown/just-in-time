@@ -53,7 +53,7 @@ export class MapContainer extends Component {
 
   render() {
     const style = {
-      maxWidth: "568px",
+      maxWidth: "1250px",
       maxHeight: "360px",
       bgcolor: "background.paper",
       borderRadius: 4,

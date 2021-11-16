@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 import Testimonial from "components/Testimonial";
 
-
-
 import GoogleMap from "components/GoogleMap";
 
 import Container from "@material-ui/core/Container";
@@ -58,7 +56,6 @@ const Home = () => {
         bgcolor="text.secondary"
         color="white"
         sx={{
-          
           borderRadius: 4,
           bgcolor: "text.disabled",
           m: 1,
@@ -107,7 +104,7 @@ const Home = () => {
                         boxShadow: 10,
                       }}
                       component="img"
-                      height="200"
+                      height="220"
                       image={primaryCaregiver}
                       alt="primaryCaregiver"
                     />
@@ -115,19 +112,32 @@ const Home = () => {
                       <Typography
                         align="center"
                         gutterButton
-                        variant="h5"
+                        variant="h4"
                         component="div"
                       >
-                        Parent/Guardian
+                        Parent/Guardian{" "}
+                        <Button color="primary" onClick={handleOpen}>
+                          Sign up or Login here
+                        </Button>
                       </Typography>
+
+                      <Box
+                        sx={{
+                          borderRadius: 4,
+                          boxShadow: 10,
+                          bgcolor: "text.disabled",
+                          m: 1,
+                          p: 1,
+                        }}
+                      >
+                        The Parent/Guardian Portal is used to create a shareable end
+                        user/patient profile for your loved one
+                      </Box>
                       <Typography
                         align="center"
                         variant="body-2"
                         color="text.secondary"
                       >
-                        <Button color="primary" onClick={handleOpen}>
-                          Sign up or Login here
-                        </Button>
                         <Modal
                           aria-labelledby="transition-modal-title"
                           aria-describedby="transition-modal-description"
@@ -144,7 +154,7 @@ const Home = () => {
                                 variant="h4"
                                 component="h2"
                               >
-                                This portal is for admins only.
+                                This portal is for parents/guardians only.
                               </Typography>
                               <Typography
                                 id="transition-modal-description"
@@ -163,54 +173,10 @@ const Home = () => {
                 </Card>
               </Box>
             </Grid>
+
+            {/* cargiver box */}
             <Grid item xs={12} sm={12} md={6}>
-              <Box
-                sx={{
-                  borderRadius: 4,
-                  boxShadow: 10,
-                  bgcolor: "text.disabled",
-                  m: 17,
-                  p: 3
-                }}
-              >
-              The Parent/Guardian Portal is used to create an end user/patient profile for your loved one
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* cargiver box */}
-      <Box
-        px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
-        color="white"
-        sx={{
-          borderRadius: 4,
-          boxShadow: 10,
-          bgcolor: "text.disabled",
-          m: 1,
-          p: 1,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Grid container direction="row" spacing={5}>
-            <Grid item border={2} item xs={12} sm={12} md={6}>
-              <Box justifyContent="center"
-                color="white"
-                sx={{
-                  borderRadius: 4,
-                  boxShadow: 10,
-                  bgcolor: "text.disabled",
-                  m: 17,
-                  p: 3
-                }}
-              >
-                The Carer Portal authorizes caretakers to view an end user/patient profile
-              </Box>
-            </Grid>
-
-            <Grid item border={2} item xs={12} sm={12} md={6}>
+              {" "}
               <Box>
                 <Card
                   sx={{
@@ -225,12 +191,12 @@ const Home = () => {
                   <CardActionArea>
                     <CardMedia
                       sx={{
-                        maxwidth: 345,
+                        maxwidth: 325,
                         borderRadius: 4,
                         boxShadow: 10,
                       }}
                       component="img"
-                      height="200"
+                      height="60"
                       image={babysitter}
                       alt="babysitter"
                     />
@@ -241,22 +207,56 @@ const Home = () => {
                         variant="h4"
                         component="div"
                       >
-                        Caregiver
-                      </Typography>
-                      <Typography
-                        align="center"
-                        variant="body-2"
-                        color="text.secondary"
-                      >
+                        Caregiver{" "}
                         <Button color="primary" onClick={handleOpen}>
                           Sign up or Login here
                         </Button>
                       </Typography>
+                      <Box
+                        justifyContent="center"
+                        color="black"
+                        sx={{
+                          borderRadius: 4,
+                          boxShadow: 10,
+                          bgcolor: "text.disabled",
+                          m: 1,
+                          p: 1,
+                        }}
+                      >
+                        The Carer Portal authorizes caretakers to view an end
+                        user/patient profile
+                      </Box>
+                      <Typography
+                        align="center"
+                        variant="body-2"
+                        color="text.secondary"
+                      ></Typography>
                     </CardContent>
                   </CardActionArea>
                 </Card>
               </Box>
             </Grid>
+          </Grid>
+        </Container>
+      </Box>
+
+      <Box
+        px={{ xs: 3, sm: 10 }}
+        py={{ xs: 5, sm: 10 }}
+        color="white"
+        sx={{
+          borderRadius: 4,
+          boxShadow: 10,
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1,
+        }}
+      >
+        <Container maxWidth="lg">
+          <Grid container direction="row" spacing={5}>
+            <Grid item border={2} item xs={12} sm={12} md={6}></Grid>
+
+            <Grid item border={2} item xs={12} sm={12} md={6}></Grid>
           </Grid>
         </Container>
       </Box>
@@ -284,10 +284,10 @@ const Home = () => {
                   maxheight: 301,
                   borderRadius: 4,
                   boxShadow: 10,
-                  m: 1
-                  
+                  m: 1,
                 }}
-              ><GoogleMap />
+              >
+                <GoogleMap />
                 <CardContent sx={{ justifyContent: "center" }}>
                   <Typography
                     align="center"
@@ -296,7 +296,6 @@ const Home = () => {
                     component="div"
                   >
                     {" "}
-                    
                     Nearest Emergency Locations
                   </Typography>
                 </CardContent>
@@ -313,7 +312,7 @@ const Home = () => {
                     boxShadow: 10,
                     bgcolor: "text.disabled",
                     m: 9,
-                  p: 1
+                    p: 1,
                   }}
                 >
                   <CardContent sx={{ justifyContent: "center" }}>

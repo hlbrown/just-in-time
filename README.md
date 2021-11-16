@@ -39,7 +39,7 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 
 ## Just In Time Motivation
 
- We all have experienced the panic scramble when a loved one is in need of medical attention be it via emergency response services or a guardian or caretaker and we are frantically searching for medicines, allergies, PCP information etc.
+ We all have experienced the panic scramble when a loved one is in need of medical attention be it via emergency response services or a guardian or caretaker and we are frantically searching for medicines, allergies, PCP information etc. <br/>
  👉  To stay calm and composed in such situations and supply the requested information in few clicks  was the motivation behind ***"just-in-time"***  an app that helps you organize all medical emergency information in a single page!
 
 ## User Story
