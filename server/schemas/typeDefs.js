@@ -9,25 +9,29 @@ type User {
   lastName: String
   email: String
   password: String
+  phoneNumber: String
+  image: String
   profile: [Profile]
-}  
+}
+
 type Profile {
     id: ID!
     firstName: String
     lastName: String
+    sex: String
     address: String
     image: String
     dob: Date
-    height: Float
-    weight: Float
+    height: String
+    weight: Int
     bloodType: String
     organDonor: Boolean
     pastSurgeries: Boolean
     pcpName: String
     pcpAddress: String
-    pcpPhoneNumber: Float
+    pcpPhoneNumber: Int
     emergencyContactName: String
-    emergencyContactNumber: Float
+    emergencyContactNumber: Int
     diagnosis: [Diagnosis]
     medication: [Medication]
 
@@ -36,6 +40,7 @@ type Profile {
   type Diagnosis {
     id: ID!
     name: String
+    commonlyKnowAs: String  
     description: String
     symptoms: String
   }

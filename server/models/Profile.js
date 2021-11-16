@@ -13,6 +13,10 @@ const profileSchema = new Schema({
       required: true,
       trim: true
     },
+    sex: {
+      type: String,
+      trim: true
+    },
     address: {
       type: String,
       required: true,
@@ -27,7 +31,7 @@ const profileSchema = new Schema({
       required: true
     }, 
     height: {
-      type: Number,
+      type: String,
       required: true
     }, 
     weight: { 

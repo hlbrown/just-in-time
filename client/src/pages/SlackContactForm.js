@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "slackcontactform.css"; 
+import "slackcontactform.css";
 // tailwind styling imported in index.html
 //https://www.youtube.com/watch?v=kyIKpsWNHCw , https://tailwindcss.com/docs
 
@@ -23,16 +23,16 @@ function App() {
       withCredentials: false,
       transformRequest: [
         (data, headers) => {
-          // removing default axios headers
-          delete headers.post["Content-Type"];
+          // removing default axios headers - but with this the message isnt sent hence commenting this out 
+          // delete headers.post["Content-Type"];
           return data;
         },
       ],
     });
 
-// if the message was successfully sent
+    // if the message was successfully sent
     if (res.status === 200) {
-      alert("Message Sent! Please expect a response in 48 hours");
+      alert("Message Sent! Please expect a response in 48 hours!");
 
       //clear state so text boxes clear after a successful submission
       setName("");
@@ -99,8 +99,9 @@ function App() {
             }}
           />
 
-          <button
-            className="mt-4 shadow-2xl bg-gray-500 hover:bg-gray-600 focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded"
+          <button 
+          // https://tailwindcss.com/docs/outline
+            className="mt-4 shadow-2xl bg-gray-600 hover:bg-gray-700 focus:shadow-outline focus:outline-black text-black font-bold py-2 px-4 rounded"
             onClick={(e) => submitForm(e)}
           >
             Submit
