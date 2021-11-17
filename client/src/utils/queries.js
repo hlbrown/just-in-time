@@ -1,69 +1,109 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_PRODUCTS = gql`
-  query getProducts($category: ID) {
-    products(category: $category) {
-      _id
-      name
-      description
-      price
-      quantity
+export const QUERY_PROFILE = gql`
+{
+  profile(_id: "ID!"){
+   firstName
+   lastName
+   sex
+   address
+   image
+   dob
+   height
+   weight
+   bloodType
+   organDonor
+   pastSurgeries
+   pcpName
+   pcpAddress
+   pcpPhoneNumber
+   emergencyContactName
+   emergencyContactNumber
+   diagnosis{
+     name
+     commonlyKnowAs
+     description
+     symptoms
+   }
+   medication{
+     name
+     brand
+     prescription
+     otc
+     dose
+     interactions
+    }
+  }
+}
+`;
+
+
+
+export const QUERY_ALL_PROFILES= gql`
+  {
+    profiles{
+      id
+      firstName
+      lastName
+      sex
+      address
       image
-      category {
-        _id
-      }
-    }
-  }
-`;
-
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
-    }
-  }
-`;
-
-export const QUERY_ALL_PRODUCTS = gql`
-  {
-    products {
-      _id
-      name
-      description
-      price
-      quantity
-      category {
+      dob	
+      height
+      weight	
+      bloodType
+      organDonor
+      pastSurgeries
+      pcpName
+      pcpAddress
+      pcpPhoneNumber
+      emergencyContactName
+      emergencyContactNumber
+      diagnosis{
+        id
         name
+        commonlyKnowAs
+        description
+        symptoms
+      }
+      medication{
+        id
+        name
+        brand
+        prescription
+        otc
+        dose
+        interactions
       }
     }
   }
 `;
 
-export const QUERY_CATEGORIES = gql`
+export const QUERY_All_USERS = gql`
   {
-    categories {
-      _id
-      name
+    users{
+      id
+      firstName
+      lastName
+      email
+      password
+      phoneNumber
+      image	
     }
   }
 `;
 
 export const QUERY_USER = gql`
   {
-    user {
+    user(_id:"ID!"){
       firstName
       lastName
-      orders {
-        _id
-        purchaseDate
-        products {
-          _id
-          name
-          description
-          price
-          quantity
-          image
-        }
+      email
+      password
+      phoneNumber
+      image
+      profile{
+        id
       }
     }
   }
