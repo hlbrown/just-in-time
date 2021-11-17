@@ -49,11 +49,10 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: 400,
     display: "flex",
     justifyContent: "center",
-    alignItems: "flex-end"
+  
   },
   icon: {
     margin: theme.spacing.unit * 2
@@ -89,25 +88,6 @@ const styles = theme => ({
   typography: {
     margin: theme.spacing.unit * 2,
     backgroundColor: "default"
-  },
-
-  searchRoot: {
-    padding: "2px 4px",
-    display: "flex",
-    alignItems: "center",
-    width: 400
-  },
-  searchInput: {
-    marginLeft: 8,
-    flex: 1
-  },
-  searchIconButton: {
-    padding: 10
-  },
-  searchDivider: {
-    width: 1,
-    height: 28,
-    margin: 4
   }
 });
 
@@ -157,7 +137,7 @@ class ImageUploadCard extends React.Component {
     return (
       <React.Fragment>
         <CardContent>
-          <Grid container justify="center" alignItems="center">
+          <Grid item xs={12} justify="center" alignItems="center">
             <input
               accept="image/*"
               className={classes.input}
