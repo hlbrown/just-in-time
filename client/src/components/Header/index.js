@@ -1,9 +1,9 @@
 import React from "react";
-import Auth from "utils/auth";
+
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
+
 
 import faviIconLogo from '../../assets/faviIconLogo.png';
 
@@ -19,7 +19,7 @@ export default function Header(){
           <Grid container direction="row" justify="center" alignItems="center">
             <Grid item >
               <Box textAlign="center" pt={{xs: 2, sm:5}} pb={{xs:2, sm:0}}>
-                <img src={faviIconLogo}></img>
+                <img src={faviIconLogo} alt="logo"></img>
               </Box>
             </Grid>
           </Grid>
