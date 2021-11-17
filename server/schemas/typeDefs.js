@@ -31,7 +31,7 @@ type Profile {
     pcpAddress: String
     pcpPhoneNumber: Int
     emergencyContactName: String
-    emergencyContactNumber: Int
+    emergencyContactNumebr: Int
     diagnosis: [Diagnosis]
     medication: [Medication]
 
