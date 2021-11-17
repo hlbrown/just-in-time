@@ -9,11 +9,7 @@ import GoogleMap from "components/GoogleMap";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-//https://mui.com/system/borders/ imported for card borders
-//https://mui.com/system/shadows/ imported for card shadows
-import { borders, shadows } from "@mui/system";
 
-import { Paper } from "@material-ui/core";
 
 // images
 import teenBabysitter from "assets/teenBabysitter.jpg";
