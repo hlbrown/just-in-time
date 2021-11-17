@@ -11,7 +11,7 @@ const diagnosisSchema = new Schema({
     },
     commonlyKnownAs: {
         type: String,
-        required: true,
+        required: false,
         trim: true
     },
     description: {

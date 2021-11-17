@@ -33,7 +33,7 @@ const resolvers = {
         })
         .select("-password");
     },
-    user: async (parent, { _id }) => {
+    user: async (parent, { _id, profile }) => {
       const params = {};
       if (profile) {
         params.profile = profile;
@@ -80,6 +80,10 @@ const resolvers = {
 
       return { token, user };
     },
+    createProfile: async (parent, args) => {
+      const profile = await Profile.create(args.profileInput);
+      return profile;
+    },
     updateUser: async (parent, args, context) => {
       if (context.user) {
         return await User.findByIdAndUpdate(context.user._id, args, {
@@ -106,9 +110,23 @@ const resolvers = {
 
       return { token, user };
     },
-    updateProfile: async (parent, { _id, args }) => {
-      return await Product.findByIdAndUpdate(_id, { $inc: {} }, { new: true });
+    updateProfile: async (parent, { _id, profileInput }) => {
+      return await Profile.findByIdAndUpdate(_id, { ...profileInput }, { new: true });
     },
+    addMedication: async (parent, args) => {
+      const medication = await Medication.create(args.medicationInput);
+      return medication;
+    },
+    addDiagnosis: async (parent, args) => {
+      const diagnosis = await Diagnosis.create(args.diagnosisInput);
+      return diagnosis;
+    },
+    updateDiagnosis: async (parent, { _id, diagnosisInput }) => {
+      return await Diagnosis.findByIdAndUpdate(_id, { ...diagnosisInput }, { new: true });
+    },
+    updateMedication: async (parent, { _id, medicationInput }) => {
+      return await Medication.findByIdAndUpdate(_id, { ...medicationInput }, { new: true });
+    }
   },
 };
 
