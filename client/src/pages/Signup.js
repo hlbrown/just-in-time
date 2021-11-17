@@ -85,25 +85,25 @@ export default function Signup() {
    firstName: "",
    lastName: "",
   //  birthdate: "",
-  // phoneNumber:"",
-  // email:"",
+  phoneNumber:"",
+  email:"",
   // password:"",
   // age: 0,
   // sex: "",
    image: "",
-  bloodType:"",
+  // bloodType:"",
 });
 const { 
    firstName,
    lastName, 
   //  birthdate, 
-  // phoneNumber,
-  // email,
-  // password,
+  phoneNumber,
+  email,
+  password,
   // age,
   // sex,
    image,
-  bloodtype
+  // bloodtype
 } = profile;
 
  
@@ -114,92 +114,245 @@ const {
   const [selectedDate, handleDateChange] = useState(new Date());
 
   return (
-    <div>
-      <Nav />
+    <main>
+      <Nav/>
+
       <Box
-      px={{ xs: 3, sm: 10 }}
-      py={{ xs: 5, sm: 10 }}>
-        <Grid 
-          container 
-          spacing={0} 
-          justify="center" 
-          direction="row">
-            <Grid item>
-              <Grid
-              container
-              spacing={2}
-              justify="center"
-              direction="column">
-              <Paper
-              variant="elevation"
-              elevation={2}
-              className="login-background"
-              >
-                <Grid item>
-                  <Typography
-                  component="h1"
-                  variant="h5">
-                    Sign Up
-                  </Typography>
-                </Grid>
-                <Grid
-                container
-                direction="column"
-                spacing={2}>
-                  <Grid item xs={12}>
-                    <label>Profile Image
-                     </label>
-                   <ImageUpload 
-                     cardName="Input Image"/>
-              <FormControl fullWidth className={classes.formControl}>
-                <InputLabel id="bloodtype">Bloodtype</InputLabel>
-                 <Select
-                 labelId="bloodtype"
-                 name="bloodtype"
-                 id="bloodtype"
-                 value={bloodtype}
+       px={{ xs: 3, sm: 10 }}
+        py={{ xs: 5, sm: 10 }}
+        bgcolor="text.secondary"
+        color="white"
+        sx={{
+          justifyContent: "center",
+          borderRadius: 4,
+          justify:"center",
+          bgcolor: "text.disabled",
+          m: 1,
+          p: 1,
+        }}>
+        <div
+          className="signup"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 10
+          }}>
+          <div
+            style={{ width: "80%", textAlign: "center" }}>
+            <h1 style={{ marginBottom: 10, color:"black"}}>Sign Up</h1>
+
+          </div>
+        </div>
+        <div style={{display: "flex", justifyContent:"center"}}>
+        <Box
+         px={{ xs: 3, sm: 10 }}
+        py={{ xs: 5, sm: 10 }}
+        bgcolor="text.secondary"
+        color="white"
+        maxWidth={400}
+           
+        sx={{
+          borderRadius: 4,
+          boxShadow: 10,
+          bgcolor: "white",
+          m: 1,
+          p: 1,
+          }}>
+          <Container 
+            maxWidth="lg">
+        
+        <Grid
+          container
+          spacing={2}
+          justify="center"
+          direction="row"
+        >
+            <label style={{color:"black"}}>Image Upload</label>
+                <ImageUpload cardName="Input Image" />
+                <br />
+                
+                <Grid item xs={12}>
+                  
+                <TextField
+                 id="firstName"
+                 label="First Name"
+                 variant="outlined"
+                 type="text"
+                 name="firstName"
+                 value={firstName}
                  onChange={handleChange}
-                >
-                  <MenuItem value={'A+'}>A+</MenuItem>                     
-                  <MenuItem value={'A-'}>A-</MenuItem>
-                  <MenuItem value={'B+'}>B+</MenuItem>
-                  <MenuItem value={'B-'}>B-</MenuItem>
-                  <MenuItem value={'AB+'}>AB+</MenuItem>
-                  <MenuItem value={'AB-'}>AB-</MenuItem>
-                  <MenuItem value={'O-'}>O-</MenuItem>
-                  <MenuItem value={'O+'}>O+</MenuItem>
-                </Select>
-              </FormControl>
-              <TextField
-        id="firstName"
-        label="First Name"
-        variant="outlined"
-        type="text"
-        name="firstName"
-        value={firstName}
-        onChange={handleChange}
-        fullWidth
-        autoComplete="firstName"
-      />
-         <TextField
-        id="lastName"
-        label="Last Name"
-        variant="outlined"
-        type="text"
-        name="lastName"
-        value={lastName}
-        onChange={handleChange}
-        fullWidth
-        autoComplete="lastName"
-      />
-              </Grid>
-              </Grid>
-              </Paper>
-            </Grid>
-          </Grid>
+                    fullWidth
+                    required
+                 autoComplete="firstName"
+                  />
+                  </Grid>
+                 
+                  <Grid item xs={12}>
+                  
+                   <TextField
+                 id="lastName"
+                 label="Last Name"
+                 variant="outlined"
+                 type="text"
+                 name="lastName"
+                 value={lastName}
+                 onChange={handleChange}
+                    fullWidth
+                    required
+                 autoComplete="lastName"
+               />
+                  </Grid>
+                  <br />
+                  <Grid item xs={12}>
+                    <MuiPhoneNumber
+                      name="phone"
+                      label="Phone Number"
+                      defaultCountry={"us"}
+                    />
+                  </Grid>
+               
+                  <Grid item xs={12} >
+                      <TextField
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      autoComplete="email"
+                      fullWidth
+                      variant="outlined"
+                      required
+
+                      />
+                  </Grid>
+                
+                  <Grid item xs={12} >
+                     <TextField
+                      type="password"
+                      placeholder="Password"
+                      fullWidth
+                      name="password"
+                      variant="outlined"
+                      // value={this.state.password}
+                      // onChange={(event) =>
+                      // this.setState({[event.target.name]: event.target.value,})}
+                      required
+                      />
+                </Grid>
+                <Grid item xs={12}>
+                  <Link to="/User">
+                     <Button
+                     variant="contained"
+                     color="text.secondary"
+                     type="submit"
+                     className="button-block"
+                     >
+                       Submit
+                     </Button>
+                  </Link>
+                 </Grid>
+          
         </Grid>
+        </Container>
+        </Box>
+     
+           </div>
       </Box>
-      <Box
+  
+
+    </main>
+
+    // <div>
+    //   <Nav />
+    //   <Box
+    //   px={{ xs: 3, sm: 10 }}
+    //   py={{ xs: 5, sm: 10 }}>
+    //     <Grid 
+    //       container 
+    //       spacing={0} 
+    //       justify="center" 
+    //       direction="row">
+    //         <Grid item>
+    //           <Grid
+    //           container
+    //           spacing={2}
+    //           justify="center"
+    //           direction="column">
+    //           <Paper
+    //           variant="elevation"
+    //           elevation={2}
+    //           className="login-background"
+    //           >
+    //             <Grid item>
+    //               <Typography
+    //               component="h1"
+    //               variant="h5">
+    //                 Sign Up
+    //               </Typography>
+    //             </Grid>
+    //             <Grid
+    //             container
+    //             direction="column"
+    //             spacing={2}>
+    //               <Grid item xs={12}>
+    //                 <label>Profile Image
+    //                  </label>
+    //                <ImageUpload 
+    //                  cardName="Input Image"/>
+    //           <FormControl fullWidth className={classes.formControl}>
+    //             <InputLabel id="bloodtype">Bloodtype</InputLabel>
+    //              <Select
+    //              labelId="bloodtype"
+    //              name="bloodtype"
+    //              id="bloodtype"
+    //              value={bloodtype}
+    //              onChange={handleChange}
+    //             >
+    //               <MenuItem value={'A+'}>A+</MenuItem>                     
+    //               <MenuItem value={'A-'}>A-</MenuItem>
+    //               <MenuItem value={'B+'}>B+</MenuItem>
+    //               <MenuItem value={'B-'}>B-</MenuItem>
+    //               <MenuItem value={'AB+'}>AB+</MenuItem>
+    //               <MenuItem value={'AB-'}>AB-</MenuItem>
+    //               <MenuItem value={'O-'}>O-</MenuItem>
+    //               <MenuItem value={'O+'}>O+</MenuItem>
+    //             </Select>
+    //           </FormControl>
+    //           <TextField
+    //     id="firstName"
+    //     label="First Name"
+    //     variant="outlined"
+    //     type="text"
+    //     name="firstName"
+    //     value={firstName}
+    //     onChange={handleChange}
+    //     fullWidth
+    //     autoComplete="firstName"
+    //   />
+    //      <TextField
+    //     id="lastName"
+    //     label="Last Name"
+    //     variant="outlined"
+    //     type="text"
+    //     name="lastName"
+    //     value={lastName}
+    //     onChange={handleChange}
+    //     fullWidth
+    //     autoComplete="lastName"
+    //   />
+    //           </Grid>
+    //           </Grid>
+    //           </Paper>
+    //         </Grid>
+    //       </Grid>
+    //     </Grid>
+    //   </Box>
+
+
+
+
+
+
+
+      /* <Box
       px={{ xs: 3, sm: 10 }}
       py={{ xs: 5, sm: 10 }}
       >
@@ -242,10 +395,10 @@ const {
               </Grid>
             </Grid>
         </Grid>
-      </Box>
+      </Box> */
 
 
-    </div>
+    // </div>
     //    <div>
     //        fullWidth
     //                     name="firstName"

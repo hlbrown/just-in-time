@@ -1,80 +1,75 @@
 import React from "react";
-import Auth from "utils/auth";
+// import Auth from "utils/auth";
 
+// import AccountCircle from "@mui/icons-material/AccountCircle";
+// import Switch from "@mui/material/Switch";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import FormGroup from "@mui/material/FormGroup";
+// import MenuItem from "@mui/material/MenuItem";
+// import faviIconLogo from "../../assets/faviIconLogo.png";
 
+// import Container from "@material-ui/core/Container";
+// import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+// import Link from "@material-ui/core/Link";
 
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
-import MenuItem from '@mui/material/MenuItem';
-import faviIconLogo from '../../assets/faviIconLogo.png';
+import { styled, alpha } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
 
-
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import Link from '@material-ui/core/Link';
-
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+// import Typography from "@mui/material/Typography";
+import InputBase from "@mui/material/InputBase";
+import MenuIcon from "@mui/icons-material/Menu";
+// import SearchIcon from "@mui/icons-material/Search";
 import { text } from "dom-helpers";
-import { Menu } from '@mui/material';
+import { Menu } from "@mui/material";
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}));
+// const Search = styled("div")(({ theme }) => ({
+//   position: "relative",
+//   borderRadius: theme.shape.borderRadius,
+//   backgroundColor: alpha(theme.palette.common.white, 0.15),
+//   "&:hover": {
+//     backgroundColor: alpha(theme.palette.common.white, 0.25),
+//   },
+//   marginLeft: 0,
+//   width: "100%",
+//   [theme.breakpoints.up("sm")]: {
+//     marginLeft: theme.spacing(1),
+//     width: "auto",
+//   },
+// }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
+// const SearchIconWrapper = styled("div")(({ theme }) => ({
+//   padding: theme.spacing(0, 2),
+//   height: "100%",
+//   position: "absolute",
+//   pointerEvents: "none",
+//   display: "flex",
+//   alignItems: "center",
+//   justifyContent: "center",
+// }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//   color: "inherit",
+//   "& .MuiInputBase-input": {
+//     padding: theme.spacing(1, 1, 1, 0),
+//     // vertical padding + font size from searchIcon
+//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//     transition: theme.transitions.create("width"),
+//     width: "100%",
+//     [theme.breakpoints.up("sm")]: {
+//       width: "12ch",
+//       "&:focus": {
+//         width: "20ch",
+//       },
+//     },
+//   },
+// }));
 
-const style = {
-
-    background: '#2E3B55'
-};
-
+// const style = {
+//   background: "#2E3B55",
+// };
 
 //     var classes = {
 //   logo: {
@@ -84,16 +79,15 @@ const style = {
 //     maxHeight: '70%',
 //   },
 //   logoHorizontallyCenter: {
-//     position: 'absolute', 
-//     left: '50%', 
+//     position: 'absolute',
+//     left: '50%',
 //     top: '50%',
 //     transform: 'translate(-50%, -50%)'
 //   }
 // };
 
-
 export default function Nav() {
- 
+  
   // const [auth, setAuth] = React.useState(true);
   // const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -120,7 +114,7 @@ export default function Nav() {
   //           </a>
   //         </li>
   //       </ul>
-        
+
   //     );
   //   } else {
   //     return (
@@ -129,29 +123,32 @@ export default function Nav() {
   //       //     <a href="#" className="navbar-brand">
   //       //       <img className="responsive-image" src={faviIconLogo}></img></a>
   //       //   </div>
-          
+
   //       //  </div>
   //     );
   //   }
   // }
- 
+
   return (
     <nav>
-    
-       <Box sx={{ flexGrow: 1}} >
-      <AppBar color="inherit" position="static">
-        <Toolbar >
-         
-          <IconButton
-            size="large"
-            edge="end"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          {/* <Typography
+      <Box bgcolor="text.secondary" sx={{ flexGrow: 1 }}>
+        <AppBar color="inherit" position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              // image width and height needs to be set to bypass this error https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=lr#images-without-dimensions
+              // width="500"
+              // height="500"
+              edge="end"
+              color="inherit"
+              aria-label="open drawer"
+              // fixed accessibility error : Missing alternative text Image alternative text is not present as per https://wave.webaim.org/report#/https://project-3-just-in-time.herokuapp.com/
+              alt="logo"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            {/* <Typography
             variant="h6"
             noWrap
             component="div"
@@ -159,7 +156,7 @@ export default function Nav() {
           >
            
           </Typography> */}
-          {/* <Search>
+            {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -168,14 +165,12 @@ export default function Nav() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search> */}
-           {/* <img src={faviIconLogo}></img> */}
-        </Toolbar>
-      </AppBar>
-    </Box>
-      </nav>
-      
+            {/* <img src={faviIconLogo}></img> */}
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </nav>
 
-   
     // // <nav className="nav-extended blue-grey darken-4">
     // //   {showNavigation()}
     // // </nav>
@@ -194,9 +189,9 @@ export default function Nav() {
     //   </FormGroup> */}
     //   <AppBar position="static" sx={{ backgroundColor:'navy'}}>
     //     <Toolbar>
-          
+
     //       <img src={faviIconLogo} alt="just in time logo" />
-       
+
     //       {/* <IconButton
     //         size="large"
     //         edge="start"
@@ -244,8 +239,5 @@ export default function Nav() {
     //     </Toolbar>
     //   </AppBar>
     // </Box>
-    
-        
   );
 }
-
