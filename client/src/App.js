@@ -11,14 +11,14 @@ import { Provider } from 'react-redux';
 import store from 'utils/store';
 
 import Home from 'pages/Home';
+import User from 'pages/User';
 
 import NoMatch from 'pages/NoMatch';
 import Login from 'pages/Login';
 import Signup from 'pages/Signup';
-
+import SlackContactForm from 'pages/SlackContactForm';
 
 import Header from 'components/Header';
-
 import Footer from 'components/Footer';
 
 
@@ -52,7 +52,6 @@ const client = new ApolloClient({
 // }
 //})
 
-
 function App() {
  
   return (
@@ -65,6 +64,8 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
+              <Route exact path="/user" component={User}/>
+              <Route exact path="/contact" component={SlackContactForm} />
               <Route component={NoMatch} />
             </Switch>
             <Footer />

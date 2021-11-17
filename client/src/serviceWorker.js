@@ -34,6 +34,7 @@ export function register(config) {
       return;
     }
 
+// may need to add {passive: true} after () to bypass this improve scrolling error : https://web.dev/uses-passive-event-listeners/?utm_source=lighthouse&utm_medium=lr
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 

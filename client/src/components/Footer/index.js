@@ -1,4 +1,4 @@
- import React from "react";
+import React from "react";
 import Auth from "utils/auth";
 
 
@@ -6,6 +6,8 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
+// import for card section
+import Card from "@mui/material/Card";
 
 
 export default function Footer() {    
@@ -22,7 +24,7 @@ export default function Footer() {
           <Grid item xs={12} sm={4}>
             <Box borderBottom={1}>Contributors</Box>
             <Box>
-              <Link href='https://github.com/bvanburenwx' target="_blank" color='inherit'>Cody Van Buren</Link>
+              <Link href='https://github.com/bvanburenwx' target="_blank" color='inherit'> Brandon Cody Van Buren  </Link>
             </Box>
             <Box>
               <Link href='https://github.com/jameleggleston' target="_blank"  color='inherit'>Jamel Eggleston</Link>
@@ -51,19 +53,19 @@ export default function Footer() {
               <Grid item xs={12} sm={4}>
             <Box borderBottom={1}>Resources</Box>
             <Box>
-              <Link href='/' color='inherit'>Contact</Link>
+              <Link href='/contact' color='inherit'>Contact Form</Link>
             </Box>
             <Box>
-              <Link href='/' color='inherit'>Contact</Link>
+              <Link href='https://github.com/hlbrown/just-in-time/issues' color='inherit'>Feature Requests</Link>
             </Box>
             <Box>
-              <Link href='/' color='inherit'>Contact</Link>
+              <Link href='https://github.com/hlbrown/just-in-time/issues' color='inherit'>Report a Bug</Link>
               </Box>
               {/* 3rd column */}
           </Grid>
           </Grid>
           <Box textAlign="center" pt={{xs: 5, sm:10}} pb={{xs:5, sm:0}}>
-             Just In time &reg;{new Date().getFullYear()}
+             Just In Time &reg; {new Date().getFullYear()}
           </Box>
       </Container>
     </Box>
@@ -72,4 +74,3 @@ export default function Footer() {
   )
 
 }
-
