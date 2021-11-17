@@ -58,7 +58,7 @@ const profileSchema = new Schema({
       required: true
     },
     pcpPhoneNumber:  {
-      type: Number,
+      type: String,
       required: true
     },
     emergencyContactName: {
@@ -66,7 +66,7 @@ const profileSchema = new Schema({
       required: true
     }, 
     emergencyContactNumber: {
-      type: Number,
+      type: String,
       required: true
     },
     diagnosis: [{

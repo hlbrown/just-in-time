@@ -29,14 +29,33 @@ type Profile {
     pastSurgeries: Boolean
     pcpName: String
     pcpAddress: String
-    pcpPhoneNumber: Int
+    pcpPhoneNumber: String
     emergencyContactName: String
-    emergencyContactNumebr: Int
+    emergencyContactNumber: String
     diagnosis: [Diagnosis]
     medication: [Medication]
 
   }
-
+  
+  input ProfileInput {
+    firstName: String
+    lastName: String
+    sex: String
+    address: String
+    image: String
+    dob: Date
+    height: String
+    weight: Int
+    bloodType: String
+    organDonor: Boolean
+    pastSurgeries: Boolean
+    pcpName: String
+    pcpAddress: String
+    pcpPhoneNumber: String
+    emergencyContactName: String
+    emergencyContactNumber: String
+  }
+  
   type Diagnosis {
     id: ID!
     name: String
@@ -45,8 +64,24 @@ type Profile {
     symptoms: String
   }
 
+  input DiagnosisInput {
+    name: String
+    commonlyKnowAs: String  
+    description: String
+    symptoms: String
+  }
+
   type Medication {
     id: ID!
+    name: String
+    brand: String
+    prescription: Boolean
+    otc: Boolean
+    dose: String
+    interactions: String
+  }
+
+  input MedicationInput {
     name: String
     brand: String
     prescription: Boolean
@@ -72,9 +107,14 @@ type Profile {
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!, phoneNumber: Float!, dob: Float!): Auth
+    createProfile(profileInput: ProfileInput!): Profile
     updateUser(firstName: String, lastName: String, email: String, password: String, phoneNumber: Float, dob: Float): User
-    updateProfile(_id: ID! firstName: String, lastName: String, address: String, image: String, dob: Date, height: Float, weight: Float, bloodType: String, organDonor: Boolean, pastSurgeries: Boolean, pcpName: String, pcpAddress: String, pcpPhoneNumber: Float, emergencyContactName: String, emergencyContactNumber: Float): Profile
+    updateProfile(_id: ID! profileInput: ProfileInput): Profile
     login(email: String!, password: String!): Auth
+    addMedication(medicationInput: MedicationInput!): Medication
+    addDiagnosis(diagnosisInput: DiagnosisInput!): Diagnosis
+    updateMedication(_id: ID! medicationInput: MedicationInput): Medication
+    updateDiagnosis(_id: ID! diagnosisInput: DiagnosisInput): Diagnosis
   }
 
 `;
