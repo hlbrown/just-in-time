@@ -124,6 +124,12 @@ function Login(props) {
                         />
                       </Grid>
                       <Grid item>
+                        {error ? (
+                          <div>
+                          <p className="error-text">The provided credentials are incorrect</p>
+                          </div>
+                        ) : null}
+                      
                         <Button
                           variant="contained"
                           color="primary"
