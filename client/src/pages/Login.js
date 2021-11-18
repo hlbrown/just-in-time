@@ -31,7 +31,7 @@ function Login(props) {
   const [login, { error }] = useMutation(LOGIN);
 
   const handleFormSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     try {
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
@@ -92,7 +92,7 @@ function Login(props) {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <form onSubmit={handleFormSubmit()}>
+                  <form onSubmit={handleFormSubmit}>
                     <Grid container direction="column" spacing={2}>
                       <Grid item xs={12}>
                         <TextField
@@ -101,6 +101,7 @@ function Login(props) {
                           fullWidth
                           name="email"
                           variant="outlined"
+                          onChange={handleChange}
                           // value={this.state.email}
                           // onChange={(event) =>
                           // this.setState({[event.target.name]: event.target.value,})}
@@ -115,6 +116,7 @@ function Login(props) {
                           fullWidth
                           name="password"
                           variant="outlined"
+                          onChange={handleChange}
                           // value={this.state.password}
                           // onChange={(event) =>
                           // this.setState({[event.target.name]: event.target.value,})}
