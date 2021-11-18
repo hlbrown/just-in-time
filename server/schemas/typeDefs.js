@@ -106,9 +106,9 @@ type Profile {
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!, phoneNumber: Float!, dob: Float!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!, phoneNumber: String): Auth
     createProfile(profileInput: ProfileInput!): Profile
-    updateUser(firstName: String, lastName: String, email: String, password: String, phoneNumber: Float, dob: Float): User
+    updateUser(firstName: String, lastName: String, email: String, password: String, phoneNumber: Float): User
     updateProfile(_id: ID! profileInput: ProfileInput): Profile
     login(email: String!, password: String!): Auth
     addMedication(medicationInput: MedicationInput!): Medication

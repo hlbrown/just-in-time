@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Nav from 'components/Nav';
 import { useMutation } from '@apollo/client';
 import Auth from 'utils/auth';
-import { ADD_USER } from 'utils/mutations';
+import { CREATE_PROFILE } from 'utils/mutations';
 
 import {
 Button,
@@ -41,33 +41,49 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function Signup() {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
-  const [dob, setDob] = React.useState(new Date());
-  const [sex, setSex] = React.useState('')
-  const [bloodtype, setBloodType] = React.useState('');
-  const [organDonor, setOrganDonor] = React.useState('');
-  const [pastSurgeries, setPastSurgeries] = React.useState('');
+export default function CreateProfile() {
+  const [formState, setFormState] = useState({
+     firstName: '',
+     lastName: '', 
+     sex: '',
+     address: '',
+     image: '',
+     dob: '',
+     height: '',
+     weight: '',
+     bloodType: '',
+     organDonor: '',
+     pastSurgeries: '',
+     pcpName: '',
+     pcpAddress: '',
+     pcpPhoneNumber: '',
+     emergencyContactName: '',
+     emergencyContactNumber: ''
+  });
+  const [createProfile] = useMutation(CREATE_PROFILE);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addUser({
+    const mutationResponse = await createProfile({
       variables: {
-        email: formState.email,
-        password: formState.password,
         firstName: formState.firstName,
         lastName: formState.lastName,
-        phoneNumber: formState.phoneNumber,
-        photo: formState.photo,
-        // dob: formState.dob,
-        // caregiver: formState.caregiver,
-        // admin: formState.admin
-        
+        sex: formState.sex,
+        address: formState.address,
+        image: formState.image,
+        dob: formState.dob,
+        height: formState.height,
+        weight: formState.weight,
+        bloodType: formState.bloodType,
+        organDonor: formState.organDonor,
+        pastSurgeries: formState.pastSurgeries,
+        pcpName: formState.pcpName,
+        pcpAddress: formState.pcpAddress,
+        pcpPhoneNumber: formState.pcpPhoneNumber,
+        emergencyContactName: formState.emergencyContactName,
+        emergencyContactNumber: formState.emergencyContactNumber
       }
     });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
   };
     const handleChange = (event) => {
     const { name, value } = event.target;
@@ -75,10 +91,6 @@ export default function Signup() {
       ...formState,
       [name]: value,
     });
-      setSex(event.target.value);
-      setBloodType(event.target.value);
-      setOrganDonor(event.target.value);
-      setPastSurgeries(event.target.value)
   };
 
  
@@ -179,6 +191,7 @@ export default function Signup() {
                       fullWidth
                       name="address"
                       variant="outlined"
+                      onChange={handleChange}
                       // value={this.state.password}
                       // onChange={(event) =>
                       // this.setState({[event.target.name]: event.target.value,})}
@@ -258,13 +271,12 @@ export default function Signup() {
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                       <InputLabel>Date Of Birth</InputLabel>
                       <DatePicker
-                        openTo="year"
-                        views={['year', 'month', 'day']}                        
-                        value={dob}
-                        onChange={(newValue) => {
-                          setDob(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} helperText={null} />}
+                        // openTo="year"
+                        // views={['year', 'month', 'day']}                        
+                        // // value={dob}
+                        // // onChange={(newValue) => {
+                        // //   setDob(newValue);
+                        // renderInput={(params) => <TextField {...params} helperText={null} />}
                       />
                      </LocalizationProvider>
                   </Grid>
@@ -275,6 +287,7 @@ export default function Signup() {
                       fullWidth
                       name="pcpName"
                       variant="outlined"
+                      onChange={handleChange}
                       // value={this.state.password}
                       // onChange={(event) =>
                       // this.setState({[event.target.name]: event.target.value,})}
@@ -296,6 +309,7 @@ export default function Signup() {
                       fullWidth
                       name="pcpAddress"
                       variant="outlined"
+                      onChange={handleChange}
                       // value={this.state.password}
                       // onChange={(event) =>
                       // this.setState({[event.target.name]: event.target.value,})}
@@ -309,6 +323,7 @@ export default function Signup() {
                       fullWidth
                       name="height"
                       variant="outlined"
+                      onChange={handleChange}
                       // value={this.state.password}
                       // onChange={(event) =>
                       // this.setState({[event.target.name]: event.target.value,})}
@@ -322,6 +337,7 @@ export default function Signup() {
                       fullWidth
                       name="weight"
                       variant="outlined"
+                      onChange={handleChange}
                       // value={this.state.password}
                       // onChange={(event) =>
                       // this.setState({[event.target.name]: event.target.value,})}
@@ -335,6 +351,7 @@ export default function Signup() {
                       fullWidth
                       name="emergencyContactName"
                       variant="outlined"
+                      onChange={handleChange}
                       // value={this.state.password}
                       // onChange={(event) =>
                       // this.setState({[event.target.name]: event.target.value,})}
@@ -350,7 +367,6 @@ export default function Signup() {
                   </Grid>
                   
                 <Grid item xs={12}>
-                  <Link to="/User">
                      <Button
                     variant="contained"
                     
@@ -360,7 +376,6 @@ export default function Signup() {
                      >
                        Submit
                      </Button>
-                     </Link>
                  </Grid>
               </form>
           
