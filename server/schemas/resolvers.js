@@ -22,6 +22,7 @@ const resolvers = {
   }),
   Query: {
     users: async (parent, { profile }) => {
+      
       const params = {};
       if (profile) {
         params.profile = profile;
@@ -33,17 +34,15 @@ const resolvers = {
         })
         .select("-password");
     },
-    user: async (parent, { _id, profile }) => {
-      const params = {};
-      if (profile) {
-        params.profile = profile;
-      }
-      return await User.findById(_id)
-        .populate({
-          path: "profile",
-          populate: [{ path: "medication" }, { path: "diagnosis" }],
-        })
-        .select("-password");
+    user: async (parent, args, context) => {
+        if(context.user) {
+            const user = await User.findById(context.user._id).select('-__v -password').populate({
+              path: "profile",
+              populate: [{ path: "medication" }, { path: "diagnosis" }],
+            });
+
+            return user;
+        }
     },
 
     profiles: async (parent, { diagnosis, medication }) => {

@@ -30,19 +30,19 @@ const userSchema = new Schema({
     trim: true,
     maxlength: 10
   },
-  userPhoto: {
+  image: {
     type: String,
     required: false,
   },
   // Adding two different portals for future development
-  admin: {
-    type: Boolean,
-    required: false,
-  },
-  careGiver: {
-    type: Boolean,
-    required: false,
-  },
+  // admin: {
+  //   type: Boolean,
+  //   required: false,
+  // },
+  // careGiver: {
+  //   type: Boolean,
+  //   required: false,
+  // },
   profile: [{
     type: Schema.Types.ObjectId,
     ref: 'Profile',
