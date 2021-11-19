@@ -8,7 +8,7 @@ export const QUERY_PROFILE = gql`
    sex
    address
    image
-   dob
+   age
    height
    weight
    bloodType
@@ -48,7 +48,7 @@ export const QUERY_ALL_PROFILES= gql`
       sex
       address
       image
-      dob	
+      age
       height
       weight	
       bloodType
@@ -95,7 +95,7 @@ export const QUERY_All_USERS = gql`
 
 export const QUERY_USER = gql`
   {
-    user(_id:"ID!"){
+    user{
       firstName
       lastName
       email

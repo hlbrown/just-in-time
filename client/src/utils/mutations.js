@@ -42,7 +42,7 @@ export const CREATE_PROFILE = gql`
     sex
     address
     image
-    dob
+    age
     height
     weight
     bloodType
@@ -53,8 +53,6 @@ export const CREATE_PROFILE = gql`
     pcpPhoneNumber
     emergencyContactName
     emergencyContactNumber
-    diagnosis{name}
-    medication{name}
   }
 }
 `;
@@ -67,7 +65,7 @@ mutation updateProfile($_id: ID!, $profileInput: ProfileInput!){
     sex
     address
     image
-    dob
+    age
     height
     weight
     bloodType
