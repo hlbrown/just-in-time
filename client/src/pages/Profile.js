@@ -48,12 +48,12 @@ export default function CreateProfile() {
      sex: '',
      address: '',
      image: '',
-     dob: '',
+     age: '',
      height: '',
      weight: '',
      bloodType: '',
-     organDonor: '',
-     pastSurgeries: '',
+     organDonor: 'false',
+     pastSurgeries: 'false',
      pcpName: '',
      pcpAddress: '',
      pcpPhoneNumber: '',
@@ -71,7 +71,7 @@ export default function CreateProfile() {
         sex: formState.sex,
         address: formState.address,
         image: formState.image,
-        dob: formState.dob,
+        age: formState.age,
         height: formState.height,
         weight: formState.weight,
         bloodType: formState.bloodType,
@@ -84,6 +84,8 @@ export default function CreateProfile() {
         emergencyContactNumber: formState.emergencyContactNumber
       }
     });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
     const handleChange = (event) => {
     const { name, value } = event.target;
@@ -200,14 +202,6 @@ export default function CreateProfile() {
                       />
                   </Grid>
                   <br />
-                  <Grid item xs={12}>
-                    <MuiPhoneNumber
-                      name="phone"
-                      label="Phone Number"
-                      defaultCountry={"us"}
-                    />
-                  </Grid>
-               
                   <Grid item xs={12} >
                     <InputLabel id="sex">Sex</InputLabel>
                     <Select
@@ -269,17 +263,18 @@ export default function CreateProfile() {
                     </Select>
                   </Grid>
                   <Grid item xs={12}>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <InputLabel>Date Of Birth</InputLabel>
-                      <DatePicker
-                        // openTo="year"
-                        // views={['year', 'month', 'day']}                        
-                        // // value={dob}
-                        // // onChange={(newValue) => {
-                        // //   setDob(newValue);
-                        // renderInput={(params) => <TextField {...params} helperText={null} />}
+                  <InputLabel>Age</InputLabel>
+                     <TextField
+                      type="age"
+                      fullWidth
+                      name="age"
+                      variant="outlined"
+                      onChange={handleChange}
+                      // value={this.state.password}
+                      // onChange={(event) =>
+                      // this.setState({[event.target.name]: event.target.value,})}
+                      required
                       />
-                     </LocalizationProvider>
                   </Grid>
                    <Grid item xs={12} >
                     <InputLabel>PCP Name</InputLabel>
@@ -300,6 +295,7 @@ export default function CreateProfile() {
                     <MuiPhoneNumber
                       name="pcpPhoneNumber"
                       defaultCountry={"us"}
+                      // onChange={handleChange}
                     />
                   </Grid>
                 
@@ -364,6 +360,7 @@ export default function CreateProfile() {
                     <MuiPhoneNumber
                       name="emergencyContactNumber"
                       defaultCountry={"us"}
+                      // onChange={handleChange}
                     />
                   </Grid>
                   

@@ -1,10 +1,11 @@
 const { gql } = require('apollo-server-express');
 
+
 const typeDefs = gql`
 scalar Date
 
 type User {
-  id: ID!
+  id: ID
   firstName: String
   lastName: String
   email: String
@@ -15,13 +16,13 @@ type User {
 }
 
 type Profile {
-    id: ID!
+    id: ID
     firstName: String
     lastName: String
     sex: String
     address: String
     image: String
-    dob: Date
+    age: String
     height: String
     weight: Int
     bloodType: String
@@ -43,7 +44,7 @@ type Profile {
     sex: String
     address: String
     image: String
-    dob: Date
+    age: String
     height: String
     weight: Int
     bloodType: String
@@ -57,7 +58,7 @@ type Profile {
   }
   
   type Diagnosis {
-    id: ID!
+    id: ID
     name: String
     commonlyKnowAs: String  
     description: String
@@ -72,7 +73,7 @@ type Profile {
   }
 
   type Medication {
-    id: ID!
+    id: ID
     name: String
     brand: String
     prescription: Boolean
@@ -98,7 +99,7 @@ type Profile {
 
   type Query {
     users(profiles: ID): [User]
-    user(_id: ID!): User
+    user: User
     profiles(diagnosis: ID, medication: ID): [Profile]
     profile(_id: ID!): Profile
     diagnosis: [Diagnosis]

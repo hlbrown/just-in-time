@@ -24,10 +24,10 @@ const profileSchema = new Schema({
     }, 
     image: {
       type: String,
-      required: true
+      required: false
     }, 
-    dob: {
-      type: Date,
+    age: {
+      type: String,
       required: true
     }, 
     height: {
@@ -59,7 +59,7 @@ const profileSchema = new Schema({
     },
     pcpPhoneNumber:  {
       type: String,
-      required: true
+      required: false
     },
     emergencyContactName: {
       type: String,
@@ -67,7 +67,7 @@ const profileSchema = new Schema({
     }, 
     emergencyContactNumber: {
       type: String,
-      required: true
+      required: false
     },
     diagnosis: [{
       type: Schema.Types.ObjectId,
