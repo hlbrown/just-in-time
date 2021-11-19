@@ -27,9 +27,6 @@ import ImageUpload from 'components/ImageUpload'
 import MuiPhoneNumber from "material-ui-phone-number";
 
 
-
-
-
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
