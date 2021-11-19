@@ -112,7 +112,8 @@ User Page:
  <img src="./client/src/assets/AdminUserPage.png"><br/>
 Profile Page:
  <img src="./client/src/assets/ProfilePage.png"><br/>
-
+Contact Form Page:
+ <img src="./client/src/assets/ContactPage.png"><br/>
 ## Presentation Requirements
 
 ```
@@ -149,7 +150,7 @@ This project is graded based on the following criteria:
 ### Deployment: 20%
 
 ```
-✔️Application deployed at live URL on Heroku and loads with no errors.
+✔️ Application deployed at live URL on Heroku and loads with no errors.
 ✔️ Application GitHub URL submitted.
 ```
 
@@ -191,7 +192,7 @@ This project is graded based on the following criteria:
 Fulfilling all three of the following requirements to turn your app into a PWA will add 10 points to your grade. Note that the highest grade you can achieve is still a 100:
 
 ❌ Uses a web manifest
-❌ Uses a service worker for offline functionality
+✔️ Uses a service worker for offline functionality
 ❌ Is installable
 ```
 
