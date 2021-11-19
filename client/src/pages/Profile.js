@@ -131,7 +131,7 @@ export default function CreateProfile() {
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
         color="white"
-        maxWidth={400}
+        maxWidth={500}
            
         sx={{
           borderRadius: 4,
