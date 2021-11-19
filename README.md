@@ -102,6 +102,17 @@ Place holder for screenshots form the app
 
 ## AccessibilityScores (LightHouseReports)
 
+Landing Page:
+ <img src="./client/src/assets/LandingPage.png"><br/>
+Login Page:
+ <img src="./client/src/assets/LoginPage.png"><br/>
+Sign Up Page:
+ <img src="./client/src/assets/SignupPage.png"><br/>
+User Page:
+ <img src="./client/src/assets/AdminUserPage.png"><br/>
+Profile Page:
+ <img src="./client/src/assets/ProfilePage.png"><br/>
+
 ## Presentation Requirements
 
 ```

@@ -1,7 +1,5 @@
 import React from "react";
 import Auth from "utils/auth";
-
-
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -21,7 +19,7 @@ export default function Footer() {
       <Container maxWidth='lg'>
           <Grid container spacing={5}>
             {/* 1st column start */}
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} sm={6}>
             <Box borderBottom={1}>Contributors</Box>
             <Box>
               <Link href='https://github.com/bvanburenwx' target="_blank" color='inherit'> Brandon Cody Van Buren  </Link>
@@ -36,7 +34,7 @@ export default function Footer() {
               <Link href='https://github.com/DionneNoellaBarretto' target="_blank"  color='inherit'>Dionne Noella Barretto</Link>
             </Box>
             </Grid>
-            {/* 2nd column start */}
+            {/* 2nd column start
               <Grid item xs={12} sm={4}>
             <Box borderBottom={1}>About</Box>
             <Box>
@@ -48,9 +46,9 @@ export default function Footer() {
             <Box>
               <Link href='/' color='inherit'>Contact</Link>
             </Box>
-            </Grid>
+            </Grid> */}
             {/* 3rd column start */}
-              <Grid item xs={12} sm={4}>
+              <Grid item xs={12} sm={6}>
             <Box borderBottom={1}>Resources</Box>
             <Box>
               <Link href='/contact' color='inherit'>Contact Form</Link>

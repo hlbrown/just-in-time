@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Testimonial from "components/Testimonial";
@@ -10,21 +9,25 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
-
 // images
 import teenBabysitter from "assets/teenBabysitter.jpg";
 import primaryCaregiver from "assets/primaryCaregiver.jpg";
 import babysitter from "assets/babysitter.jpg";
+import caregiver from "assets/caregiver.png";
+import parentOrguradian from "assets/parentOrguradian.png";
+
 // import for card section
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+
 // modal imports
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Backdrop from "@mui/material/Backdrop";
+import { makeStyles } from "@material-ui/core/styles";
 
 // styles for the modal
 const style = {
@@ -43,6 +46,19 @@ const Home = () => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  // button style
+
+const useStyles = makeStyles({
+  button: {
+    backgroundColor: "#3c52b2",
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#fff",
+      color: "#3c52b2",
+    },
+  },
+});
+ const classes = useStyles();
   return (
     <main>
       {/* Mission Statement */}
@@ -101,18 +117,22 @@ const Home = () => {
                       }}
                       component="img"
                       height="220"
-                      image={primaryCaregiver}
+                      image={parentOrguradian}
                       alt="primaryCaregiver"
                     />
                     <CardContent sx={{ justifyContent: "center" }}>
                       <Typography
                         align="center"
-                        gutterButton
+                        gutterbutton
                         variant="h4"
                         component="div"
                       >
-                        Parent/Guardian{" "}
-                        <Button color="primary" onClick={handleOpen}>
+                        Admin
+                        <Button
+                          color="primary"
+                          onClick={handleOpen}
+                          className={classes.button}
+                        >
                           Sign up or Login here
                         </Button>
                       </Typography>
@@ -126,8 +146,8 @@ const Home = () => {
                           p: 1,
                         }}
                       >
-                        The Parent/Guardian Portal is used to create a shareable end
-                        user/patient profile for your loved one
+                        The Parent/Guardian Portal is used to create a shareable
+                        end user/patient profile for your loved one
                       </Box>
                       <Typography
                         align="center"
@@ -193,13 +213,13 @@ const Home = () => {
                       }}
                       component="img"
                       height="60"
-                      image={babysitter}
-                      alt="babysitter"
+                      image={caregiver}
+                      alt="caregiver"
                     />
                     <CardContent sx={{ justifyContent: "center" }}>
                       <Typography
                         align="center"
-                        gutterButton
+                        gutterbutton
                         variant="h4"
                         component="div"
                       >
@@ -235,7 +255,7 @@ const Home = () => {
           </Grid>
         </Container>
       </Box>
-
+      {/* 
       <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
@@ -258,7 +278,7 @@ const Home = () => {
       </Box>
 
       {/* emergency information box */}
-      <Box
+      {/*     <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
@@ -290,7 +310,7 @@ const Home = () => {
                 <CardContent sx={{ justifyContent: "center" }}>
                   <Typography
                     align="center"
-                    gutterButton
+                    gutterbutton
                     variant="h5"
                     component="div"
                   >
@@ -318,7 +338,7 @@ const Home = () => {
                     <Typography
                       color="white"
                       align="center"
-                      gutterButton
+                      gutterbutton
                       variant="h4"
                       component="div"
                     >
@@ -346,7 +366,8 @@ const Home = () => {
             </Grid>
           </Grid>
         </Container>
-      </Box>
+      </Box> 
+      */}
 
       {/* Testimonial carousel */}
       <Box

@@ -16,7 +16,7 @@ export default function Header(){
         py={{ xs: 5, sm: 5 }}
         bgcolor="text.primary" color="white">
                 <Container maxWidth='lg'>
-          <Grid container direction="row" justify="center" alignItems="center">
+          <Grid container direction="row" justifyContent="center" alignItems="center">
             <Grid item >
               <Box textAlign="center" pt={{xs: 2, sm:5}} pb={{xs:2, sm:0}}>
                 <img src={faviIconLogo} alt="logo"></img>

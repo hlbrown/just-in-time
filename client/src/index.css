@@ -9,14 +9,19 @@
   --spacing-two: calc(1rem);
 }
 
+/* https://web.dev/font-display/  */
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
-  
-}
 
 body {
   display: flex;
@@ -221,9 +226,7 @@ input:focus {
 .babysitter{
   max-height:2em;
 }
-.faviIconLogo{
-  
-}
+
 
 @media screen and (max-width: 768px) {
   .card {
