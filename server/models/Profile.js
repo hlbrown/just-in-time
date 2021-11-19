@@ -5,12 +5,12 @@ const { Schema } = mongoose;
 const profileSchema = new Schema({
     firstName: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     }, 
     lastName: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     },
     sex: {
@@ -19,7 +19,7 @@ const profileSchema = new Schema({
     },
     address: {
       type: String,
-      required: true,
+      required: false,
       trim: true
     }, 
     image: {
@@ -28,34 +28,34 @@ const profileSchema = new Schema({
     }, 
     age: {
       type: String,
-      required: true
+      required: false
     }, 
     height: {
       type: String,
-      required: true
+      required: false
     }, 
     weight: { 
       type: Number,
-      required: true
+      required: false
     }, 
     bloodType: {
       type: String,
-      required: true
+      required: false
     },
     organDonor: {
       type: Boolean
     },
     pastSurgeries: {
       type: Boolean,
-      required: true
+      required: false
     },
     pcpName: {
       type: String,
-      required: true
+      required: false
     },
     pcpAddress: {
       type: String,
-      required: true
+      required: false
     },
     pcpPhoneNumber:  {
       type: String,
@@ -63,7 +63,7 @@ const profileSchema = new Schema({
     },
     emergencyContactName: {
       type: String,
-      required: true
+      required: false
     }, 
     emergencyContactNumber: {
       type: String,

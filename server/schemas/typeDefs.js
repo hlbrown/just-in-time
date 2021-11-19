@@ -5,7 +5,7 @@ const typeDefs = gql`
 scalar Date
 
 type User {
-  id: ID
+  id: ID!
   firstName: String
   lastName: String
   email: String
@@ -16,7 +16,7 @@ type User {
 }
 
 type Profile {
-    id: ID
+    id: ID!
     firstName: String
     lastName: String
     sex: String
@@ -52,13 +52,11 @@ type Profile {
     pastSurgeries: Boolean
     pcpName: String
     pcpAddress: String
-    pcpPhoneNumber: String
     emergencyContactName: String
-    emergencyContactNumber: String
   }
   
   type Diagnosis {
-    id: ID
+    id: ID!
     name: String
     commonlyKnowAs: String  
     description: String
@@ -73,7 +71,7 @@ type Profile {
   }
 
   type Medication {
-    id: ID
+    id: ID!
     name: String
     brand: String
     prescription: Boolean
@@ -108,7 +106,7 @@ type Profile {
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!, phoneNumber: String): Auth
-    createProfile(profileInput: ProfileInput!): Profile
+    createProfile(profileInput: ProfileInput): Profile
     updateUser(firstName: String, lastName: String, email: String, password: String, phoneNumber: Float): User
     updateProfile(_id: ID! profileInput: ProfileInput): Profile
     login(email: String!, password: String!): Auth

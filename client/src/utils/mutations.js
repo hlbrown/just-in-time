@@ -35,7 +35,7 @@ export const ADD_USER = gql`
 `;
 
 export const CREATE_PROFILE = gql`
-  mutation createProfile($profileInput: ProfileInput!){
+  mutation createProfile($profileInput: ProfileInput){
 	createProfile (profileInput: $profileInput){
     firstName
     lastName
@@ -50,9 +50,7 @@ export const CREATE_PROFILE = gql`
     pastSurgeries
     pcpName
     pcpAddress
-    pcpPhoneNumber
     emergencyContactName
-    emergencyContactNumber
   }
 }
 `;
