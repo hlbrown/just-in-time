@@ -52,14 +52,14 @@ export default function Signup() {
     });
   };
 
-  const containerStyle = { padding: 20, width: 280, margin: "20px auto" };
-  const btnstyle = { margin: "8px 0" };
+     const containerStyle={padding :20 ,width:280, margin:"20px auto"}
+ const btnstyle={margin:'8px 0'}
 
   return (
     <main>
       <Nav />
 
-      <Box
+     <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
@@ -72,8 +72,8 @@ export default function Signup() {
           m: 1,
           p: 1,
         }}
-      >
-        <div style={{ display: "flex", justifyContent: "center" }}>
+      > 
+       <div style={{ display: "flex", justifyContent: "center" }}>
           <Box
             px={{ xs: 3, sm: 10 }}
             py={{ xs: 5, sm: 10 }}
@@ -84,29 +84,30 @@ export default function Signup() {
               borderRadius: 4,
               boxShadow: 10,
               bgcolor: "white",
+               
               m: 1,
               p: 1,
             }}
           >
-            <div
-              className="signup"
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: 10,
-              }}
-            >
-              <div style={{ width: "80%", textAlign: "center" }}>
-                <h1 style={{ marginBottom: 10, color: "black" }}>Sign Up</h1>
-              </div>
-            </div>
+          <div
+          className="signup"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: 10,
+          }}
+        >
+          <div style={{ width: "80%", textAlign: "center" }}>
+            <h1 style={{ marginBottom: 10, color: "black" }}>Sign Up</h1>
+          </div>
+        </div>
             <Container maxWidth="lg" style={containerStyle}>
               <Grid container spacing={2} justify="center" direction="row">
-                <form onSubmit={handleFormSubmit}>
-                  <label style={{ color: "black" }}>Image Upload</label>
+                <form onSubmit={handleFormSubmit}> 
+                  <label style={{ color: "black", boxShadow: 10 }}>Image Upload</label>
                   <ImageUpload cardName="Input Image" />
                   <br />
-                  <Grid container item xs={12}>
+                  <Grid container item xs={12} >
                     <TextField
                       id="firstName"
                       label="First Name"
@@ -120,7 +121,7 @@ export default function Signup() {
                       autoComplete="firstName"
                     />
                   </Grid>
-                  <Grid container item xs={12}>
+                  <Grid  container item xs={12} >
                     <TextField
                       id="lastName"
                       label="Last Name"
@@ -135,7 +136,7 @@ export default function Signup() {
                     />
                   </Grid>
                   <br />
-                  <Grid container item xs={12}>
+                  <Grid container item xs={12} >
                     <MuiPhoneNumber
                       name="phoneNumber"
                       label="Phone Number"
@@ -143,7 +144,7 @@ export default function Signup() {
                       defaultCountry={"us"}
                     />
                   </Grid>
-                  <Grid container item xs={12}>
+                  <Grid container item xs={12} >
                     <TextField
                       name="email"
                       type="email"
@@ -155,7 +156,7 @@ export default function Signup() {
                       required
                     />
                   </Grid>
-                  <Grid container item xs={12}>
+                  <Grid  container item xs={12} >
                     <TextField
                       type="password"
                       placeholder="Password"
@@ -169,24 +170,22 @@ export default function Signup() {
                       required
                     />
                   </Grid>
-                  <Grid container item xs={12}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      type="submit"
-                      className="button-block"
-                      style={btnstyle}
-                      fullWidth
-                    >
-                      Submit
-                    </Button>
+                  <Grid container item xs={12} >
+                     <Button
+                          variant="contained"
+                          color="primary"
+                          type="submit"
+                          className="button-block"
+                          style={btnstyle} fullWidth>
+                          Submit
+                        </Button>
                   </Grid>
                 </form>
               </Grid>
             </Container>
           </Box>
         </div>
-      </Box>
+      </Box> 
     </main>
   );
 }
