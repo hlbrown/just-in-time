@@ -27,9 +27,6 @@ import ImageUpload from 'components/ImageUpload'
 import MuiPhoneNumber from "material-ui-phone-number";
 
 
-
-
-
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
@@ -41,7 +38,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export default function Createprofile() {
+export default function CreateProfile() {
   const [formState, setFormState] = useState({
      firstName: '',
      lastName: '', 
@@ -52,19 +49,19 @@ export default function Createprofile() {
      height: '',
      weight: '',
      bloodType: '',
-     organDonor: '',
-     pastSurgeries: '',
+     organDonor: 'false',
+     pastSurgeries: 'false',
      pcpName: '',
      pcpAddress: '',
      pcpPhoneNumber: '',
      emergencyContactName: '',
      emergencyContactNumber: ''
   });
-  const [CreateProfile] = useMutation(CREATE_PROFILE);
+  const [createProfile] = useMutation(CREATE_PROFILE);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await CreateProfile({
+    const mutationResponse = await createProfile({
       variables: {
         firstName: formState.firstName,
         lastName: formState.lastName,
@@ -84,17 +81,19 @@ export default function Createprofile() {
         emergencyContactNumber: formState.emergencyContactNumber
       }
     });
-    return mutationResponse;
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
     const handleChange = (event) => {
-    const { name, value } = event.target.value;
+    const { name, value } = event.target;
     setFormState({
       ...formState,
       [name]: value,
     });
   };
 
- 
+ const containerStyle = { padding: 20, width: 280, margin: "20px auto" };
+  const btnstyle = { margin: "8px 0" };
 
   return (
     <main>
@@ -114,7 +113,6 @@ export default function Createprofile() {
           m: 1,
           p: 1,
         }}>
-<<<<<<< Updated upstream
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Box
             px={{ xs: 3, sm: 10 }}
@@ -142,38 +140,8 @@ export default function Createprofile() {
                 <h1 style={{ marginBottom: 10, color: "black" }}>Profile Info</h1>
               </div>
             </div>
-=======
-        <div
-          className="signup"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: 10
-          }}>
-          <div
-            style={{ width: "80%", textAlign: "center" }}>
-            <h1 style={{ marginBottom: 10, color:"black"}}>Profile Info</h1>
-
-          </div>
-        </div>
-        <div style={{display: "flex", justifyContent:"center"}}>
-        <Box
-         px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
-        bgcolor="text.secondary"
-        color="white"
-        maxWidth={400}
-           
-        sx={{
-          borderRadius: 4,
-          boxShadow: 10,
-          bgcolor: "white",
-          m: 1,
-          p: 1,
-          }}>
->>>>>>> Stashed changes
           <Container 
-            maxWidth="lg">
+            maxWidth="lg" style={containerStyle}>
         
         <Grid
           container
@@ -238,7 +206,6 @@ export default function Createprofile() {
                       id="sex"
                       label="sex"
                       fullWidth
-                      name='sex'
                       onChange={handleChange}
                     >
                       <MenuItem value={'Male'}>Male</MenuItem>
@@ -256,7 +223,6 @@ export default function Createprofile() {
                     labelId="bloodtype"
                       id="bloodtype"
                       label="bloodtype"
-                      name='bloodType'
                       fullWidth
                       onChange={handleChange}>
                       <MenuItem value={'A+'}>A+</MenuItem>
@@ -275,7 +241,6 @@ export default function Createprofile() {
                     labelId="organDonor"
                       id="organDonor"
                       label="organDonor"
-                      name="organDonor"
                       fullWidth
                       onChange={handleChange}>
                       <MenuItem value={'True'}>True</MenuItem>
@@ -288,7 +253,6 @@ export default function Createprofile() {
                     labelId="pastSurgeries"
                       id="pastSurgeries"
                       label="pastSurgeries"
-                      name="pastSurgeries"
                       fullWidth
                       onChange={handleChange}>
                       <MenuItem value={'True'}>True</MenuItem>
@@ -323,14 +287,14 @@ export default function Createprofile() {
                       required
                       />
                   </Grid>
-                  {/* <Grid item xs={12}>
+                  <Grid item xs={12}>
                     <InputLabel>PCP Phone Number</InputLabel>
                     <MuiPhoneNumber
                       name="pcpPhoneNumber"
                       defaultCountry={"us"}
                       // onChange={handleChange}
                     />
-                  </Grid> */}
+                  </Grid>
                 
                   <Grid item xs={12} >
                     <InputLabel>PCP Address</InputLabel>
@@ -388,17 +352,16 @@ export default function Createprofile() {
                       required
                       />
                   </Grid>
-                  {/* <Grid item xs={12}>
+                  <Grid item xs={12}>
                     <InputLabel>Emergency Contact Number</InputLabel>
                     <MuiPhoneNumber
                       name="emergencyContactNumber"
                       defaultCountry={"us"}
                       // onChange={handleChange}
                     />
-                  </Grid> */}
+                  </Grid>
                   
                 <Grid item xs={12}>
-<<<<<<< Updated upstream
                     <Button
                       variant="contained"
                       color="primary"
@@ -409,17 +372,6 @@ export default function Createprofile() {
                     >
                       Submit
                     </Button>
-=======
-                     <Button
-                    variant="contained"
-                    
-                     color=""
-                     type="submit"
-                     className="button-block"
-                     >
-                       Submit
-                     </Button>
->>>>>>> Stashed changes
                  </Grid>
               </form>
           
@@ -432,4 +384,3 @@ export default function Createprofile() {
     </main>
   );
   }
-
