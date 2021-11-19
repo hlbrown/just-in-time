@@ -9,7 +9,7 @@ const NoMatch = () => {
         <h1>
           <span role="img" aria-label="Face With Rolling Eyes Emoji">
             🙄
-          </span>
+          </span> Please check the url you have entered and try again!
         </h1>
       </Jumbotron>
     </div>

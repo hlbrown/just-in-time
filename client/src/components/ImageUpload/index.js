@@ -291,6 +291,7 @@ class ImageUploadCard extends React.Component {
             width="100%"
             className={classes.media}
             src={this.state.selectedFile}
+            alt="uploaded img"
           />
         </CardActionArea>
       </React.Fragment>

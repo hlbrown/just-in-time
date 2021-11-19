@@ -6,13 +6,14 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <!-- not support ed by all browsers : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color  -->
+  <meta name="theme-color" content="#000000" /> 
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" integrity="sha256" />
 
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" integrity="sha256" />
   <!-- styling for the slack contact form using tailwindcss -->
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"  rel="stylesheet" crossorigin="anonymous" />
   <!-- https://web.dev/font-display/?utm_source=lighthouse&utm_medium=lr improving font load time with preload as per this hack: https://stackoverflow.com/questions/51874007/how-to-preload-material-icons-using-rel-preload-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons&amp;display=swap" media="print"
     onload="this.media='all'" crossorigin="anonymous"> 
@@ -33,8 +34,8 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script crossorigin="anonymous"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBXJogeVn9AL_eViKwuaQwi-wABxTNevQ&libraries=places"></script>
+  <!-- <script crossorigin="anonymous"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBXJogeVn9AL_eViKwuaQwi-wABxTNevQ&libraries=places"></script> -->
 
 </body>
 
