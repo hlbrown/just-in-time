@@ -93,7 +93,8 @@ export default function CreateProfile() {
     });
   };
 
- 
+ const containerStyle = { padding: 20, width: 280, margin: "20px auto" };
+  const btnstyle = { margin: "8px 0" };
 
   return (
     <main>
@@ -141,7 +142,7 @@ export default function CreateProfile() {
           p: 1,
           }}>
           <Container 
-            maxWidth="lg">
+            maxWidth="lg" style={containerStyle}>
         
         <Grid
           container
@@ -369,7 +370,7 @@ export default function CreateProfile() {
                 <Grid item xs={12}>
                      <Button
                     variant="contained"
-                    
+                     style={btnstyle}
                      color=""
                      type="submit"
                      className="button-block"

@@ -92,6 +92,7 @@ function DashboardContent(props) {
     setOpen(!open);
   };
 
+
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
@@ -147,7 +148,7 @@ function DashboardContent(props) {
                     height: 240,
                   }}
                               ><Link to="/Profile"><Button
-            variant="contained"
+            variant="contained" 
         >Add Profile
 
         </Button>
