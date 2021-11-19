@@ -51,6 +51,8 @@ function Login(props) {
     });
   };
 
+   const paperStyle={padding :20 ,width:280, margin:"20px auto"}
+ const btnstyle={margin:'8px 0'}
   return (
     <div>
       <Nav />
@@ -81,7 +83,7 @@ function Login(props) {
                 boxShadow: 10,
               }}
             >
-              <Paper
+              <Paper  style={paperStyle}
                 variant="elevation"
                 elevation={2}
                 className="login-background"
@@ -122,7 +124,14 @@ function Login(props) {
                           // this.setState({[event.target.name]: event.target.value,})}
                           required
                         />
-                      </Grid>
+                      </Grid> 
+                      
+                      <Grid item>
+                  <Link href="#" variant="body2">
+                    Forgot Password?
+                  </Link>
+                </Grid>
+                     
                       <Grid item>
                         {error ? (
                           <div>
@@ -135,18 +144,15 @@ function Login(props) {
                           color="primary"
                           type="submit"
                           className="button-block"
-                        >
+                          style={btnstyle} fullWidth>
+                        
                           Submit
                         </Button>
                       </Grid>
                     </Grid>
                   </form>
                 </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    Forgot Password?
-                  </Link>
-                </Grid>
+               
               </Paper>
             </Grid>
           </Grid>
