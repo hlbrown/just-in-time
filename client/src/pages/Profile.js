@@ -27,9 +27,6 @@ import ImageUpload from 'components/ImageUpload'
 import MuiPhoneNumber from "material-ui-phone-number";
 
 
-
-
-
 const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(1),
@@ -95,7 +92,8 @@ export default function CreateProfile() {
     });
   };
 
- 
+ const containerStyle = { padding: 20, width: 280, margin: "20px auto" };
+  const btnstyle = { margin: "8px 0" };
 
   return (
     <main>
@@ -133,7 +131,7 @@ export default function CreateProfile() {
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
         color="white"
-        maxWidth={400}
+        maxWidth={500}
            
         sx={{
           borderRadius: 4,
@@ -143,7 +141,7 @@ export default function CreateProfile() {
           p: 1,
           }}>
           <Container 
-            maxWidth="lg">
+            maxWidth="lg" style={containerStyle}>
         
         <Grid
           container
@@ -366,7 +364,7 @@ export default function CreateProfile() {
                 <Grid item xs={12}>
                      <Button
                     variant="contained"
-                    
+                     style={btnstyle}
                      color=""
                      type="submit"
                      className="button-block"

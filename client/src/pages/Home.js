@@ -283,7 +283,10 @@ const Home = () => {
                   m: 1,
                 }}
               >
+
                 <GoogleMap />
+
+                
                 <CardContent sx={{ justifyContent: "center" }}>
                   <Typography
                     align="center"
