@@ -101,8 +101,8 @@ function App() {
 
           <button 
           // https://tailwindcss.com/docs/outline
-            className="mt-4 shadow-2xl bg-gray-600 hover:bg-gray-700 focus:shadow-outline focus:outline-black text-black font-bold py-2 px-4 rounded"
-            onClick={(e) => submitForm(e)}
+            className="mt-4 shadow-2xl bg-blue-600 w-full hover:bg-blue-700 focus:shadow-outline focus:outline-black text-black font-bold py-2 px-4 rounded"
+            onClick={(e) => submitForm(e)} 
           >
             Submit
           </button>
