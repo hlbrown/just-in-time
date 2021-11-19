@@ -103,6 +103,7 @@ export default function CreateProfile() {
        px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
+        
         color="white"
         sx={{
           justifyContent: "center",
@@ -112,34 +113,33 @@ export default function CreateProfile() {
           m: 1,
           p: 1,
         }}>
-        <div
-          className="signup"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: 10
-          }}>
-          <div
-            style={{ width: "80%", textAlign: "center" }}>
-            <h1 style={{ marginBottom: 10, color:"black"}}>Profile Info</h1>
-
-          </div>
-        </div>
-        <div style={{display: "flex", justifyContent:"center"}}>
-        <Box
-         px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
-        bgcolor="text.secondary"
-        color="white"
-        maxWidth={500}
-           
-        sx={{
-          borderRadius: 4,
-          boxShadow: 10,
-          bgcolor: "white",
-          m: 1,
-          p: 1,
-          }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Box
+            px={{ xs: 3, sm: 10 }}
+            py={{ xs: 5, sm: 10 }}
+            bgcolor="text.secondary"
+            color="white"
+            maxWidth={500}
+            sx={{
+              borderRadius: 4,
+              boxShadow: 10,
+              bgcolor: "white",
+              m: 1,
+              p: 1,
+            }}
+          >
+            <div
+              className="signup"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: 10,
+              }}
+            >
+              <div style={{ width: "80%", textAlign: "center" }}>
+                <h1 style={{ marginBottom: 10, color: "black" }}>Profile Info</h1>
+              </div>
+            </div>
           <Container 
             maxWidth="lg" style={containerStyle}>
         
@@ -149,7 +149,7 @@ export default function CreateProfile() {
           justify="center"
           direction="row"
               ><form onSubmit={handleFormSubmit}
-              >            <label style={{color:"black"}}>Image Upload</label>
+              >            <label style={{color:"black", boxShadow: 10}}>Image Upload</label>
                 <ImageUpload cardName="Input Image" />
                 <br />
                 
@@ -362,15 +362,16 @@ export default function CreateProfile() {
                   </Grid>
                   
                 <Grid item xs={12}>
-                     <Button
-                    variant="contained"
-                     style={btnstyle}
-                     color=""
-                     type="submit"
-                     className="button-block"
-                     >
-                       Submit
-                     </Button>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                      className="button-block"
+                      style={btnstyle}
+                      fullWidth
+                    >
+                      Submit
+                    </Button>
                  </Grid>
               </form>
           
