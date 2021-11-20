@@ -18,7 +18,7 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
+import { Button } from "@material-ui/core";
 import Paper from "@mui/material/Paper";
 
 import MenuIcon from "@mui/icons-material/Menu";
@@ -95,7 +95,7 @@ function DashboardContent(props) {
     setOpen(!open);
   };
 
-
+const btnstyle={margin:'8px 0'}
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
@@ -126,7 +126,7 @@ function DashboardContent(props) {
                     height: 240,
                   }}
                               ><Link to="/Profile"><Button
-            variant="contained" 
+            variant="contained" color="primary"style={btnstyle}
         >Add Profile
 
         </Button>
@@ -146,7 +146,7 @@ function DashboardContent(props) {
                     height: 240,
                   }}
                 >
-                  Profile info will go here once working 
+                  Profile info will go here once working
                   {/* this is where we could display the profile */}
                 </Paper>
               </Grid>

@@ -69,8 +69,8 @@ const useStyles = makeStyles({
       {/* Mission Statement */}
      
       <Box
-        px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
+        px={{ xs: 1, sm: 5 }}
+        py={{ xs: 1, sm: 5 }}
         bgcolor="text.secondary"
         color="white"
         sx={{

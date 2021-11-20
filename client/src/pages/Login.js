@@ -127,7 +127,8 @@ function Login(props) {
                       </Grid> 
                       
                       <Grid item>
-                  <Link href="#" variant="body2">
+                      {/* rerouting forgot password to /signup for now */}
+                  <Link href="/signup" variant="body2">
                     Forgot Password?
                   </Link>
                 </Grid>

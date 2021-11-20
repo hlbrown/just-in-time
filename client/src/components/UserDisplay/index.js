@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { QUERY_USER } from "utils/queries";
+import Auth from "utils/auth";
 
 import { Avatar, Box, Button } from "@material-ui/core";
 
@@ -27,7 +28,10 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
+import { makeStyles } from "@material-ui/core/styles";
+
 const drawerWidth = 240;
+
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -64,8 +68,26 @@ const SizedAvatar = styled(Avatar)`
 
 const mdTheme = createTheme();
 
-function UserDisplay(props) {
+const logout = (event, label) => {
+  if (label === "logout") {
+    Auth.logout();
+  }
+}
+
+function UserDisplay() {
   // const { loading = false } = props;
+ const useStyles = makeStyles({
+  button: {
+    backgroundColor: "#c51162",
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#fff",
+      color: "#3c52b2",
+    },
+  },
+ 
+});
+  const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -79,6 +101,8 @@ console.log(data);
   if (data) {
     user = data.user;
   }
+  const btnstyle = { margin: '8px 0' }
+ 
 
   return (
     <>
@@ -92,6 +116,7 @@ console.log(data);
                   alignItems: "center",
                   justifyContent: "flex-end",
                   px: [1],
+                 
                 }}
               >
                 <IconButton onClick={toggleDrawer}>
@@ -100,37 +125,58 @@ console.log(data);
               </Toolbar>
 
               <Divider />
-              <h3>
+
+              
+              <Box sx={{ p: 2 }} >
+                <>
+                  <Box >
+                    <h3 >
                 {user.firstName} {user.lastName}
               </h3>
-              <Box>
-                <>
-                  <Box>
                     <h1></h1>
                     <Divider />
-                    <SizedAvatar
-                      sx={{ width: 90, height: 90 }}
+                    <br />
+                    <SizedAvatar 
+                      sx={{ width: 90, height: 90}}
                       src={user.image}
                     />
                     ​
                   </Box>
-                  <Divider />
+                  <Divider /> <br/>
                   <Box sx={{p: 2}}>
                     <List
                       sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
                       component="nav"
                       aria-labelledby="nested-list-subheader"
                       subheader={
-                        <ListSubheader compnent="div" id="nested-list-subheader">
+                        <ListSubheader  id="nested-list-subheader">
                           Profile Info
                         </ListSubheader>
                       }>
-                      <Divider/>
+                      <Divider />
                       <ListItemText>Phone:</ListItemText>
                       <ListItemText> {user.phoneNumber}</ListItemText>
                       <ListItemText>Email Address:</ListItemText>
                       <ListItemText>{user.email}</ListItemText>
+                      <Divider />
+
+                      <ListItemText>
+                        <a href="/" onClick={() => Auth.logout()}>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          type="submit"
+                          // className={classes.button}
+                          style={btnstyle}
+                          fullWidth
+                          label="logout"
+                          sx={{onClick: (event) => {logout(event, 'logout')}}}>
+                 
+                        Log Out</Button>
+                        </a>
+                      </ListItemText>
                     </List>
+
 
 
                   </Box>
