@@ -119,14 +119,14 @@ function UserDisplay() {
                 {user.firstName} {user.lastName}
               </h3>
                     <h1></h1>
-                    <Divider />
+                    <Divider /> <br/>
                     <SizedAvatar 
                       sx={{ width: 90, height: 90 }}
                       src={user.image}
                     />
                     ​
                   </Box>
-                  <Divider />
+                  <Divider /> <br/>
                   <Box sx={{p: 2}}>
                     <List
                       sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
@@ -148,16 +148,15 @@ function UserDisplay() {
                         <a href="/" onClick={() => Auth.logout()}>
                         <Button
                           variant="contained"
-                          color="danger"
+                          color="primary"
                           type="submit"
                           className="button-block"
                           style={btnstyle}
                           fullWidth
                           label="logout"
-                          sx={{onClick: (event) => {logout(event, 'logout')}}}
-                          
-                          
-                        >Log Out</Button>
+                          sx={{onClick: (event) => {logout(event, 'logout')}}}>
+                 
+                        Log Out</Button>
                         </a>
                       </ListItemText>
                     </List>

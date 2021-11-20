@@ -96,7 +96,7 @@ Depending on whether you are a parent/guardian OR a care giver, you should have 
 ⏭️ Display the nearest hospital, police station and urgent care facility with the shortest route / a direct phone number based on the caretaker’s location<br>
 ⏭️ Connect the testimonial with the seed / backend database<br>
 ⏭️ Ability for Admins to create copy template fields<br>
-⏭️ Ability to auto pin in the map on the landing page to display the nearest Fire station, Police station, UrgentCare facility based on users browser geolocation<br>
+⏭️ Ability to auto pin in the map on the landing page to display the nearest Fire station, Police station, UrgentCare facility based on users browser geolocation <br>
 ⏭️ Ability for caregivers/ EMS to comment on stale information / request Parents & Guardians for further clarification on medicine/allergy or the diagnosis information<br>
 ⏭️ Modal alert for the Contact form<br>
 ⏭️ Ability for caretakers to easily look up medicine information for clarification using the API<br>
@@ -104,21 +104,38 @@ Depending on whether you are a parent/guardian OR a care giver, you should have 
 
 ## Mock-Up (Screenshots & Responsive UI View)
 
-Place holder for screenshots from the app
+Landing Page:
+ <img src="./client/src/assets/Landing_Page.png"><br/>
+Login Page:
+ <img src="./client/src/assets/Login_Page.png"><br/>
+Sign Up Page:
+ <img src="./client/src/assets/SignUp_Page.png"><br/>
+User Page:
+ <img src="./client/src/assets/User_Page.png"><br/>
+FeatureRequest/BugReport:
+ <img src="./client/src/assets/FeatureRequest,Bug.png"><br/>
+Contact Form Page:
+ <img src="./client/src/assets/Contact_Page.png"><br/>
+ Contact Form Acknowledgement:
+ <img src="./client/src/assets/Contact_Acknowledgement.png"><br/>
+ Patient Profile Page:
+ <img src="./client/src/assets/PatientProfileForm.png"><br/>
+Responsive UI:
+ <img src="./client/src/assets/Responsive_UI.png"><br/>
 
 ## AccessibilityScores (LightHouseReports)
 
-Landing Page:
+Landing Page:<br>
  <img src="./client/src/assets/LandingPage.png"><br/>
-Login Page:
+Login Page:<br>
  <img src="./client/src/assets/LoginPage.png"><br/>
-Sign Up Page:
+Sign Up Page:<br>
  <img src="./client/src/assets/SignupPage.png"><br/>
-User Page:
+User Page:<br>
  <img src="./client/src/assets/AdminUserPage.png"><br/>
-Profile Page:
+Profile Page:<br>
  <img src="./client/src/assets/ProfilePage.png"><br/>
-Contact Form Page:
+Contact Form Page:<br>
  <img src="./client/src/assets/ContactPage.png"><br/>
 
 ## Presentation Requirements

@@ -94,8 +94,7 @@ function DashboardContent(props) {
   const toggleDrawer = () => {
     setOpen(!open);
   };
-
-
+  const btnstyle = { margin: "8px 0" };
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
@@ -125,15 +124,19 @@ function DashboardContent(props) {
                     flexDirection: "column",
                     height: 240,
                   }}
-                              ><Link to="/Profile"><Button
-            variant="contained" 
-        >Add Profile
-
-        </Button>
-        </Link>
-                  
-                                  
-                 
+                >
+                  <Link to="/Profile">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                      className="button-block"
+                      style={btnstyle}
+                      fullWidth
+                    >
+                      Add Profile
+                    </Button>
+                  </Link>
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
@@ -146,7 +149,7 @@ function DashboardContent(props) {
                     height: 240,
                   }}
                 >
-                  Profile info will go here once working 
+                  Profile info will go here once working
                   {/* this is where we could display the profile */}
                 </Paper>
               </Grid>
