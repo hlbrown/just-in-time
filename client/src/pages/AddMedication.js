@@ -50,11 +50,11 @@ export default function AddMedication() {
     console.log(formData);
     const { data } = await addMedication({
         variables: {
-            diagnosisInput: { ...formData},
+            medicationInput: { ...formData},
         },
         });
 
-        window.locaion.assign('/User')
+        window.location.assign('/User')
     };
     const handleChange = (event) => {
         const { name, value } = event.target;
