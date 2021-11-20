@@ -24,10 +24,10 @@ type Profile {
     image: String
     age: String
     height: String
-    weight: Int
+    weight: String
     bloodType: String
-    organDonor: Boolean
-    pastSurgeries: Boolean
+    organDonor: String
+    pastSurgeries: String
     pcpName: String
     pcpAddress: String
     pcpPhoneNumber: String
@@ -46,10 +46,10 @@ type Profile {
     image: String
     age: String
     height: String
-    weight: Int
+    weight: String
     bloodType: String
-    organDonor: Boolean
-    pastSurgeries: Boolean
+    organDonor: String
+    pastSurgeries: String
     pcpName: String
     pcpAddress: String
     emergencyContactName: String
