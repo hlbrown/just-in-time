@@ -18,7 +18,7 @@ import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
+import { Button } from "@material-ui/core";
 import Paper from "@mui/material/Paper";
 
 import MenuIcon from "@mui/icons-material/Menu";
@@ -94,7 +94,12 @@ function DashboardContent(props) {
   const toggleDrawer = () => {
     setOpen(!open);
   };
+<<<<<<< Updated upstream
   const btnstyle = { margin: "8px 0" };
+=======
+
+const btnstyle={margin:'8px 0'}
+>>>>>>> Stashed changes
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
@@ -124,6 +129,7 @@ function DashboardContent(props) {
                     flexDirection: "column",
                     height: 240,
                   }}
+<<<<<<< Updated upstream
                 >
                   <Link to="/Profile">
                     <Button
@@ -137,6 +143,17 @@ function DashboardContent(props) {
                       Add Profile
                     </Button>
                   </Link>
+=======
+                              ><Link to="/Profile"><Button
+            variant="contained" color="primary"style={btnstyle}
+        >Add Profile
+
+        </Button>
+        </Link>
+                  
+                                  
+                 
+>>>>>>> Stashed changes
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
