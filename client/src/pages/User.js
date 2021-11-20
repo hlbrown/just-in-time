@@ -95,7 +95,6 @@ function DashboardContent(props) {
   const toggleDrawer = () => {
     setOpen(!open);
   };
-
   const btnstyle = { margin: "8px 0" };
   return (
     <ThemeProvider theme={mdTheme}>
@@ -115,9 +114,9 @@ function DashboardContent(props) {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+
             <ProfileDisplay />
-          </Container>
+       
         </Box>
       </Box>
     </ThemeProvider>
