@@ -64,6 +64,8 @@ export default function CreateProfile() {
         profileInput: { ...formData },
       },
     });
+
+    window.location.assign('/User')
   };
   const handleChange = (event) => {
     const { name, value } = event.target;
