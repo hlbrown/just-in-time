@@ -11,22 +11,23 @@
 
 /* https://web.dev/font-display/  */
 @font-face {
-  font-family: 'Pacifico';
+  font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
-  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
+  src: url('https://fonts.gstatic.com/s/Raleway.woff2') format('woff2');
   font-display: swap;
 }
 
 * {
   box-sizing: border-box;
+   font-family: 'Raleway', sans-serif;
 }
 
 
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Karla', sans-serif;
+  
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -45,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Raleway';
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;

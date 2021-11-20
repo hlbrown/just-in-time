@@ -20,6 +20,13 @@ import {
   StylesProvider,
 } from "@mui/material/styles";
 
+//list styles
+import ListSubheader from '@mui/material/ListSubheader';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
 const drawerWidth = 240;
 
 const Drawer = styled(MuiDrawer, {
@@ -108,6 +115,25 @@ function UserDisplay(props) {
                     ​
                   </Box>
                   <Divider />
+                  <Box sx={{p: 2}}>
+                    <List
+                      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+                      component="nav"
+                      aria-labelledby="nested-list-subheader"
+                      subheader={
+                        <ListSubheader compnent="div" id="nested-list-subheader">
+                          Profile Info
+                        </ListSubheader>
+                      }>
+                      <Divider/>
+                      <ListItemText>Phone:</ListItemText>
+                      <ListItemText> {user.phoneNumber}</ListItemText>
+                      <ListItemText>Email Address:</ListItemText>
+                      <ListItemText>{user.email}</ListItemText>
+                    </List>
+
+
+                  </Box>
                 </>
               </Box>
             </Drawer>

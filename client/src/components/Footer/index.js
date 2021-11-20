@@ -13,8 +13,8 @@ export default function Footer() {
   return (        
   <footer>
     <Box
-      px={{ xs: 3, sm: 10 }}
-      py={{ xs: 5, sm: 10 }}
+      px={{ xs: 1, sm: 2 }}
+      py={{ xs: 1, sm: 2 }}
       bgcolor="text.primary" color="white">
       <Container maxWidth='lg'>
           <Grid container spacing={5}>
@@ -54,15 +54,15 @@ export default function Footer() {
               <Link href='/contact' color='inherit'>Contact Form</Link>
             </Box>
             <Box>
-              <Link href='https://github.com/hlbrown/just-in-time/issues' color='inherit'>Feature Requests</Link>
+              <Link href='https://github.com/hlbrown/just-in-time/issues/new?assignees=&labels=&template=feature_request.md&title=' color='inherit'>Feature Requests</Link>
             </Box>
             <Box>
-              <Link href='https://github.com/hlbrown/just-in-time/issues' color='inherit'>Report a Bug</Link>
+              <Link href='https://github.com/hlbrown/just-in-time/issues/new?assignees=&labels=&template=bug_report.md&title=' color='inherit'>Report a Bug</Link>
               </Box>
               {/* 3rd column */}
           </Grid>
           </Grid>
-          <Box textAlign="center" pt={{xs: 5, sm:10}} pb={{xs:5, sm:0}}>
+          <Box textAlign="center" pt={{xs: 2, sm:10}} pb={{xs:5, sm:0}}>
              Just In Time &reg; {new Date().getFullYear()}
           </Box>
       </Container>

@@ -97,7 +97,7 @@ export default function CreateProfile() {
 
   return (
     <main>
-      <Nav/>
+     
 
       <Box
        px={{ xs: 3, sm: 10 }}
