@@ -118,6 +118,20 @@ export const QUERY_USER = gql`
         pcpName
         pcpAddress
         emergencyContactName
+        diagnosis {
+          name
+          commonlyKnowAs
+          description
+          symptoms
+        }
+        medication {
+          name
+          brand
+          prescription
+          otc
+          dose
+          interactions
+        }
       }
     }
   }
