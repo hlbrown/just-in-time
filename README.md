@@ -111,7 +111,7 @@ Login Page:
 Sign Up Page:
  <img src="./client/src/assets/SignUp_Page.png"><br/>
 User Page:
- <img src="./client/src/assets/.png"><br/>
+ <img src="./client/src/assets/User_Page.png"><br/>
 FeatureRequest/BugReport:
  <img src="./client/src/assets/FeatureRequest,Bug.png"><br/>
 Contact Form Page:
