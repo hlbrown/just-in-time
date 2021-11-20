@@ -26,7 +26,7 @@ import MuiPhoneNumber from "material-ui-phone-number";
 export default function AddDiagnosis() {
     const [formData, setFormData] = useState({    
         name: "", 
-        commonlyKnownAs: "",
+        commonlyKnowAs: "",
         description: "",
         symptoms: "",
     });
@@ -42,7 +42,7 @@ export default function AddDiagnosis() {
         },
         });
 
-        window.locaion.assign('/User')
+        window.location.assign('/User')
     };
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -126,7 +126,7 @@ export default function AddDiagnosis() {
                       variant="outlined"
                       type="String"
                       name="commonlyKnowAs"
-                      value={formData.commonlyKnownAs}
+                      value={formData.commonlyKnowAs}
                       onChange={handleChange}
                       fullWidth
                       required

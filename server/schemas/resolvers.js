@@ -113,12 +113,14 @@ const resolvers = {
     updateProfile: async (parent, { _id, profileInput }) => {
       return await Profile.findByIdAndUpdate(_id, { ...profileInput }, { new: true });
     },
-    addMedication: async (parent, args) => {
+    addMedication: async (parent, args, context) => {
       const medication = await Medication.create(args.medicationInput);
+      await User.findByIdAndUpdate(context.user._id, { $push: { medication: medication._id } });
       return medication;
     },
-    addDiagnosis: async (parent, args) => {
+    addDiagnosis: async (parent, args, context) => {
       const diagnosis = await Diagnosis.create(args.diagnosisInput);
+      await User.findByIdAndUpdate(context.user._id, { $push: { diagnosis: diagnosis._id } });
       return diagnosis;
     },
     updateDiagnosis: async (parent, { _id, diagnosisInput }) => {
