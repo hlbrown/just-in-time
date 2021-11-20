@@ -10,9 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
 // images
-import teenBabysitter from "assets/teenBabysitter.jpg";
-import primaryCaregiver from "assets/primaryCaregiver.jpg";
-import babysitter from "assets/babysitter.jpg";
+import familyIcon from "assets/familyIcon.jpg"
 import caregiver from "assets/caregiver.png";
 import parentOrguradian from "assets/parentOrguradian.png";
 
@@ -65,18 +63,7 @@ const useStyles = makeStyles({
  
 });
   const classes = useStyles();
-  const theme = createTheme({
-    components: {
-      Typography: {
-        styleOverrides: {
-          'css-azcnfz-MuiTypography-root': {
-            fontFamily: 'Praise',
-          },
-        },
-      },
-    },
-  });
-  
+ 
   return (
     <main>
       {/* Mission Statement */}
@@ -101,8 +88,8 @@ const useStyles = makeStyles({
       </Box>
       {/* admin box */}
       <Box
-        px={{ xs: 3, sm: 10 }}
-        py={{ xs: 5, sm: 10 }}
+        px={{ xs: 3, sm: 2 }}
+        py={{ xs: 3, sm: 2 }}
         bgcolor="text.secondary"
         color="white"
         sx={{
@@ -113,7 +100,7 @@ const useStyles = makeStyles({
           p: 1,
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="md">
           <Grid container direction="row" spacing={5}>
             <Grid item xs={12} sm={12} md={6}>
               <Box>
@@ -136,7 +123,7 @@ const useStyles = makeStyles({
                       }}
                       component="img"
                       height="220"
-                      image={parentOrguradian}
+                      image={familyIcon}
                       alt="primaryCaregiver"
                     />
                     <CardContent sx={{ justifyContent: "center" }}>
@@ -146,7 +133,7 @@ const useStyles = makeStyles({
                         variant="h4"
                         component="div"
                       >
-                        Admin
+                        Parent or Guardian
                         <Button
                           color="primary"
                           onClick={handleOpen}
@@ -164,9 +151,10 @@ const useStyles = makeStyles({
                           m: 1,
                           p: 1,
                         }}
-                      >
+                      ><p>
                         The Parent/Guardian Portal is used to create a shareable
                         end user/patient profile for your loved one
+                        </p>
                       </Box>
                       <Typography
                         align="center"
@@ -257,9 +245,10 @@ const useStyles = makeStyles({
                           m: 1,
                           p: 1,
                         }}
-                      >
+                      ><p>
                         The Carer Portal authorizes caretakers to view an end
                         user/patient profile
+                        </p>
                       </Box>
                       <Typography
                         align="center"
