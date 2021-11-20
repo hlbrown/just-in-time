@@ -57,7 +57,7 @@ export default function Signup() {
 
   return (
     <main>
-      <Nav />
+      
 
      <Box
         px={{ xs: 3, sm: 10 }}

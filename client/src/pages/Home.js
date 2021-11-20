@@ -29,6 +29,11 @@ import Fade from "@mui/material/Fade";
 import Backdrop from "@mui/material/Backdrop";
 import { makeStyles } from "@material-ui/core/styles";
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+import 'index.css';
+
+
 // styles for the modal
 const style = {
   position: "absolute",
@@ -57,11 +62,25 @@ const useStyles = makeStyles({
       color: "#3c52b2",
     },
   },
+ 
 });
- const classes = useStyles();
+  const classes = useStyles();
+  const theme = createTheme({
+    components: {
+      Typography: {
+        styleOverrides: {
+          'css-azcnfz-MuiTypography-root': {
+            fontFamily: 'Praise',
+          },
+        },
+      },
+    },
+  });
+  
   return (
     <main>
       {/* Mission Statement */}
+     
       <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
@@ -74,7 +93,7 @@ const useStyles = makeStyles({
           p: 1,
         }}
       >
-        <Typography align="center" id="mission" variant="h4" color="black">
+        <Typography align="center" id="mission" variant="h4" color="black" fontFamily='Raleway'>
           Just In Time's mission is to help parents and/or guardians securely &
           efficiently create and share emergency information for their loved
           ones via a web application portal in a few clicks!
@@ -386,6 +405,7 @@ const useStyles = makeStyles({
       >
         <Testimonial />
       </Box>
+     
     </main>
   );
 };
