@@ -28,7 +28,10 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
+import { makeStyles } from "@material-ui/core/styles";
+
 const drawerWidth = 240;
+
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -73,7 +76,18 @@ const logout = (event, label) => {
 
 function UserDisplay() {
   // const { loading = false } = props;
-
+ const useStyles = makeStyles({
+  button: {
+    backgroundColor: "#c51162",
+    color: "#fff",
+    "&:hover": {
+      backgroundColor: "#fff",
+      color: "#3c52b2",
+    },
+  },
+ 
+});
+  const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -87,7 +101,8 @@ function UserDisplay() {
   if (data) {
     user = data.user;
   }
-  const btnstyle={margin:'8px 0'}
+  const btnstyle = { margin: '8px 0' }
+ 
 
   return (
     <>
@@ -119,9 +134,14 @@ function UserDisplay() {
                 {user.firstName} {user.lastName}
               </h3>
                     <h1></h1>
+<<<<<<< Updated upstream
                     <Divider /> <br/>
+=======
+                    <Divider />
+                    <br />
+>>>>>>> Stashed changes
                     <SizedAvatar 
-                      sx={{ width: 90, height: 90 }}
+                      sx={{ width: 90, height: 90}}
                       src={user.image}
                     />
                     ​
@@ -150,7 +170,7 @@ function UserDisplay() {
                           variant="contained"
                           color="primary"
                           type="submit"
-                          className="button-block"
+                          // className={classes.button}
                           style={btnstyle}
                           fullWidth
                           label="logout"
