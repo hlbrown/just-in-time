@@ -55,7 +55,7 @@ function Login(props) {
  const btnstyle={margin:'8px 0'}
   return (
     <div>
-      <Nav />
+      
       <Box
         px={{ xs: 3, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
