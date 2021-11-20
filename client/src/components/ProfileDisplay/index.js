@@ -8,15 +8,15 @@ import React from "react";
 // } from "@mui/material/styles";
 // import CssBaseline from "@mui/material/CssBaseline";
 // import MuiDrawer from "@mui/material/Drawer";
-// import Box from "@mui/material/Box";
+import Box from "@mui/material/Box";
 // import MuiAppBar from "@mui/material/AppBar";
 // import Toolbar from "@mui/material/Toolbar";
-// import List from "@mui/material/List";
+import List from "@mui/material/List";
 // import Typography from "@mui/material/Typography";
-// import Divider from "@mui/material/Divider";
+import Divider from "@mui/material/Divider";
 // import IconButton from "@mui/material/IconButton";
 // import Badge from "@mui/material/Badge";
-// import Container from "@mui/material/Container";
+import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { Button } from "@material-ui/core";
 import Paper from "@mui/material/Paper";
@@ -29,14 +29,34 @@ import { useQuery } from "@apollo/client";
 // import NotificationsIcon from "@mui/icons-material/Notifications";
 
 // import Skeleton from "@mui/material/Skeleton";
-// import Stack from "@mui/material/Stack";
-// import { Avatar } from "@material-ui/core";
+import Stack from "@mui/material/Stack";
+import { Avatar } from "@material-ui/core";
 
 // import Profile from "pages/Profile";
 import { Link } from "react-router-dom";
 // import UserDisplay from "components/UserDisplay";
+import ListSubheader from '@mui/material/ListSubheader';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import ListItem from '@mui/material/ListItem';
+import { styled } from '@mui/material/styles';
+import DiagnosisDisplay from "components/DiagnosisDisplay";
 
 function ProfileDisplay() {
+
+  const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'left',
+    color: theme.palette.text.secondary,
+  }));
+  const SizedAvatar = styled(Avatar)`
+  ${({ size, theme }) => `
+    width: ${theme.spacing(size)}px; 
+    height: ${theme.spacing(size)}px; 
+  `};
+`;
  
 
 const { loading, data, error } = useQuery(QUERY_USER);
@@ -85,20 +105,21 @@ console.log(data);
         >                 
             {user.profile.map(({  
                 id,
-        firstName,
-        lastName,
-        sex,
-        address,
-        image,
-        age,
-        height,
-        weight,	
-        bloodType,
-        organDonor,
-        pastSurgeries,
-        pcpName,
-        pcpAddress,
-        emergencyContactName }, index) => (
+          firstName,
+          lastName,
+          sex,
+          address,
+          image,
+          age,
+          height,
+          weight,	
+          bloodType,
+          organDonor,
+          pastSurgeries,
+          pcpName,
+          pcpAddress,
+          emergencyContactName,
+          emergencyContactNumber }, index) => (
               <div key={index} >
                 <Stack>
                   <Item>
@@ -109,7 +130,7 @@ console.log(data);
                       aria-labelledby="nested-list-subheader"
                       subheader={
                         <ListSubheader  id="nested-list-subheader">
-                          <h3>{firstName}{lastName}</h3>
+                          <h3>{firstName} {lastName}</h3>
                           <Divider />
                           <br />
                            <SizedAvatar 
@@ -120,16 +141,73 @@ console.log(data);
                         </ListSubheader>
                       }>
                       <Divider />
-                      <ListItemText>Phone:</ListItemText>
-                      <ListItemText> {}</ListItemText>
-                      <ListItemText>Address:</ListItemText>
+                      <ListItem>Age:</ListItem>
+                      <ListItemText>{age}</ListItemText>
+                      <ListItem>Gender:</ListItem>
+                      <ListItemText>{sex}</ListItemText>
+                      <ListItem>Height:</ListItem>
+                      <ListItemText>{height}</ListItemText>
+                      <ListItem>Weight:</ListItem>
+                      <ListItemText>{weight}</ListItemText>
+                      <ListItem>Address:</ListItem>
                       <ListItemText>{address}</ListItemText>
+                      <ListItem>Blood Type:</ListItem>
+                      <ListItemText>{bloodType}</ListItemText>
+                      <ListItem>Organ Donor:</ListItem>
+                      <ListItemText>{organDonor}</ListItemText>
+                      <ListItem>Past Surgeries:</ListItem>
+                      <ListItemText>{pastSurgeries}</ListItemText>
+                      <ListItem>Primary Care provider:</ListItem>
+                      <ListItemText>{pcpName}</ListItemText>
+                      <ListItem>Primary Care Provider's Address:</ListItem>
+                      <ListItemText>{pcpAddress}</ListItemText>
+                      <ListItem>Emergency Contact Name:</ListItem>
+                      <ListItemText>{emergencyContactName}</ListItemText>
+
                       <Divider />
                     </List>
+                    <List
+                    sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}
+                    component="nav"
+                    aria-labelledby="nested-list-subheader"
+                    subheader={
+                      <ListSubheader  id="nested-list-subheader">
+                        <h3>Diagnosis</h3>
+                        <Divider />
+                      </ListSubheader>
+                    }>
+                    
+                      <Link to="/Diagnosis">
+                      <Button variant="contained" color="primary" style={btnstyle}>
+                      Add Diagnosis
+                      </Button>
+                      </Link>
+                    </List>
+                    <b/>
+
+                    <List
+                    sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}
+                    component="nav"
+                    aria-labelledby="nested-list-subheader"
+                    subheader={
+                      <ListSubheader  id="nested-list-subheader">
+                        <h3>Medication</h3>
+                        <Divider />
+                      </ListSubheader>
+                    }>
+              
+                      <Link to="/Medication">
+                      <Button variant="contained" color="primary" style={btnstyle}>
+                      Add Medication
+                      </Button>
+                      </Link>
+                    </List>
+
                     </Box>
                   </Item>
                   
                 </Stack>
+              
                     </div>
         ))}
           {/* this is where we could display the profile */}
@@ -137,7 +215,7 @@ console.log(data);
       </Grid>
       {/* Recent Orders */}
       <Grid item xs={12}>
-        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>hi</Paper>
+        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}></Paper>
       </Grid>
             </Grid>
             </Container>
