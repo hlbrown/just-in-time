@@ -104,6 +104,20 @@ export const QUERY_USER = gql`
       image
       profile{
         id
+        firstName
+        lastName
+        sex
+        address
+        image
+        age
+        height
+        weight	
+        bloodType
+        organDonor
+        pastSurgeries
+        pcpName
+        pcpAddress
+        emergencyContactName
       }
     }
   }

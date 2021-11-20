@@ -32,6 +32,7 @@ import { Avatar } from "@material-ui/core";
 import Profile from "pages/Profile";
 import { Link } from "react-router-dom";
 import UserDisplay from "components/UserDisplay";
+import ProfileDisplay from "components/ProfileDisplay";
 
 const drawerWidth = 240;
 
@@ -94,6 +95,10 @@ function DashboardContent(props) {
   const toggleDrawer = () => {
     setOpen(!open);
   };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5bd599a6697f870e114706ae396a63945d402df9
   const btnstyle = { margin: "8px 0" };
   return (
     <ThemeProvider theme={mdTheme}>
@@ -114,6 +119,7 @@ function DashboardContent(props) {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+<<<<<<< HEAD
             <Grid container spacing={3}>
               {/* Chart */}
               <Grid item xs={12} md={4} lg={3}>
@@ -160,6 +166,9 @@ function DashboardContent(props) {
                 ></Paper>
               </Grid>
             </Grid>
+=======
+            <ProfileDisplay />
+>>>>>>> 5bd599a6697f870e114706ae396a63945d402df9
           </Container>
         </Box>
       </Box>
