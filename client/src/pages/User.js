@@ -34,6 +34,7 @@ import { Link } from "react-router-dom";
 import UserDisplay from "components/UserDisplay";
 import ProfileDisplay from "components/ProfileDisplay";
 
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -116,7 +117,8 @@ function DashboardContent(props) {
           <Toolbar />
 
             <ProfileDisplay />
-       
+            <Divider />
+    
         </Box>
       </Box>
     </ThemeProvider>

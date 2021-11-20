@@ -119,6 +119,7 @@ export const QUERY_USER = gql`
         pcpAddress
         emergencyContactName
         diagnosis {
+          id
           name
           commonlyKnowAs
           description

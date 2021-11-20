@@ -179,7 +179,7 @@ export default function CreateProfile() {
                   </Grid>
                   <br />
                   <Grid item xs={12}>
-                    <InputLabel id="sex">Sex</InputLabel>
+                    <InputLabel id="sex">Gender</InputLabel>
                     <Select
                       // type="string"
                       // value={formData.sex}

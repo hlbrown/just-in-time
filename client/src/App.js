@@ -14,6 +14,8 @@ import store from 'utils/store';
 import Home from 'pages/Home';
 import User from 'pages/User';
 import Profile from 'pages/Profile';
+import AddMedication from 'pages/AddMedication';
+import AddDiagnosis from 'pages/AddDiagnosis';
 
 import NoMatch from 'pages/NoMatch';
 import Login from 'pages/Login';
@@ -68,6 +70,8 @@ function App() {
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/user" component={User} />
               <Route exact path="/profile" component={Profile} />
+              <Route exact path="/medication" component={AddMedication} />
+              <Route exact path="/diagnosis" component={AddDiagnosis} />
               <Route exact path="/contact" component={SlackContactForm} />
               <Route component={NoMatch} />
             </Switch>
