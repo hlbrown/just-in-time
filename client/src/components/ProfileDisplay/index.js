@@ -200,7 +200,8 @@ console.log(data);
                       <Button variant="contained" color="primary" style={btnstyle}>
                       Add Medication
                       </Button>
-                      </Link>
+                        </Link>
+                        <DiagnosisDisplay />
                     </List>
 
                     </Box>
