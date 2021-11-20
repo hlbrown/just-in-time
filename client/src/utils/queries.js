@@ -104,6 +104,9 @@ export const QUERY_USER = gql`
       image
       profile{
         id
+        firstName
+        lastName
+        age
       }
     }
   }
