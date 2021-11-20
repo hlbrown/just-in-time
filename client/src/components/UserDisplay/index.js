@@ -134,12 +134,8 @@ console.log(data);
                 {user.firstName} {user.lastName}
               </h3>
                     <h1></h1>
-<<<<<<< HEAD
-                    <Divider /> <br/>
-=======
                     <Divider />
                     <br />
->>>>>>> 5bd599a6697f870e114706ae396a63945d402df9
                     <SizedAvatar 
                       sx={{ width: 90, height: 90}}
                       src={user.image}

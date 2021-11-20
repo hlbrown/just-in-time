@@ -95,10 +95,6 @@ function DashboardContent(props) {
   const toggleDrawer = () => {
     setOpen(!open);
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> 5bd599a6697f870e114706ae396a63945d402df9
   const btnstyle = { margin: "8px 0" };
   return (
     <ThemeProvider theme={mdTheme}>
@@ -118,58 +114,9 @@ function DashboardContent(props) {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-<<<<<<< HEAD
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  <Link to="/Profile">
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      type="submit"
-                      className="button-block"
-                      style={btnstyle}
-                      fullWidth
-                    >
-                      Add Profile
-                    </Button>
-                  </Link>
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  Profile info will go here once working
-                  {/* this is where we could display the profile */}
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper
-                  sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                ></Paper>
-              </Grid>
-            </Grid>
-=======
+
             <ProfileDisplay />
->>>>>>> 5bd599a6697f870e114706ae396a63945d402df9
-          </Container>
+       
         </Box>
       </Box>
     </ThemeProvider>
