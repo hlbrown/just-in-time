@@ -21,6 +21,7 @@ import Grid from "@mui/material/Grid";
 import { Button } from "@material-ui/core";
 import Paper from "@mui/material/Paper";
 import { QUERY_USER } from "utils/queries";
+import PropTypes from 'prop-types';
 import { useQuery } from "@apollo/client";
 
 // import MenuIcon from "@mui/icons-material/Menu";
@@ -36,6 +37,7 @@ import { Link } from "react-router-dom";
 // import UserDisplay from "components/UserDisplay";
 
 function ProfileDisplay() {
+ 
 
 const { loading, data, error } = useQuery(QUERY_USER);
   if (loading) return "loading...";
@@ -51,15 +53,16 @@ console.log(data);
     <>
     {user ? (
         <>
+    <Container maxWidth="lg">
     <Grid container spacing={3}>
-      {/* Chart */}
+      {/* adding profile button */}
       <Grid item xs={12} md={4} lg={3}>
         <Paper
           sx={{
             p: 2,
             display: "flex",
             flexDirection: "column",
-            height: 240,
+            height: "auto",
           }}
         >
           <Link to="/Profile">
@@ -75,17 +78,11 @@ console.log(data);
           sx={{
             p: 2,
             display: "flex",
-            flexDirection: "column",
-            height: 240,
-          }}
-        >
-
+            flexDirection: "row",
+                    height: 'auto',
                     
-                     
-
-
-
-
+          }}
+        >                 
             {user.profile.map(({  
                 id,
         firstName,
@@ -102,10 +99,37 @@ console.log(data);
         pcpName,
         pcpAddress,
         emergencyContactName }, index) => (
-        <div key={index} className="card px-1 py-1">
-           <h1> {firstName} {lastName}</h1>
-                      <div>
-                      </div>
+              <div key={index} >
+                <Stack>
+                  <Item>
+                    <Box >
+                       <List
+                      sx={{ width: '100%', maxWidth: 600, bgcolor: 'background.paper' }}
+                      component="nav"
+                      aria-labelledby="nested-list-subheader"
+                      subheader={
+                        <ListSubheader  id="nested-list-subheader">
+                          <h3>{firstName}{lastName}</h3>
+                          <Divider />
+                          <br />
+                           <SizedAvatar 
+                      sx={{ width: 90, height: 90}}
+                      src={image}
+                          />
+
+                        </ListSubheader>
+                      }>
+                      <Divider />
+                      <ListItemText>Phone:</ListItemText>
+                      <ListItemText> {}</ListItemText>
+                      <ListItemText>Address:</ListItemText>
+                      <ListItemText>{address}</ListItemText>
+                      <Divider />
+                    </List>
+                    </Box>
+                  </Item>
+                  
+                </Stack>
                     </div>
         ))}
           {/* this is where we could display the profile */}
@@ -113,12 +137,14 @@ console.log(data);
       </Grid>
       {/* Recent Orders */}
       <Grid item xs={12}>
-        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}></Paper>
+        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>hi</Paper>
       </Grid>
-    </Grid>
+            </Grid>
+            </Container>
     </>
     ) : null}
     </>
   );
 }
+
 export default ProfileDisplay;
