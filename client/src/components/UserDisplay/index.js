@@ -1,31 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useMutation, useQuery } from "@apollo/client";
+// import { Link } from "react-router-dom";
+import {  useQuery } from "@apollo/client";
 import { QUERY_USER } from "utils/queries";
 import Auth from "utils/auth";
 
 import { Avatar, Box, Button } from "@material-ui/core";
 
-import Profile from "pages/Profile";
+// import Profile from "pages/Profile";
 import Divider from "@mui/material/Divider";
 import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
+// import CssBaseline from "@mui/material/CssBaseline";
 import IconButton from "@mui/material/IconButton";
 import MuiDrawer from "@mui/material/Drawer";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import {
   styled,
-  createTheme,
-  ThemeProvider,
-  useTheme,
-  StylesProvider,
+  createTheme
+
 } from "@mui/material/styles";
 
 //list styles
 import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
+// import ListItemButton from '@mui/material/ListItemButton';
+// import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
 import { makeStyles } from "@material-ui/core/styles";

@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
     // webhook from slack channel hook setup (https://justintime-talk.slack.com/services/2723913526019?updated=1) p3 setup here
     const webhookUrl =
-      "https://hooks.slack.com/services/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";
+      "https://hooks.slack.com/services/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";
 
     const data = {
       text: `Name: ${name} \n Email:${email} \n Message:${message}`,

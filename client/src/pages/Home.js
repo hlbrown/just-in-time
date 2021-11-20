@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Testimonial from "components/Testimonial";
 
-import GoogleMap from "components/GoogleMap";
+// import GoogleMap from "components/GoogleMap";
 
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -12,14 +12,14 @@ import Box from "@material-ui/core/Box";
 // images
 import familyIcon from "assets/familyIcon.jpg"
 import caregiver from "assets/caregiver.png";
-import parentOrguradian from "assets/parentOrguradian.png";
+// import parentOrguradian from "assets/parentOrguradian.png";
 
 // import for card section
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { Button, CardActionArea } from "@mui/material";
 
 // modal imports
 import Modal from "@mui/material/Modal";
@@ -27,7 +27,7 @@ import Fade from "@mui/material/Fade";
 import Backdrop from "@mui/material/Backdrop";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+// import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import 'index.css';
 
