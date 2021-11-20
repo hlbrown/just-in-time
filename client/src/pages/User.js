@@ -94,12 +94,7 @@ function DashboardContent(props) {
   const toggleDrawer = () => {
     setOpen(!open);
   };
-<<<<<<< Updated upstream
   const btnstyle = { margin: "8px 0" };
-=======
-
-const btnstyle={margin:'8px 0'}
->>>>>>> Stashed changes
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
@@ -129,7 +124,6 @@ const btnstyle={margin:'8px 0'}
                     flexDirection: "column",
                     height: 240,
                   }}
-<<<<<<< Updated upstream
                 >
                   <Link to="/Profile">
                     <Button
@@ -143,17 +137,6 @@ const btnstyle={margin:'8px 0'}
                       Add Profile
                     </Button>
                   </Link>
-=======
-                              ><Link to="/Profile"><Button
-            variant="contained" color="primary"style={btnstyle}
-        >Add Profile
-
-        </Button>
-        </Link>
-                  
-                                  
-                 
->>>>>>> Stashed changes
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
