@@ -13,17 +13,17 @@ function App() {
     e.preventDefault();
     // webhook from slack channel hook setup (https://justintime-talk.slack.com/services/2723913526019?updated=1) p3 setup here
     const webhookUrl =
-      "https://hooks.slack.com/services/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";
+      "https://hooks.slack.com/services/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";
 
     const data = {
-      text: `Name: ${name} \n${email} \n${message}`,
+      text: `Name: ${name} \n Email:${email} \n Message:${message}`,
     };
 
     let res = await axios.post(webhookUrl, JSON.stringify(data), {
       withCredentials: false,
       transformRequest: [
         (data, headers) => {
-          // removing default axios headers - but with this the message isnt sent hence commenting this out 
+          // removing default axios headers - but with this the message isnt sent hence commenting this out
           // delete headers.post["Content-Type"];
           return data;
         },
@@ -99,12 +99,12 @@ function App() {
             }}
           />
 
-          <button 
-          // https://tailwindcss.com/docs/outline
+        
+           {/* https://tailwindcss.com/docs/outline */}
+           <button
             className="mt-4 shadow-2xl bg-blue-600 w-full hover:bg-blue-700 focus:shadow-outline focus:outline-black text-black font-bold py-2 px-4 rounded"
-            onClick={(e) => submitForm(e)} 
-          >
-            Submit
+            onClick={(e) => submitForm(e)}
+          > Submit
           </button>
         </form>
       </div>
