@@ -118,8 +118,12 @@ Contact Form Page:<br>
  <img src="./client/src/assets/Contact_Page.png"><br/>
  Contact Form Acknowledgement:<br>
  <img src="./client/src/assets/Contact_Acknowledgement.png"><br/>
- Patient Profile Page:<br>
- <img src="./client/src/assets/PatientProfileForm.png"><br/>
+ Patient Profile Pages:<br>
+  <img src="./client/src/assets/CVB.png"><br/> 
+   <img src="./client/src/assets/JE.png"><br/> 
+    <img src="./client/src/assets/HLB.png"><br/> 
+     <img src="./client/src/assets/DB"><br/> 
+ <img src="./client/src/assets/PatientProfileForm.png"><br/> 
 Responsive UI:<br>
  <img src="./client/src/assets/Responsive_UI.png"><br/>
 
