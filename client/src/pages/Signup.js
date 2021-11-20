@@ -1,26 +1,26 @@
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import React, {  useState } from "react";
+// import { Link } from "react-router-dom";
 // import { Login } from 'utils/mutations';
-import Nav from "components/Nav";
+// import Nav from "components/Nav";
 import { useMutation } from "@apollo/client";
 import Auth from "utils/auth";
 import { ADD_USER } from "utils/mutations";
 
 import { Button, TextField, Grid, Container, Box } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 
 import ImageUpload from "components/ImageUpload";
 import MuiPhoneNumber from "material-ui-phone-number";
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   formControl: {
+//     margin: theme.spacing(1),
+//     minWidth: 120,
+//   },
+//   selectEmpty: {
+//     marginTop: theme.spacing(2),
+//   },
+// }));
 
 export default function Signup() {
   const [formState, setFormState] = useState({ email: "", password: "" });

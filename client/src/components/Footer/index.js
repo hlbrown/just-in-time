@@ -1,11 +1,11 @@
 import React from "react";
-import Auth from "utils/auth";
+// import Auth from "utils/auth";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 // import for card section
-import Card from "@mui/material/Card";
+// import Card from "@mui/material/Card";
 
 
 export default function Footer() {    

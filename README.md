@@ -7,15 +7,15 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 👉[Project Live URL - Heroku](https://project-3-just-in-time.herokuapp.com/) <br>
 👉[Project Presentation Deck](https://docs.google.com/presentation/d/1oBTbKuoBImAajCfZEzhd-XQqrMtvI3edJvQaT-AKSn0/edit?usp=drive_web&ouid=105816435444916249569)<br>
 👉[Project Management](https://github.com/hlbrown/just-in-time/projects/1)<br>
-👉 [Project Issues](https://github.com/hlbrown/just-in-time/issues)<br>
-👉 [File a Bug/ Feature Request](https://github.com/hlbrown/just-in-time/issues/new/choose)<br>
+👉[Project Issues](https://github.com/hlbrown/just-in-time/issues)<br>
+👉[File a Bug/ Feature Request](https://github.com/hlbrown/just-in-time/issues/new/choose)<br>
 👉[Project Wire frame/Plan/Proposal](https://app.diagrams.net/#G1JadNhCap1E0CLt_nYPJxmN1EoFnpzAhf)<br>
 👉[Meeting Notes](https://docs.google.com/document/d/1njId61FKle7ykOCIGgb-_9f-hWhYVQetDhAcyLX1bIk/edit#)<br>
 👉[Repository](https://github.com/hlbrown/just-in-time)<br>
-👉 📖 [Setting up MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-set-up-mongodb-atlas)<br>
-👉 📖 [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)<br>
-👉 📖 [Project Management with GitHub Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)<br>
-👉 📝 [Project ContactForm Slack Channel](https://app.slack.com/client/T02M9S1RTJN)<br>
+📖[Setting up MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-set-up-mongodb-atlas)<br>
+📖[Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)<br>
+📖[Project Management with GitHub Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)<br>
+📝[Project ContactForm Slack Channel](https://app.slack.com/client/T02M9S1RTJN)<br>
 
 
 ## Project Team (Developers)
@@ -104,23 +104,23 @@ Depending on whether you are a parent/guardian OR a care giver, you should have 
 
 ## Mock-Up (Screenshots & Responsive UI View)
 
-Landing Page:
+Landing Page:<br>
  <img src="./client/src/assets/Landing_Page.png"><br/>
-Login Page:
+Login Page:<br>
  <img src="./client/src/assets/Login_Page.png"><br/>
-Sign Up Page:
+Sign Up Page:<br>
  <img src="./client/src/assets/SignUp_Page.png"><br/>
-User Page:
+User Page:<br>
  <img src="./client/src/assets/User_Page.png"><br/>
-FeatureRequest/BugReport:
+FeatureRequest/BugReport:<br>
  <img src="./client/src/assets/FeatureRequest,Bug.png"><br/>
-Contact Form Page:
+Contact Form Page:<br>
  <img src="./client/src/assets/Contact_Page.png"><br/>
- Contact Form Acknowledgement:
+ Contact Form Acknowledgement:<br>
  <img src="./client/src/assets/Contact_Acknowledgement.png"><br/>
- Patient Profile Page:
+ Patient Profile Page:<br>
  <img src="./client/src/assets/PatientProfileForm.png"><br/>
-Responsive UI:
+Responsive UI:<br>
  <img src="./client/src/assets/Responsive_UI.png"><br/>
 
 ## AccessibilityScores (LightHouseReports)

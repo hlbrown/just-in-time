@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import Nav from "components/Nav";
+// import Nav from "components/Nav";
 import { LOGIN } from "utils/mutations";
 import Auth from "utils/auth";
 
@@ -16,15 +16,15 @@ import {
   TextField,
   Grid,
   Paper,
-  AppBar,
+  // AppBar,
   Typography,
-  Toolbar,
+  // Toolbar,
   Link,
-  Container,
+  // Container,
   Box,
 } from "@material-ui/core";
 
-import { borders, shadows } from "@mui/system";
+// import { borders, shadows } from "@mui/system";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
