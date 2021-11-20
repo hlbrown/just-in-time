@@ -74,8 +74,8 @@ type Profile {
     id: ID!
     name: String
     brand: String
-    prescription: Boolean
-    otc: Boolean
+    prescription: String
+    otc: String
     dose: String
     interactions: String
   }
@@ -83,8 +83,8 @@ type Profile {
   input MedicationInput {
     name: String
     brand: String
-    prescription: Boolean
-    otc: Boolean
+    prescription: String  
+    otc: String
     dose: String
     interactions: String
   }
