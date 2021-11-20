@@ -35,7 +35,7 @@ const profileSchema = new Schema({
       required: false
     }, 
     weight: { 
-      type: Number,
+      type: String,
       required: false
     }, 
     bloodType: {
@@ -43,10 +43,10 @@ const profileSchema = new Schema({
       required: false
     },
     organDonor: {
-      type: Boolean
+      type: String
     },
     pastSurgeries: {
-      type: Boolean,
+      type: String,
       required: false
     },
     pcpName: {

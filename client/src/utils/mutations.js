@@ -51,6 +51,8 @@ export const CREATE_PROFILE = gql`
     pcpName
     pcpAddress
     emergencyContactName
+    diagnosis{name}
+    medication{name}
   }
 }
 `;
