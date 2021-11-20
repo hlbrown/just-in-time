@@ -134,12 +134,7 @@ function UserDisplay() {
                 {user.firstName} {user.lastName}
               </h3>
                     <h1></h1>
-<<<<<<< Updated upstream
                     <Divider /> <br/>
-=======
-                    <Divider />
-                    <br />
->>>>>>> Stashed changes
                     <SizedAvatar 
                       sx={{ width: 90, height: 90}}
                       src={user.image}
