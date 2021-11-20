@@ -40,7 +40,6 @@ const resolvers = {
               path: "profile",
               populate: [{ path: "medication" }, { path: "diagnosis" }],
             });
-
             return user;
         }
     },
@@ -79,8 +78,9 @@ const resolvers = {
 
       return { token, user };
     },
-    createProfile: async (parent, args) => {
+    createProfile: async (parent, args, context) => {
       const profile = await Profile.create(args.profileInput);
+      await User.findByIdAndUpdate(context.user._id, { $push: { profile: profile._id } });
       return profile;
     },
     updateUser: async (parent, args, context) => {
@@ -88,6 +88,7 @@ const resolvers = {
         return await User.findByIdAndUpdate(context.user._id, args, {
           new: true,
         });
+
       }
 
       throw new AuthenticationError("Not logged in");

@@ -73,7 +73,7 @@ function UserDisplay(props) {
   const { loading, data, error } = useQuery(QUERY_USER);
   if (loading) return "loading...";
   if (error) return `error!${error.message}`;
-
+console.log(data);
   let user;
 
   if (data) {
