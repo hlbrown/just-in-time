@@ -125,17 +125,17 @@ Responsive UI:
 
 ## AccessibilityScores (LightHouseReports)
 
-Landing Page:
+Landing Page:<br>
  <img src="./client/src/assets/LandingPage.png"><br/>
-Login Page:
+Login Page:<br>
  <img src="./client/src/assets/LoginPage.png"><br/>
-Sign Up Page:
+Sign Up Page:<br>
  <img src="./client/src/assets/SignupPage.png"><br/>
-User Page:
+User Page:<br>
  <img src="./client/src/assets/AdminUserPage.png"><br/>
-Profile Page:
+Profile Page:<br>
  <img src="./client/src/assets/ProfilePage.png"><br/>
-Contact Form Page:
+Contact Form Page:<br>
  <img src="./client/src/assets/ContactPage.png"><br/>
 
 ## Presentation Requirements
