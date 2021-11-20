@@ -5,8 +5,10 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 ## Project Resources
 <!-- 👉[Watch - Project App Demo]()<br> -->
 👉[Project Live URL - Heroku](https://project-3-just-in-time.herokuapp.com/) <br>
+👉[Project Presentation Deck](https://docs.google.com/presentation/d/1oBTbKuoBImAajCfZEzhd-XQqrMtvI3edJvQaT-AKSn0/edit?usp=drive_web&ouid=105816435444916249569)<br>
 👉[Project Management](https://github.com/hlbrown/just-in-time/projects/1)<br>
 👉 [Project Issues](https://github.com/hlbrown/just-in-time/issues)<br>
+👉 [File a Bug/ Feature Request](https://github.com/hlbrown/just-in-time/issues/new/choose)<br>
 👉[Project Wire frame/Plan/Proposal](https://app.diagrams.net/#G1JadNhCap1E0CLt_nYPJxmN1EoFnpzAhf)<br>
 👉[Meeting Notes](https://docs.google.com/document/d/1njId61FKle7ykOCIGgb-_9f-hWhYVQetDhAcyLX1bIk/edit#)<br>
 👉[Repository](https://github.com/hlbrown/just-in-time)<br>
@@ -14,7 +16,7 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 👉 📖 [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)<br>
 👉 📖 [Project Management with GitHub Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)<br>
 👉 📝 [Project ContactForm Slack Channel](https://app.slack.com/client/T02M9S1RTJN)<br>
-👉[Project Presentation Deck]()
+
 
 ## Project Team (Developers)
 
@@ -39,18 +41,19 @@ This repository is for group 2's Project3 - Interactive Performant and Scalable 
 
 ## Just In Time Motivation
 
- We all have experienced the panic scramble when a loved one is in need of medical attention be it via emergency response services or a guardian or caretaker and we are frantically searching for medicines, allergies, PCP information etc. <br/>
- 👉  To stay calm and composed in such situations and supply the requested information in few clicks  was the motivation behind ***"just-in-time"***  an app that helps you organize all medical emergency information in a single page!
+We all have experienced the panic scramble when a loved one is in need of medical attention be it via emergency response services or a guardian or caretaker and we are frantically searching for medicines, allergies, PCP information etc. <br/>
+
+ 👉  Our motivation behind ***"just-in-time"*** was to help users like parents/guardians and caregivers organize all medical emergency information in a single page and make it accessible in few clicks!
 
 ## User Story
 
 ***AS*** an **admin** (for example: authorized parent or guardian) <br>
 ***I WANT*** to create a **profile** for my loved one to display all their medical emergency information  </br>
-***SO AS*** to allow **care givers/nannies/guardians/others** authorized to view this information to leverage it in time of need should an emergency manifest itself!
+***SO AS*** to allow ***caregivers/nannies/guardians/others*** authorized to view this information leverage it in time of need should an emergency manifest itself!
 
 ## Project Requirements
 
-Apply everything we’ve learnt over the past six months to create a real-world full-mern-stack application that we'll showcase to potential employers. Besides the user story and acceptance criteria our project fulfils the following requirements:
+Attempt to apply everything we’ve learnt over the past six months to create a real-world full-mern-stack application that we'll showcase to potential employers. Besides the user story and acceptance criteria our project fulfils the following requirements:
 
 ```
 ✔️ Use React for the front end.
@@ -90,15 +93,18 @@ Apply everything we’ve learnt over the past six months to create a real-world 
 Depending on whether you are a parent/guardian OR a care giver, you should have the ability to login to the appropriate Portal and have access to either enter information for a Patient /Dependent Profile OR view the entered information for the Patient/Dependent being cared for in under 5 clicks!
 
 ## Project Future Enhancements
-
+⏭️ Display the nearest hospital, police station and urgent care facility with the shortest route / a direct phone number based on the caretaker’s location<br>
+⏭️ Connect the testimonial with the seed / backend database<br>
 ⏭️ Ability for Admins to create copy template fields<br>
 ⏭️ Ability to auto pin in the map on the landing page to display the nearest Fire station, Police station, UrgentCare facility based on users browser geolocation<br>
 ⏭️ Ability for caregivers/ EMS to comment on stale information / request Parents & Guardians for further clarification on medicine/allergy or the diagnosis information<br>
 ⏭️ Modal alert for the Contact form<br>
+⏭️ Ability for caretakers to easily look up medicine information for clarification using the API<br>
+⏭️ Continue to Improve Accessibility/Performance Page Scores <br>
 
 ## Mock-Up (Screenshots & Responsive UI View)
 
-Place holder for screenshots form the app
+Place holder for screenshots from the app
 
 ## AccessibilityScores (LightHouseReports)
 
@@ -114,6 +120,7 @@ Profile Page:
  <img src="./client/src/assets/ProfilePage.png"><br/>
 Contact Form Page:
  <img src="./client/src/assets/ContactPage.png"><br/>
+
 ## Presentation Requirements
 
 ```
