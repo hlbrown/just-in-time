@@ -32,6 +32,7 @@ import { Avatar } from "@material-ui/core";
 import Profile from "pages/Profile";
 import { Link } from "react-router-dom";
 import UserDisplay from "components/UserDisplay";
+import ProfileDisplay from "components/ProfileDisplay";
 
 const drawerWidth = 240;
 
@@ -95,7 +96,7 @@ function DashboardContent(props) {
     setOpen(!open);
   };
 
-const btnstyle={margin:'8px 0'}
+  const btnstyle = { margin: "8px 0" };
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: "flex" }}>
@@ -115,48 +116,7 @@ const btnstyle={margin:'8px 0'}
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                              ><Link to="/Profile"><Button
-            variant="contained" color="primary"style={btnstyle}
-        >Add Profile
-
-        </Button>
-        </Link>
-                  
-                                  
-                 
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  Profile info will go here once working
-                  {/* this is where we could display the profile */}
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper
-                  sx={{ p: 2, display: "flex", flexDirection: "column" }}
-                ></Paper>
-              </Grid>
-            </Grid>
+            <ProfileDisplay />
           </Container>
         </Box>
       </Box>
