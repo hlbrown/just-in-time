@@ -75,7 +75,7 @@ function DiagnosisDisplay() {
               height: 'auto',                    
               }}
             >                 
-            {user.profile[1].diagnosis}
+            
            
 
                 <div >
@@ -89,6 +89,7 @@ function DiagnosisDisplay() {
                       subheader={
                         <ListSubheader  id="nested-list-subheader">
                           <h3>Diagnosis</h3>
+                          <h2> </h2>
                           <Divider />
                         </ListSubheader>
                       }>
@@ -96,11 +97,7 @@ function DiagnosisDisplay() {
                       <ListItemText>Diagnosis:</ListItemText>
                       </List>
                       <Divider />
-                      <Link to="/Medication">
-                      <Button variant="contained" color="primary" style={btnstyle}>
-                        Add Medication
-                      </Button>
-                      </Link>
+
                       </Box>
                       </Item>
                       </Stack>
