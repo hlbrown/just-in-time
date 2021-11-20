@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^6.4.0"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
