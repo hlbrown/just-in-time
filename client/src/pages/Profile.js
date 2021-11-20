@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function CreateProfile() {
-  const [formState, setFormState] = useState({
+  const [formData, setFormData] = useState({
      firstName: '',
      lastName: '', 
      sex: '',
@@ -49,45 +49,45 @@ export default function CreateProfile() {
      height: '',
      weight: '',
      bloodType: '',
-     organDonor: 'false',
-     pastSurgeries: 'false',
+     organDonor: '',
+     pastSurgeries: '',
      pcpName: '',
      pcpAddress: '',
      pcpPhoneNumber: '',
      emergencyContactName: '',
      emergencyContactNumber: ''
   });
-  const [createProfile] = useMutation(CREATE_PROFILE);
+  const [createProfile, { data, error }] = useMutation(CREATE_PROFILE);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await createProfile({
+    const { data } = await createProfile({
       variables: {
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-        sex: formState.sex,
-        address: formState.address,
-        image: formState.image,
-        age: formState.age,
-        height: formState.height,
-        weight: formState.weight,
-        bloodType: formState.bloodType,
-        organDonor: formState.organDonor,
-        pastSurgeries: formState.pastSurgeries,
-        pcpName: formState.pcpName,
-        pcpAddress: formState.pcpAddress,
-        pcpPhoneNumber: formState.pcpPhoneNumber,
-        emergencyContactName: formState.emergencyContactName,
-        emergencyContactNumber: formState.emergencyContactNumber
+        profileInput: { ...formData }
+        
+        // firstName: formState.firstName,
+        // lastName: formState.lastName,
+        // sex: formState.sex,
+        // address: formState.address,
+        // image: formState.image,
+        // age: formState.age,
+        // height: formState.height,
+        // weight: formState.weight,
+        // bloodType: formState.bloodType,
+        // organDonor: formState.organDonor,
+        // pastSurgeries: formState.pastSurgeries,
+        // pcpName: formState.pcpName,
+        // pcpAddress: formState.pcpAddress,
+        // pcpPhoneNumber: formState.pcpPhoneNumber,
+        // emergencyContactName: formState.emergencyContactName,
+        // emergencyContactNumber: formState.emergencyContactNumber
       }
     });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
   };
     const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormState({
-      ...formState,
+    setFormData({
+      ...formData,
       [name]: value,
     });
   };
@@ -159,7 +159,7 @@ export default function CreateProfile() {
                  id="firstName"
                  label="First Name"
                  variant="outlined"
-                 type="text"
+                 type="string"
                  name="firstName"
                 //  value={firstName}
                  onChange={handleChange}
@@ -175,7 +175,7 @@ export default function CreateProfile() {
                  id="lastName"
                  label="Last Name"
                  variant="outlined"
-                 type="text"
+                 type="string"
                  name="lastName"
                 //  value={lastName}
                  onChange={handleChange}
@@ -186,7 +186,7 @@ export default function CreateProfile() {
                   </Grid>
                     <Grid item xs={12} >
                      <TextField
-                      type="address"
+                      type="string"
                       placeholder="address"
                       fullWidth
                       name="address"
@@ -202,6 +202,7 @@ export default function CreateProfile() {
                   <Grid item xs={12} >
                     <InputLabel id="sex">Sex</InputLabel>
                     <Select
+                      type="string"
                       labelId="sex"
                       id="sex"
                       label="sex"
@@ -223,6 +224,7 @@ export default function CreateProfile() {
                     labelId="bloodtype"
                       id="bloodtype"
                       label="bloodtype"
+                      type="string"
                       fullWidth
                       onChange={handleChange}>
                       <MenuItem value={'A+'}>A+</MenuItem>
@@ -241,6 +243,7 @@ export default function CreateProfile() {
                     labelId="organDonor"
                       id="organDonor"
                       label="organDonor"
+                      type="string"
                       fullWidth
                       onChange={handleChange}>
                       <MenuItem value={'True'}>True</MenuItem>
@@ -253,6 +256,7 @@ export default function CreateProfile() {
                     labelId="pastSurgeries"
                       id="pastSurgeries"
                       label="pastSurgeries"
+                      type="string"
                       fullWidth
                       onChange={handleChange}>
                       <MenuItem value={'True'}>True</MenuItem>
@@ -265,6 +269,7 @@ export default function CreateProfile() {
                       type="age"
                       fullWidth
                       name="age"
+                      type="string"
                       variant="outlined"
                       onChange={handleChange}
                       // value={this.state.password}
@@ -280,6 +285,7 @@ export default function CreateProfile() {
                       fullWidth
                       name="pcpName"
                       variant="outlined"
+                      type="string"
                       onChange={handleChange}
                       // value={this.state.password}
                       // onChange={(event) =>
@@ -287,19 +293,19 @@ export default function CreateProfile() {
                       required
                       />
                   </Grid>
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <InputLabel>PCP Phone Number</InputLabel>
                     <MuiPhoneNumber
                       name="pcpPhoneNumber"
                       defaultCountry={"us"}
                       // onChange={handleChange}
                     />
-                  </Grid>
+                  </Grid> */}
                 
                   <Grid item xs={12} >
                     <InputLabel>PCP Address</InputLabel>
                      <TextField
-                      type="pcpAddress"
+                      type="string"
                       fullWidth
                       name="pcpAddress"
                       variant="outlined"
@@ -312,7 +318,7 @@ export default function CreateProfile() {
                   </Grid>
                     <Grid item xs={12} >
                      <TextField
-                      type="height"
+                      type="string"
                       placeholder="height"
                       fullWidth
                       name="height"
@@ -326,7 +332,7 @@ export default function CreateProfile() {
                   </Grid>
                     <Grid item xs={12} >
                      <TextField
-                      type="weight"
+                      type="string"
                       placeholder="weight"
                       fullWidth
                       name="weight"
@@ -346,20 +352,21 @@ export default function CreateProfile() {
                       name="emergencyContactName"
                       variant="outlined"
                       onChange={handleChange}
+                      type="string"
                       // value={this.state.password}
                       // onChange={(event) =>
                       // this.setState({[event.target.name]: event.target.value,})}
                       required
                       />
                   </Grid>
-                  <Grid item xs={12}>
+                  {/* <Grid item xs={12}>
                     <InputLabel>Emergency Contact Number</InputLabel>
                     <MuiPhoneNumber
                       name="emergencyContactNumber"
                       defaultCountry={"us"}
                       // onChange={handleChange}
                     />
-                  </Grid>
+                  </Grid> */}
                   
                 <Grid item xs={12}>
                     <Button
