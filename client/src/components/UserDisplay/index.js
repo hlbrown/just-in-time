@@ -95,7 +95,7 @@ function UserDisplay() {
   const { loading, data, error } = useQuery(QUERY_USER);
   if (loading) return "loading...";
   if (error) return `error!${error.message}`;
-
+console.log(data);
   let user;
 
   if (data) {
@@ -134,7 +134,12 @@ function UserDisplay() {
                 {user.firstName} {user.lastName}
               </h3>
                     <h1></h1>
+<<<<<<< HEAD
                     <Divider /> <br/>
+=======
+                    <Divider />
+                    <br />
+>>>>>>> 127582a538e532650780ce808912e27a8be60bbb
                     <SizedAvatar 
                       sx={{ width: 90, height: 90}}
                       src={user.image}
