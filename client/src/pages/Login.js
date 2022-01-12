@@ -160,42 +160,6 @@ function Login(props) {
         </Grid>
       </Box>
     </div>
-
-    // {/* // <Container className="container my-1">
-    //   <Link to="/signup">← Go to Signup</Link>
-
-    //   <h2>Login</h2>
-    //   <form onSubmit={handleFormSubmit}>
-    //     <Container className="flex-row space-between my-2">
-    //       <label htmlFor="email">Email address:</label>
-    //       <input */}
-    //         placeholder="youremail@test.com"
-    //         name="email"
-    //         type="email"
-    //         id="email"
-    //         onChange={handleChange}
-    //       />
-    //     </Container>
-    //     <Container className="flex-row space-between my-2">
-    //       <label htmlFor="pwd">Password:</label>
-    //       <input
-    //         placeholder="******"
-    //         name="password"
-    //         type="password"
-    //         id="pwd"
-    //         onChange={handleChange}
-    //       />
-    //     </Container>
-    //     {error ? (
-    //       <Container>
-    //         <p className="error-text">The provided credentials are incorrect</p>
-    //       </Container>
-    //     ) : null}
-    //     <Container className="flex-row flex-end">
-    //       <button type="submit">Submit</button>
-    //     </Container>
-    //   </form>
-    // </Container>
   );
 }
 

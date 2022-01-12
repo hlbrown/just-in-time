@@ -1,6 +1,6 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import {  useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "utils/queries";
 import Auth from "utils/auth";
 
@@ -13,23 +13,18 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MuiDrawer from "@mui/material/Drawer";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import {
-  styled,
-  createTheme
-
-} from "@mui/material/styles";
+import { styled, createTheme } from "@mui/material/styles";
 
 //list styles
-import ListSubheader from '@mui/material/ListSubheader';
-import List from '@mui/material/List';
+import ListSubheader from "@mui/material/ListSubheader";
+import List from "@mui/material/List";
 // import ListItemButton from '@mui/material/ListItemButton';
 // import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import ListItemText from "@mui/material/ListItemText";
 
 import { makeStyles } from "@material-ui/core/styles";
 
 const drawerWidth = 240;
-
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -70,21 +65,20 @@ const logout = (event, label) => {
   if (label === "logout") {
     Auth.logout();
   }
-}
+};
 
 function UserDisplay() {
   // const { loading = false } = props;
- const useStyles = makeStyles({
-  button: {
-    backgroundColor: "#c51162",
-    color: "#fff",
-    "&:hover": {
-      backgroundColor: "#fff",
-      color: "#3c52b2",
+  const useStyles = makeStyles({
+    button: {
+      backgroundColor: "#c51162",
+      color: "#fff",
+      "&:hover": {
+        backgroundColor: "#fff",
+        color: "#3c52b2",
+      },
     },
-  },
- 
-});
+  });
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
@@ -93,14 +87,13 @@ function UserDisplay() {
   const { loading, data, error } = useQuery(QUERY_USER);
   if (loading) return "loading...";
   if (error) return `error!${error.message}`;
-console.log(data);
+  console.log(data);
   let user;
 
   if (data) {
     user = data.user;
   }
-  const btnstyle = { margin: '8px 0' }
- 
+  const btnstyle = { margin: "8px 0" };
 
   return (
     <>
@@ -114,7 +107,6 @@ console.log(data);
                   alignItems: "center",
                   justifyContent: "flex-end",
                   px: [1],
-                 
                 }}
               >
                 <IconButton onClick={toggleDrawer}>
@@ -124,32 +116,36 @@ console.log(data);
 
               <Divider />
 
-              
-              <Box sx={{ p: 2 }} >
+              <Box sx={{ p: 2 }}>
                 <>
-                  <Box >
-                    <h3 >
-                {user.firstName} {user.lastName}
-              </h3>
+                  <Box>
+                    <h3>
+                      {user.firstName} {user.lastName}
+                    </h3>
                     <h1></h1>
-                    <Divider /> <br/>
-                    <SizedAvatar 
-                      sx={{ width: 90, height: 90}}
+                    <Divider /> <br />
+                    <SizedAvatar
+                      sx={{ width: 90, height: 90 }}
                       src={user.image}
                     />
                     ​
                   </Box>
-                  <Divider /> <br/>
-                  <Box sx={{p: 2}}>
+                  <Divider /> <br />
+                  <Box sx={{ p: 2 }}>
                     <List
-                      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
+                      sx={{
+                        width: "100%",
+                        maxWidth: 360,
+                        bgcolor: "background.paper",
+                      }}
                       component="nav"
                       aria-labelledby="nested-list-subheader"
                       subheader={
-                        <ListSubheader  id="nested-list-subheader">
+                        <ListSubheader id="nested-list-subheader">
                           Profile Info
                         </ListSubheader>
-                      }>
+                      }
+                    >
                       <Divider />
                       <ListItemText>Phone:</ListItemText>
                       <ListItemText> {user.phoneNumber}</ListItemText>
@@ -159,23 +155,37 @@ console.log(data);
 
                       <ListItemText>
                         <a href="/" onClick={() => Auth.logout()}>
-                        <Button
-                          variant="contained"
-                          color="primary"
-                          type="submit"
-                          // className={classes.button}
-                          style={btnstyle}
-                          fullWidth
-                          label="logout"
-                          sx={{onClick: (event) => {logout(event, 'logout')}}}>
-                 
-                        Log Out</Button>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                            // className={classes.button}
+                            style={btnstyle}
+                            fullWidth
+                            label="logout"
+                            sx={{
+                              onClick: (event) => {
+                                logout(event, "logout");
+                              },
+                            }}
+                          >
+                            Log Out
+                          </Button>
                         </a>
                       </ListItemText>
+                      <ListItemText>
+                        <Link to="/Profile">
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            style={btnstyle}
+                          >
+                            Add Profile
+                          </Button>
+                        </Link>
+                      </ListItemText>
                     </List>
-
-
-
                   </Box>
                 </>
               </Box>
