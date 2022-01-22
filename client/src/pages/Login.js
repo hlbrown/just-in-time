@@ -57,7 +57,7 @@ function Login(props) {
     <div>
       
       <Box
-        px={{ xs: 3, sm: 10 }}
+        px={{ xs: 5, sm: 10 }}
         py={{ xs: 5, sm: 10 }}
         bgcolor="text.secondary"
         color="white"
