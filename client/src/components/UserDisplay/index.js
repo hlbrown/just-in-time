@@ -44,7 +44,6 @@ const SizedAvatar = styled(Avatar)`
   `};
 `;
 
-const mdTheme = createTheme();
 
 const logout = (event, label) => {
   if (label === "logout") {
@@ -68,36 +67,25 @@ function UserDisplay() {
   }
 
   return (
-    <div>
+    
     <React.Fragment>
       {user ? (
         <React.Fragment>
-            <Box  
-              px={{ xs: 1, sm: 5}}
-              py={{ xs: 1, sm: 5}}
-              bgcolor="red"
-              sx={{
-                borderRadius: 4,
-                bgcolor: "text.disabled",
-                m: 2,
-                p: 2
-              }}
-              
-            >
+           
               <Container maxWidth="lg">
-                <Grid container direction="row" spacing={3}>
-                  <Grid item xs={12} sm={12} md={6}>
+                <Grid container direction="row">
+                  <Grid item xs={12} sm={12} >
                     <Box>
                       <Card
                         sx={{
                           maxWidth: 300,
                           minHeight:400,
-                    borderRadius: 4,
-                    boxShadow: 10,
-                    m: 1,
-                    p: 1,
-                    border: "2px solid 	#808080",
-                        }}>
+                          borderRadius: 4,
+                          boxShadow: 10,
+                          m: 1,
+                          p: 1,
+                          border: "2px solid 	#808080",
+                              }}>
                         <CardMedia
                         sx={{
                         maxWidth: 300,
@@ -110,37 +98,11 @@ function UserDisplay() {
                       alt="image of self"
                         />
                         <CardContent sx={{ justifyContent: "left" }}>
-                          <Typography
-                          
+                          <Typography                          
                             variant="h4">
                             {user.firstName} {user.lastName}
                           </Typography>
-                        </CardContent>
-                        
-                      </Card>
-                    </Box>
-                  </Grid>
-                  <Grid item item xs={12} sm={12} md={6}>
-                          <Card
-                        sx={{
-                        maxWidth: 300,
-                          minHeight: 400,
-                    borderRadius: 4,
-                    boxShadow: 10,
-                    m: 1,
-                    p: 1,
-                    border: "2px solid 	#808080",
-                        }}>
-                        <CardMedia
-                        sx={{
-                        maxWidth: 300,
-                        borderRadius: 4,
-                        boxShadow: 10,
-                       
-                          }}
-                        />
-                      <CardContent sx={{ justifyContent: "left"}}>
-                        <List>
+                          <List>
                           <ListItemText>Phone: {user.phoneNumber}</ListItemText>
                           <ListItemText>Email: {user.email}</ListItemText>
                           <ListItem>
@@ -151,24 +113,18 @@ function UserDisplay() {
                             </a>
                           </ListItem>
                         </List>
-
-                        
-     
                         </CardContent>
                         
                       </Card>
+                    </Box>
                   </Grid>
+                  
                 </Grid>
             </Container>
-              
-
-              
-          </Box>
 
         </React.Fragment>
       ) : null}
       </React.Fragment>
-      </div>
   );
 }
 export default UserDisplay;

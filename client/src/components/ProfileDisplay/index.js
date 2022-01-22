@@ -39,6 +39,12 @@ import Modal from '@mui/material/Modal';
 import ButtonBase from '@mui/material/ButtonBase';
 
 
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+
+
 
 export default function ProfileDisplay() {
   const [value, setValue] = React.useState(0);
@@ -81,23 +87,63 @@ console.log(data);
     <React.Fragment>
       {user ? (
         <React.Fragment>
-      <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-              
-              {user.profile.map(({data}, index) => (
-            
-              
-                <Stack
-              direction={{ xs: 'column', sm: 'row' }}
-              spacing={{ xs: 1, sm: 2, md: 4 }}>
-              <Paper>
-                {data.firstName}
-              </Paper>
-              </Stack>
-            
-          ))}
+            <Container maxWidth="lg">
+            <Grid container direction="row">
+                <Box>
+                  {user.profile.map(({
+                       id,
+          firstName,
+          lastName,
+          sex,
+          address,
+          image,
+          age,
+          height,
+          weight,	
+          bloodType,
+          organDonor,
+          pastSurgeries,
+          pcpName,
+          pcpAddress,
+          emergencyContactName,
+          emergencyContactNumber 
+                  }, index) => (
+                  <Grid item xs={12} sm={12} md={6}>
+                  
+                  <Card
+                        sx={{
+                          maxWidth: 300,
+                          minHeight:400,
+                          borderRadius: 4,
+                          boxShadow: 10,
+                          m: 1,
+                          p: 1,
+                          border: "2px solid 	#808080",
+                          }}>
+                    <CardContent sx={{ justifyContent: "left" }}>
+                          <Typography                          
+                            variant="h4">
+                            {firstName} {lastName}
+                          </Typography>
+                          <List>
+                          <ListItemText>Phone: {user.phoneNumber}</ListItemText>
+                          <ListItemText>Email: {user.email}</ListItemText>
+                          <ListItem>
+                            
+                            <Button>
+
+                              </Button>
+                            
+                          </ListItem>
+                        </List>
+                        </CardContent>
+                    
+                      </Card>
+                      </Grid>
+                    ))}
+                    </Box>
             </Grid>
-            </Box>
+          </Container>
         </React.Fragment>
       ) : null}
     </React.Fragment>
