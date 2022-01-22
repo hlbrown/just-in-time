@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import ReactFragment from "@material-ui/core"
 
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -44,6 +45,10 @@ export default function ProfileDisplay() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   }
+  const [spacing, setSpacing] = React.useState(2);
+  const handlespace = (event) => {
+    setSpacing(Number(event.target.value));
+  };
 
   const Item = styled(Paper)(({ theme }) => ({
     ...theme.typography.body2,
@@ -73,112 +78,29 @@ console.log(data);
     
   return (
     
-    <>
-    {user ? (
-        <>
-    <Container component="section" sx={{mt: 8, mb: 4}}>      
-                  
-            {user.profile.map(({  
-                id,
-          firstName,
-          lastName,
-          sex,
-          address,
-          image,
-          age,
-          height,
-          weight,	
-          bloodType,
-          organDonor,
-          pastSurgeries,
-          pcpName,
-          pcpAddress,
-          emergencyContactName,
-          emergencyContactNumber }, index) => (
-              <div key={id} >
-                    <Box
-                    sx={{ mt: 8, display: 'flex', flexWrap: 'wrap', width: '25%'}}
-                    >
-                       <List
-                      sx={{ width: '100%', bgcolor: 'background.paper' }}>          
-                        
-                          <h3>{firstName} {lastName}</h3>
-                          <Divider />
-                          <br />
-                           <SizedAvatar 
-                      sx={{ width: 90, height: 90, position: 'relative'}}
-                      src={image}                  
-                      />
-                        <br />
-                      <Divider />
-                      <ListItem>Age: {age}</ListItem>
-                        <ListItem>Gender: {sex}</ListItem>
-                      {/* <ListItemText>{sex}</ListItemText> */}
-                      <ListItem>Height: {height}</ListItem>
-                      {/* <ListItemText>{height}</ListItemText> */}
-                      <ListItem>Weight: {weight}</ListItem>
-                      {/* <ListItemText>{weight}</ListItemText> */}
-                      <ListItem>Address: {address}</ListItem>
-                      {/* <ListItemText>{address}</ListItemText> */}
-                      <ListItem>Blood Type: {bloodType}</ListItem>
-                      {/* <ListItemText>{bloodType}</ListItemText> */}
-                      <ListItem>Organ Donor: {organDonor}</ListItem>
-                      {/* <ListItemText>{organDonor}</ListItemText> */}
-                      <ListItem>Past Surgeries: {pastSurgeries}</ListItem>
-                      {/* <ListItemText>{pastSurgeries}</ListItemText> */}
-                      <ListItem>Primary Care provider: {pcpName}</ListItem>
-                      {/* <ListItemText>{pcpName}</ListItemText> */}
-                      <ListItem>Primary Care Provider's Address: {pcpAddress}</ListItem>
-                      {/* <ListItemText>{pcpAddress}</ListItemText> */}
-                      <ListItem>Emergency Contact Name: {emergencyContactName}</ListItem>
-                      {/* <ListItemText>{emergencyContactName}</ListItemText> */}
-
-                      <Divider />
-                    </List>
-                    <List
-                    sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                    
-            
-                        <h3>Diagnosis</h3>
-                        <Divider />
-                   
-                    
-                    
-                      <Link to="/Diagnosis">
-                      <Button variant="contained" color="primary" style={btnstyle}>
-                      Add Diagnosis
-                      </Button>
-                      </Link>
-                    </List>
-                    <b/>
-
-                    <List
-                    sx={{ width: '100%', bgcolor: 'background.paper' }}
-                    component="nav"
-                    aria-labelledby="nested-list-subheader"
-                    subheader={
-                      <ListSubheader  id="nested-list-subheader">
-                        <h3>Medication</h3>
-                        <Divider />
-                      </ListSubheader>
-                    }>
+    <React.Fragment>
+      {user ? (
+        <React.Fragment>
+      <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
               
-                      <Link to="/Medication">
-                      <Button variant="contained" color="primary" style={btnstyle}>
-                      Add Medication
-                      </Button>
-                        </Link>
-                        {/* <DiagnosisDisplay /> */}
-                    </List>
-
-                    </Box>
-                    </div>
-        ))}
-          {/* this is where we could display the profile */}
-            </Container>
-    </>
-    ) : null}
-    </>
+              {user.profile.map(({data}, index) => (
+            
+              
+                <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={{ xs: 1, sm: 2, md: 4 }}>
+              <Paper>
+                {data.firstName}
+              </Paper>
+              </Stack>
+            
+          ))}
+            </Grid>
+            </Box>
+        </React.Fragment>
+      ) : null}
+    </React.Fragment>
   );
 }
 

@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "utils/queries";
 import Auth from "utils/auth";
 
-import { Avatar, Box, Button } from "@material-ui/core";
+import { Avatar, Box, Button, Typography } from "@material-ui/core";
 
 // import Profile from "pages/Profile";
 import Divider from "@mui/material/Divider";
@@ -14,43 +14,28 @@ import IconButton from "@mui/material/IconButton";
 import MuiDrawer from "@mui/material/Drawer";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { styled, createTheme } from "@mui/material/styles";
+import Container from "@mui/material/Container"
 
 //list styles
 import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
 // import ListItemButton from '@mui/material/ListItemButton';
 // import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from "@mui/material/ListItemText";
+
 
 import { makeStyles } from "@material-ui/core/styles";
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 
-const drawerWidth = 240;
+//scrolling list we can change this is we want
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import { FixedSizeList } from 'react-window';
 
-const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  "& .MuiDrawer-paper": {
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    boxSizing: "border-box",
-    ...(!open && {
-      overflowX: "hidden",
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(7),
-      [theme.breakpoints.up("sm")]: {
-        width: theme.spacing(9),
-      },
-    }),
-  },
-}));
 
 const SizedAvatar = styled(Avatar)`
   ${({ size, theme }) => `
@@ -67,23 +52,11 @@ const logout = (event, label) => {
   }
 };
 
+
+
 function UserDisplay() {
   // const { loading = false } = props;
-  const useStyles = makeStyles({
-    button: {
-      backgroundColor: "#c51162",
-      color: "#fff",
-      "&:hover": {
-        backgroundColor: "#fff",
-        color: "#3c52b2",
-      },
-    },
-  });
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
+ 
   const { loading, data, error } = useQuery(QUERY_USER);
   if (loading) return "loading...";
   if (error) return `error!${error.message}`;
@@ -93,107 +66,109 @@ function UserDisplay() {
   if (data) {
     user = data.user;
   }
-  const btnstyle = { margin: "8px 0" };
 
   return (
-    <>
-      <div>
-        {user ? (
-          <>
-            <Drawer variant="permanent" open={open}>
-              <Toolbar
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "flex-end",
-                  px: [1],
-                }}
-              >
-                <IconButton onClick={toggleDrawer}>
-                  <ChevronLeftIcon />
-                </IconButton>
-              </Toolbar>
+    <div>
+    <React.Fragment>
+      {user ? (
+        <React.Fragment>
+            <Box  
+              px={{ xs: 1, sm: 5}}
+              py={{ xs: 1, sm: 5}}
+              bgcolor="red"
+              sx={{
+                borderRadius: 4,
+                bgcolor: "text.disabled",
+                m: 2,
+                p: 2
+              }}
+              
+            >
+              <Container maxWidth="lg">
+                <Grid container direction="row" spacing={3}>
+                  <Grid item xs={12} sm={12} md={6}>
+                    <Box>
+                      <Card
+                        sx={{
+                          maxWidth: 300,
+                          minHeight:400,
+                    borderRadius: 4,
+                    boxShadow: 10,
+                    m: 1,
+                    p: 1,
+                    border: "2px solid 	#808080",
+                        }}>
+                        <CardMedia
+                        sx={{
+                        maxWidth: 300,
+                        borderRadius: 4,
+                        boxShadow: 10,
+                        maxHeight: 300
+                          }}
+                      component="img"
+                      image={user.image}
+                      alt="image of self"
+                        />
+                        <CardContent sx={{ justifyContent: "left" }}>
+                          <Typography
+                          
+                            variant="h4">
+                            {user.firstName} {user.lastName}
+                          </Typography>
+                        </CardContent>
+                        
+                      </Card>
+                    </Box>
+                  </Grid>
+                  <Grid item item xs={12} sm={12} md={6}>
+                          <Card
+                        sx={{
+                        maxWidth: 300,
+                          minHeight: 400,
+                    borderRadius: 4,
+                    boxShadow: 10,
+                    m: 1,
+                    p: 1,
+                    border: "2px solid 	#808080",
+                        }}>
+                        <CardMedia
+                        sx={{
+                        maxWidth: 300,
+                        borderRadius: 4,
+                        boxShadow: 10,
+                       
+                          }}
+                        />
+                      <CardContent sx={{ justifyContent: "left"}}>
+                        <List>
+                          <ListItemText>Phone: {user.phoneNumber}</ListItemText>
+                          <ListItemText>Email: {user.email}</ListItemText>
+                          <ListItem>
+                            <a href="/" onClick={() => Auth.logout()}>
+                            <Button>
 
-              <Divider />
+                              </Button>
+                            </a>
+                          </ListItem>
+                        </List>
 
-              <Box sx={{ p: 2 }}>
-                <>
-                  <Box>
-                    <h3>
-                      {user.firstName} {user.lastName}
-                    </h3>
-                    <h1></h1>
-                    <Divider /> <br />
-                    <SizedAvatar
-                      sx={{ width: 90, height: 90 }}
-                      src={user.image}
-                    />
-                    ​
-                  </Box>
-                  <Divider /> <br />
-                  <Box sx={{ p: 2 }}>
-                    <List
-                      sx={{
-                        width: "100%",
-                        maxWidth: 360,
-                        bgcolor: "background.paper",
-                      }}
-                      component="nav"
-                      aria-labelledby="nested-list-subheader"
-                      subheader={
-                        <ListSubheader id="nested-list-subheader">
-                          Profile Info
-                        </ListSubheader>
-                      }
-                    >
-                      <Divider />
-                      <ListItemText>Phone:</ListItemText>
-                      <ListItemText> {user.phoneNumber}</ListItemText>
-                      <ListItemText>Email Address:</ListItemText>
-                      <ListItemText>{user.email}</ListItemText>
-                      <Divider />
+                        
+     
+                        </CardContent>
+                        
+                      </Card>
+                  </Grid>
+                </Grid>
+            </Container>
+              
 
-                      <ListItemText>
-                        <a href="/" onClick={() => Auth.logout()}>
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            type="submit"
-                            // className={classes.button}
-                            style={btnstyle}
-                            fullWidth
-                            label="logout"
-                            sx={{
-                              onClick: (event) => {
-                                logout(event, "logout");
-                              },
-                            }}
-                          >
-                            Log Out
-                          </Button>
-                        </a>
-                      </ListItemText>
-                      <ListItemText>
-                        <Link to="/Profile">
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            fullWidth
-                            style={btnstyle}
-                          >
-                            Add Profile
-                          </Button>
-                        </Link>
-                      </ListItemText>
-                    </List>
-                  </Box>
-                </>
-              </Box>
-            </Drawer>
-          </>
-        ) : null}
+              
+          </Box>
+
+        </React.Fragment>
+      ) : null}
+      </React.Fragment>
       </div>
-    </>
   );
 }
 export default UserDisplay;
