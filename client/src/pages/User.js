@@ -36,15 +36,12 @@ import ProfileDisplay from "components/ProfileDisplay";
 
 
 
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
 
-
-const SizedAvatar = styled(Avatar)`
-  ${({ size, theme }) => `
-    width: ${theme.spacing(size)}px; 
-    height: ${theme.spacing(size)}px; 
-  `};
-`;
-const mdTheme = createTheme();
+}));
 
 function DashboardContent(props) {
   //   const classes = useStyles();
@@ -52,24 +49,29 @@ function DashboardContent(props) {
   
   const btnstyle = { margin: "8px 0" };
   return (
-    <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: "flex", maxWidth: '100%' }}>
-        {/* <Box
-          component="main"
-          sx={{
-          backgroundColor: (theme) =>
-              theme.palette.mode === "light"
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
-            flexGrow: 1,
-            height: "100vh",
-            overflow: "auto",
-          }}> */}
-       
-        {/* </Box>        */}
-        <UserDisplay />
-      </Box>
-    </ThemeProvider>
+   
+        <Box  
+              px={{ xs: 1, sm: 5}}
+      py={{ xs: 1, sm: 5 }}
+      bgcolor="text.secondary"
+              sx={{
+                borderRadius: 4,
+                m: 2,
+                p: 2,
+                flexGrow: 1        
+      }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={4}>
+          
+            <UserDisplay />
+         
+        </Grid>
+        <Grid item xs={12} md={8}>
+          <ProfileDisplay/>
+        </Grid>
+      </Grid>      
+        </Box>
+
 
   );
 }
